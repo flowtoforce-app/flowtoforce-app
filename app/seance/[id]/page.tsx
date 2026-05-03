@@ -177,7 +177,7 @@ export default function Seance({ params }: { params: { id: string } }) {
           <ul className="space-y-3 text-gray-300 font-space text-sm">
             <li>✓ Échauffement: 5-10 min de cardio léger + mobilité dynamique</li>
             <li>✓ Hydratation: bois de l'eau entre les séries</li>
-            <li>✓ Forme > Poids: privilégie toujours la technique</li>
+            <li>✓ Forme &gt; Poids: privilégie toujours la technique</li>
             <li>✓ Progression: ajoute du poids quand les 10 derniers reps sont confortables</li>
             <li>✓ Nutrition: 2-3h après ta séance, repas avec protéines + glucides</li>
           </ul>
