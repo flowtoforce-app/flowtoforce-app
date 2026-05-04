@@ -154,6 +154,36 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.socialLinks {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.socialLink:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.socialLink svg {
+  width: 18px;
+  height: 18px;
+}
+
 @media (max-width: 768px) {
   .heroContent h1 {
     font-size: 36px;

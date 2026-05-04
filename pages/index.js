@@ -18,14 +18,14 @@ export default function Home() {
       id: 'v2',
       name: 'FlowToForce V2',
       subtitle: 'Home Programme',
-      description: '12 semaines. 8 chapitres. Une progression structurée à la maison avec ton poids du corps et des accessoires (élastiques, chaise, haltères). Tu te muscles, tu construis ta confiance. Après, tu seras prête pour la salle.',
+      description: '12 semaines. 8 chapitres. Une progression structurée à la maison au poids du corps et accessoires (élastiques, chaise, haltères). Tu te muscles, tu construis ta confiance. L\'étape idéale avant de passer à la salle avec V1.',
       price: 29.99,
     },
     {
       id: 'bundle',
       name: 'FlowToForce Bundle',
       subtitle: 'V1 + V2',
-      description: 'Les deux programmes : la salle et la maison. Flexibilité totale selon ton emploi du temps et tes objectifs.',
+      description: 'Les deux programmes : V1 Salle + V2 Home. Flexibilité totale selon ton emploi du temps et tes objectifs.',
       price: 39.99,
     },
   ]
@@ -58,11 +58,17 @@ export default function Home() {
         {/* Hero Section */}
         <section className={styles.hero}>
           <div className={styles.logo}>
-            <svg viewBox="0 0 390 390" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0" y="0" width="380" height="380" fill="#FFFFFF" />
-              <text x="100" y="180" textAnchor="middle" fontFamily="Helvetica, Arial, sans-serif" fontSize="32" fontWeight="700" fill="#000000" letterSpacing="1">flow</text>
-              <line x1="160" y1="205" x2="220" y2="205" stroke="#000000" strokeWidth="1.5" />
-              <text x="280" y="235" textAnchor="middle" fontFamily="Helvetica, Arial, sans-serif" fontSize="32" fontWeight="700" fill="#000000" letterSpacing="1">force</text>
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <style>{`
+                .logoText {
+                  fill: white;
+                  font-family: 'Playfair Display', serif;
+                  letter-spacing: 0.5px;
+                }
+              `}</style>
+              <text x="30" y="50" className="logoText" fontSize="14">flow</text>
+              <line x1="55" y1="62" x2="70" y2="62" stroke="white" strokeWidth="1"/>
+              <text x="65" y="80" className="logoText" fontSize="14">force</text>
             </svg>
           </div>
 
@@ -103,6 +109,23 @@ export default function Home() {
 
         {/* Footer */}
         <footer className={styles.footer}>
+          <div className={styles.socialLinks}>
+            <a href="https://www.instagram.com/flowtoforce/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 6.63 5.37 12 12 12s12-5.37 12-12S18.63 0 12 0zm0 22c-5.52 0-10-4.48-10-10S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm3.7-10c0 2.05-1.65 3.7-3.7 3.7s-3.7-1.65-3.7-3.7 1.65-3.7 3.7-3.7 3.7 1.65 3.7 3.7zM17.9 6.1c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1.5-1.1 1.1-1.1 1.1.5 1.1 1.1z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@flowtoforce" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.07 6.85 6.85 0 1 0 6.89 6.86V9.24a8.65 8.65 0 0 0 5.1 1.93V7.24a4.84 4.84 0 0 1-.89-.08z"/>
+              </svg>
+            </a>
+            <a href="mailto:flowtoforce@protonmail.com" className={styles.socialLink}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </a>
+          </div>
           <p>FlowToForce © 2026</p>
         </footer>
       </div>
