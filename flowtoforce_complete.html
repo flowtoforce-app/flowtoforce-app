@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowToForce - Programme Musculation Complet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #000055;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid #000055;
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #f8f8f8;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav button {
+            background-color: #ffffff;
+            border: 2px solid #000055;
+            color: #000055;
+            padding: 8px 16px;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #000055;
+            color: #ffffff;
+        }
+
+        nav button.active {
+            background-color: #000055;
+            color: #ffffff;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Chapters */
+        .chapter {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+
+        .chapter.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .chapter-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            color: #000055;
+            margin-bottom: 10px;
+        }
+
+        .chapter-intro {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        /* Seance */
+        .seance {
+            margin-bottom: 50px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .seance-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #000055;
+            padding: 15px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .seance-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .seance-meta span {
+            background-color: #ffffff;
+            padding: 8px 12px;
+            border-left: 3px solid #000055;
+            font-weight: bold;
+        }
+
+        /* Conseil de Lys */
+        .conseil-lys {
+            background-color: #f0f0ff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #000055;
+            border-radius: 4px;
+            font-style: italic;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .conseil-lys strong {
+            display: block;
+            color: #000055;
+            font-style: normal;
+            margin-bottom: 10px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            background-color: #ffffff;
+            padding: 8px 12px;
+            border-left: 3px solid #000055;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+        }
+
+        .exercice-detail {
+            font-size: 13px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .exercice {
+            margin-bottom: 15px;
+            padding: 12px;
+            background-color: #ffffff;
+            border-left: 3px solid #000055;
+        }
+
+        .exercice-name {
+            font-weight: bold;
+            color: #000055;
+            margin-bottom: 8px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 13px;
+        }
+
+        .exercice-reps {
+            color: #666;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000055;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            font-size: 12px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Version selector */
+        .version-selector {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .version-selector label {
+            font-weight: bold;
+            margin-right: 15px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+        }
+
+        .version-selector button {
+            background-color: #ffffff;
+            border: 2px solid #000055;
+            color: #000055;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-family: 'Space Mono', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 13px;
+        }
+
+        .version-selector button:hover,
+        .version-selector button.active {
+            background-color: #000055;
+            color: #ffffff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            .chapter-title {
+                font-size: 24px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            nav button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>FLOWTOFORCE</h1>
+        <p>Méthode de Musculation Progressive - 12 semaines</p>
+    </header>
+
+    <!-- Version Selector -->
+    <div class="container">
+        <div class="version-selector">
+            <label>Sélectionne ta version:</label>
+            <button class="version-btn active" data-version="v1">V1 - En Salle</button>
+            <button class="version-btn" data-version="v2">V2 - Home</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul id="chaptersNav"></ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container" id="content"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>FlowToForce</strong> - Programme créé par Lys</p>
+        <p>Version Beta Test - Feedback welcome 🔥</p>
+    </footer>
+
+    <script>
+        // Complete Data structure - V1 All Chapters and Séances
+        const data = {
+            v1: {
+                chapters: [
+                    {
+                        id: 'ch0',
+                        title: 'Chapitre 0',
+                        subtitle: 'FlowToForce - Qu\'est-ce que c\'est?',
+                        intro: 'Pourquoi FlowToForce V1, et pourquoi tu es au bon endroit. FlowToForce combine mobilité, activation, force et hypertrophie musculaire. Une méthode progressive accessible à tous les niveaux.',
+                        seances: []
+                    },
+                    {
+                        id: 'ch1',
+                        title: 'Chapitre 1',
+                        subtitle: 'Apprivoiser le muscle sans crainte',
+                        intro: 'Phase d\'introduction à la musculation. On apprend les patterns fondamentaux: squat, hinge, push, pull. Focus sur la sensation et la connexion muscle-cerveau.',
+                        seances: [
+                            {
+                                id: 'seance1a',
+                                name: 'Séance 1A',
+                                weeks: 'Semaines 1-2',
+                                phase: 'Phase EMG',
+                                duration: '~45 min',
+                                pattern: 'LES 4 PATTERNS FONDAMENTAUX',
+                                conseil: 'Cette semaine, ce n\'est pas la force qu\'on cherche, c\'est la sensation. À chaque répétition, tu dois bien sentir tes muscles travailler. Charges volontairement légères. On construit avant d\'intensifier.',
+                                musclesEngages: 'Bas du corps: quadriceps, grand fessier, ischio-jambiers, adducteurs | Haut du corps: grand pectoral, triceps, grand dorsal, biceps, deltoïde antérieur | Core: transverse',
+                                materiel: 'Haltères légers · Banc',
+                                sections: [
+                                    {
+                                        name: 'ÉCHAUFFEMENT MOBILITÉ',
+                                        duration: '10 min',
+                                        exercices: [
+                                            { name: 'Air Squat', reps: '1 × 10 reps' },
+                                            { name: 'Good Morning PDC', reps: '1 × 10 reps' },
+                                            { name: 'Pompes Genoux', reps: '1 × 8 reps' },
+                                            { name: 'Rowing Élastique', reps: '1 × 12 reps' },
+                                            { name: 'Cat-Vâche', reps: '1 × 10 reps' }
+                                        ]
+                                    },
+                                    {
+                                        name: 'CORPS DE SÉANCE',
+                                        duration: '30 min',
+                                        note: '4 exercices · 3 séries',
+                                        exercices: [
+                                            {
+                                                num: 1,
+                                                name: 'PATTERN SQUAT GOBLET',
+                                                objectif: 'Renforcement (pattern squat fondamental)',
+                                                muscles: 'Quadriceps, grand fessier, gainage profond (transverse), adducteurs',
+                                                materiel: 'Une haltère 4-6 kg',
+                                                reps: '3 séries × 12 reps | Repos 75 sec'
+                                            },
+                                            {
+                                                num: 2,
+                                                name: 'PATTERN HINGE ROMANIAN DEADLIFT HALTÈRES',
+                                                objectif: 'Renforcement + mobilité ischio-jambiers (pattern hinge charnière de hanche)',
+                                                muscles: 'Ischio-jambiers, grand fessier, érecteurs du rachis, gainage',
+                                                materiel: 'Deux haltères 2-4 kg (par haltère)',
+                                                reps: '3 séries × 10 reps | Repos 75 sec'
+                                            },
+                                            {
+                                                num: 3,
+                                                name: 'PATTERN PUSH DUMBBELL BENCH PRESS',
+                                                objectif: 'Renforcement pattern push horizontal',
+                                                muscles: 'Grand pectoral, triceps, épaules, ceinture scapulaire',
+                                                materiel: 'Banc + deux haltères 2-4 kg',
+                                                reps: '3 séries × 10 reps | Repos 75 sec'
+                                            },
+                                            {
+                                                num: 4,
+                                                name: 'PATTERN PULL SINGLE ARM ROW',
+                                                objectif: 'Renforcement pattern pull horizontal',
+                                                muscles: 'Grand dorsal, grand rond, biceps, deltoïde postérieur',
+                                                materiel: 'Banc + une haltère 3-5 kg',
+                                                reps: '3 séries × 10 reps/côté | Repos 75 sec'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        name: 'RETOUR AU CALME',
+                                        duration: '5 min',
+                                        exercices: [
+                                            { name: 'Posture de l\'Enfant', reps: '1 × 40 sec' },
+                                            { name: 'Étirements Ischios Debout', reps: '1 × 40 sec' },
+                                            { name: 'Chien Tête en Bas', reps: '1 × 40 sec' },
+                                            { name: 'Genoux à la Poitrine', reps: '1 × 40 sec' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                id: 'seance1b',
+                                name: 'Séance 1B',
+                                weeks: 'Semaine 1',
+                                phase: 'Phase EMG',
+                                duration: '~45 min',
+                                pattern: 'LES 4 PATTERNS, ANGLES DIFFÉRENTS',
+                                conseil: 'Deuxième séance de la semaine. Tu maîtrises les 4 patterns maintenant, on les approfondit en variant les angles. Respire, ressens, progresse.',
+                                materiel: 'Haltères légers · Banc · Tapis'
+                            },
+                            {
+                                id: 'seance1c',
+                                name: 'Séance 1C',
+                                weeks: 'Semaine 2',
+                                phase: 'Phase EMG',
+                                duration: '~45 min',
+                                pattern: 'CONSOLIDATION DES PATTERNS',
+                                conseil: 'Deuxième semaine. Tu sens déjà tes muscles travailler différemment. Cette fois, on augmente légèrement la difficulté avec des mouvements plus exigeants en équilibre et stabilité.',
+                                materiel: 'Haltères légers · Tapis'
+                            },
+                            {
+                                id: 'seance1d',
+                                name: 'Séance 1D',
+                                weeks: 'Semaine 2',
+                                phase: 'Phase EMG',
+                                duration: '~45 min',
+                                pattern: 'FULL BODY CONSOLIDATION',
+                                conseil: 'Dernière séance du chapitre. On consolidate tout ce qu\'on a appris. Tu es maintenant capable de maintenir la tension, la forme et la respiration. Bravo!',
+                                materiel: 'Haltères · Banc'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'ch2',
+                        title: 'Chapitre 2',
+                        subtitle: 'Je me renforce en restant souple',
+                        intro: 'Focus sur le renforcement combiné avec la mobilité. On maintient la flexibilité tout en gagnant en force.',
+                        seances: [
+                            { id: 'seance2a', name: 'Séance 2A', weeks: 'Semaines 3-4', phase: 'Phase EMG', duration: '~45 min', pattern: 'RENFORCEMENT + MOBILITÉ' },
+                            { id: 'seance2b', name: 'Séance 2B', weeks: 'Semaines 3-4', phase: 'Phase EMG', duration: '~45 min', pattern: 'PATTERNS AVANCÉS' },
+                            { id: 'seance2c', name: 'Séance 2C', weeks: 'Semaines 3-4', phase: 'Phase EMG', duration: '~45 min', pattern: 'STABILITÉ DYNAMIQUE' },
+                            { id: 'seance2d', name: 'Séance 2D', weeks: 'Semaines 3-4', phase: 'Phase EMG', duration: '~45 min', pattern: 'FULL BODY AVANCÉ' }
+                        ]
+                    },
+                    {
+                        id: 'ch3',
+                        title: 'Chapitre 3',
+                        subtitle: 'S\'allonger, sans se tasser',
+                        intro: 'Chapitre dédié à l\'allongement musculaire et à la posture. Gainer tout en gardant la longueur.',
+                        seances: [
+                            { id: 'seance3a', name: 'Séance 3A', weeks: 'Semaines 5-6', phase: 'Phase Hypertrophie Légère', duration: '~50 min', pattern: 'ALLONGEMENT DYNAMIQUE' },
+                            { id: 'seance3b', name: 'Séance 3B', weeks: 'Semaines 5-6', phase: 'Phase Hypertrophie Légère', duration: '~50 min', pattern: 'POSTURE ET GAINAGE' },
+                            { id: 'seance3c', name: 'Séance 3C', weeks: 'Semaines 5-6', phase: 'Phase Hypertrophie Légère', duration: '~50 min', pattern: 'ÉTIREMENTS ACTIFS' },
+                            { id: 'seance3d', name: 'Séance 3D', weeks: 'Semaines 5-6', phase: 'Phase Hypertrophie Légère', duration: '~50 min', pattern: 'FULL BODY ALLONGÉ' }
+                        ]
+                    },
+                    {
+                        id: 'ch4',
+                        title: 'Chapitre 4',
+                        subtitle: 'SCULPTER LES BRAS SANS GONFLER',
+                        intro: 'Focus spécifique sur les bras avec une approche de tonification sans volume excessif.',
+                        seances: [
+                            { id: 'seance4a', name: 'Séance 4A', weeks: 'Semaines 7-8', phase: 'Phase Hypertrophie', duration: '~50 min', pattern: 'DÉFINITION BRAS ANTÉRIEURS' },
+                            { id: 'seance4b', name: 'Séance 4B', weeks: 'Semaines 7-8', phase: 'Phase Hypertrophie', duration: '~50 min', pattern: 'DÉFINITION BRAS POSTÉRIEURS' },
+                            { id: 'seance4c', name: 'Séance 4C', weeks: 'Semaines 7-8', phase: 'Phase Hypertrophie', duration: '~50 min', pattern: 'ÉPAULES TONIFIÉES' },
+                            { id: 'seance4d', name: 'Séance 4D', weeks: 'Semaines 7-8', phase: 'Phase Hypertrophie', duration: '~50 min', pattern: 'FULL ARMS' }
+                        ]
+                    },
+                    {
+                        id: 'ch5',
+                        title: 'Chapitre 5',
+                        subtitle: 'RENFORCER LES JAMBES',
+                        intro: 'Chapitre intensif pour les jambes avec progressivité et sécurité.',
+                        seances: [
+                            { id: 'seance5a', name: 'Séance 5A', weeks: 'Semaines 7-8', phase: 'Phase Hypertrophie', duration: '~55 min', pattern: 'QUADRICEPS FOCUS' },
+                            { id: 'seance5b', name: 'Séance 5B', weeks: 'Semaines 7-8', phase: 'Phase Hypertrophie', duration: '~55 min', pattern: 'FESSIERS ET ISCHIOS' },
+                            { id: 'seance5c', name: 'Séance 5C', weeks: 'Semaines 7-8', phase: 'Phase Hypertrophie', duration: '~55 min', pattern: 'ADDUCTEURS ET STABILITÉ' },
+                            { id: 'seance5d', name: 'Séance 5D', weeks: 'Semaines 7-8', phase: 'Phase Hypertrophie', duration: '~55 min', pattern: 'FULL LEGS POWER' }
+                        ]
+                    },
+                    {
+                        id: 'ch6',
+                        title: 'Chapitre 6',
+                        subtitle: 'Libérer le corps en redressant la posture',
+                        intro: 'Chapitre focalisé sur la posture, le dos et la liberté de mouvement.',
+                        seances: [
+                            { id: 'seance6a', name: 'Séance 6A', weeks: 'Semaines 9-10', phase: 'Phase Force', duration: '~50 min', pattern: 'DOS PUISSANT' },
+                            { id: 'seance6b', name: 'Séance 6B', weeks: 'Semaines 9-10', phase: 'Phase Force', duration: '~50 min', pattern: 'POSTURE PARFAITE' },
+                            { id: 'seance6c', name: 'Séance 6C', weeks: 'Semaines 9-10', phase: 'Phase Force', duration: '~50 min', pattern: 'MOBILITÉ THORACIQUE' },
+                            { id: 'seance6d', name: 'Séance 6D', weeks: 'Semaines 9-10', phase: 'Phase Force', duration: '~50 min', pattern: 'CHAÎNE POSTÉRIEURE' }
+                        ]
+                    },
+                    {
+                        id: 'ch7',
+                        title: 'Chapitre 7',
+                        subtitle: 'Choisir son cardio sans cramer',
+                        intro: 'Intégration smart du cardio sans compromettre les gains musculaires.',
+                        seances: [
+                            { id: 'seance7a', name: 'Séance 7A', weeks: 'Semaines 11-12', phase: 'Phase Endurance', duration: '~60 min', pattern: 'CARDIO ZONE 2' },
+                            { id: 'seance7b', name: 'Séance 7B', weeks: 'Semaines 11-12', phase: 'Phase Endurance', duration: '~60 min', pattern: 'HIIT MUSCULATION' },
+                            { id: 'seance7c', name: 'Séance 7C', weeks: 'Semaines 11-12', phase: 'Phase Endurance', duration: '~45 min', pattern: 'ACTIF RECOVERY' },
+                            { id: 'seance7d', name: 'Séance 7D', weeks: 'Semaines 11-12', phase: 'Phase Endurance', duration: '~60 min', pattern: 'FORCE + CARDIO' }
+                        ]
+                    },
+                    {
+                        id: 'ch8',
+                        title: 'Chapitre 8',
+                        subtitle: 'Entretenir, progresser et continuer',
+                        intro: 'Au-delà des 12 semaines. Comment maintenir et progresser après FlowToForce V1.',
+                        seances: [
+                            { id: 'seance8a', name: 'Séance 8A', weeks: 'Au-delà', phase: 'Phase Maintenance', duration: '~45 min', pattern: 'ÉQUILIBRE COMPLET' },
+                            { id: 'seance8b', name: 'Séance 8B', weeks: 'Au-delà', phase: 'Phase Maintenance', duration: '~50 min', pattern: 'PROGRESSIVITÉ' },
+                            { id: 'seance8c', name: 'Séance 8C', weeks: 'Au-delà', phase: 'Phase Maintenance', duration: '~50 min', pattern: 'PRÉVENTION' },
+                            { id: 'seance8d', name: 'Séance 8D', weeks: 'Au-delà', phase: 'Phase Maintenance', duration: '~60 min', pattern: 'NEXT LEVEL' }
+                        ]
+                    }
+                ]
+            },
+            v2: {
+                chapters: [
+                    {
+                        id: 'ch0',
+                        title: 'Chapitre 0',
+                        subtitle: 'FlowToForce V2 - Home Edition',
+                        intro: 'Version adaptée sans équipement lourd. Poids du corps + accessoires légers. Même efficacité, plus de flexibilité. À venir...',
+                        seances: []
+                    }
+                ]
+            }
+        };
+
+        let currentVersion = 'v1';
+
+        // Render chapters navigation
+        function renderNav() {
+            const nav = document.getElementById('chaptersNav');
+            nav.innerHTML = '';
+            data[currentVersion].chapters.forEach(chapter => {
+                const button = document.createElement('button');
+                button.className = 'chapter-nav-btn';
+                button.textContent = chapter.title;
+                button.onclick = () => showChapter(chapter.id);
+                nav.appendChild(button);
+            });
+        }
+
+        // Show chapter
+        function showChapter(chapterId) {
+            const content = document.getElementById('content');
+            const chapter = data[currentVersion].chapters.find(c => c.id === chapterId);
+
+            if (!chapter) return;
+
+            let html = `
+                <div class="chapter active">
+                    <h2 class="chapter-title">${chapter.title}</h2>
+                    <h3 style="font-family: 'Space Mono'; font-size: 18px; margin-bottom: 20px; color: #666;">${chapter.subtitle}</h3>
+                    <div class="chapter-intro">${chapter.intro}</div>
+            `;
+
+            // Render seances
+            if (chapter.seances && chapter.seances.length > 0) {
+                chapter.seances.forEach(seance => {
+                    html += renderSeance(seance);
+                });
+            }
+
+            html += '</div>';
+            content.innerHTML = html;
+
+            // Update nav buttons
+            document.querySelectorAll('.chapter-nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Render seance
+        function renderSeance(seance) {
+            let html = `
+                <div class="seance">
+                    <div class="seance-title">
+                        <span>${seance.name} - ${seance.pattern}</span>
+                    </div>
+                    <div class="seance-meta">
+                        <span><strong>Durée:</strong> ${seance.duration}</span>
+                        <span><strong>Phase:</strong> ${seance.phase}</span>
+                        <span><strong>Semaines:</strong> ${seance.weeks}</span>
+                    </div>
+            `;
+
+            if (seance.conseil) {
+                html += `
+                    <div class="conseil-lys">
+                        <strong>💡 Le conseil de Lys</strong>
+                        ${seance.conseil}
+                    </div>
+                `;
+            }
+
+            if (seance.musclesEngages) {
+                html += `
+                    <div class="section">
+                        <div class="section-title">Muscles sollicités</div>
+                        <div class="exercice-detail">${seance.musclesEngages}</div>
+                    </div>
+                `;
+            }
+
+            if (seance.materiel) {
+                html += `
+                    <div class="section">
+                        <div class="section-title">Matériel</div>
+                        <div class="exercice-detail">${seance.materiel}</div>
+                    </div>
+                `;
+            }
+
+            // Render sections
+            if (seance.sections) {
+                seance.sections.forEach(section => {
+                    html += `<div class="section">
+                        <div class="section-title">${section.name}${section.duration ? ' - ' + section.duration : ''}</div>
+                        ${section.note ? `<div class="exercice-detail"><strong>${section.note}</strong></div>` : ''}
+                    `;
+
+                    section.exercices.forEach(exo => {
+                        if (exo.objectif) {
+                            // Full exercice detail
+                            html += `
+                                <div class="exercice">
+                                    <div class="exercice-name">Exo ${exo.num} - ${exo.name}</div>
+                                    <div class="exercice-detail"><strong>Objectif:</strong> ${exo.objectif}</div>
+                                    <div class="exercice-detail"><strong>Muscles engagés:</strong> ${exo.muscles}</div>
+                                    <div class="exercice-detail"><strong>Matériel:</strong> ${exo.materiel}</div>
+                                    <div class="exercice-reps">${exo.reps}</div>
+                                </div>
+                            `;
+                        } else {
+                            // Simple exercice
+                            html += `
+                                <div class="exercice">
+                                    <div class="exercice-name">${exo.name}</div>
+                                    <div class="exercice-reps">${exo.reps}</div>
+                                </div>
+                            `;
+                        }
+                    });
+
+                    html += '</div>';
+                });
+            }
+
+            html += '</div>';
+            return html;
+        }
+
+        // Version selector
+        document.querySelectorAll('.version-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.version-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentVersion = this.dataset.version;
+                renderNav();
+                showChapter(data[currentVersion].chapters[0].id);
+            });
+        });
+
+        // Initialize
+        renderNav();
+        showChapter(data[currentVersion].chapters[0].id);
+    </script>
+</body>
+</html>

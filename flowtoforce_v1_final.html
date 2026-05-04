@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowToForce V1 - Programme Complet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #000055;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #000055;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #ffffff;
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #000055;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #ffffff;
+            overflow-x: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            min-width: 100%;
+        }
+
+        nav button {
+            background-color: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 12px;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        nav button:hover {
+            background-color: #ffffff;
+            color: #000055;
+        }
+
+        nav button.active {
+            background-color: #ffffff;
+            color: #000055;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .chapter {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+
+        .chapter.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .chapter-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 10px;
+        }
+
+        .chapter-intro {
+            font-size: 14px;
+            color: #cccccc;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .seance {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #ffffff;
+            border-radius: 4px;
+        }
+
+        .seance-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .seance-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .seance-meta-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 10px;
+            border-left: 2px solid #ffffff;
+            font-weight: bold;
+        }
+
+        .seance-meta-label {
+            opacity: 0.7;
+            font-size: 10px;
+            display: block;
+        }
+
+        .counsel {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 3px solid #ffffff;
+            font-style: italic;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 10px;
+            border-left: 2px solid #ffffff;
+            font-weight: bold;
+            margin-bottom: 12px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 13px;
+        }
+
+        .exercise {
+            margin-bottom: 12px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-left: 2px solid #ffffff;
+            font-size: 12px;
+        }
+
+        .exercise-name {
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 4px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 12px;
+        }
+
+        .exercise-detail {
+            font-size: 11px;
+            color: #cccccc;
+            margin-bottom: 2px;
+        }
+
+        footer {
+            background-color: #000055;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            font-size: 12px;
+            border-top: 2px solid #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .chapter-title {
+                font-size: 20px;
+            }
+
+            nav button {
+                font-size: 10px;
+                padding: 6px 8px;
+            }
+
+            body {
+                font-size: 13px;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .seance {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FLOWTOFORCE V1</h1>
+        <p>Programme Complet - 12 Semaines de Musculation Progressive</p>
+    </header>
+
+    <nav>
+        <ul id="chaptersNav"></ul>
+    </nav>
+
+    <div class="container" id="content"></div>
+
+    <footer>
+        <p><strong>FlowToForce V1</strong> - Créé par Lys</p>
+        <p>Programme Complet Beta - Bienvenue dans ta transformation</p>
+    </footer>
+
+    <script>
+        const flowtoForceData = {
+            ch0: {
+                title: "Chapitre 0",
+                intro: "FlowToForce - Qu'est-ce que c'est? Découvre pourquoi tu es au bon endroit.",
+                content: "Pourquoi FlowToForceV1, et pourquoi tu es au bon endroit. J'ai commencé la gymnastique à 3 ans et j'ai arrêté à 16. Mon corps a appris tôt à s'entraîner, à se dépasser, à se discipliner. Pendant 15 ans, j'ai pratiqué tout ce que Paris proposait de \"doux\" : yoga sous toutes ses formes, pilates mat et reformer, mobilité, natation, barre, vélo en salle. J'ai enseigné le yoga pendant 7 ans, dans des studios parisiens, en retraite et en ligne. J'ai formé des coachs, structuré des cours, co-créé des méthodes. Et puis j'ai eu envie d'autre chose. Pourquoi la musculation? Parce que le yoga et le pilates, aussi puissants soient-ils, ne construisent pas tout. Ils développent la mobilité, la conscience, l'équilibre. Mais la force pure, la densité, la structure musculaire qui change durablement la silhouette et la posture ça, ça se construit ailleurs. J'ai voulu ce corps-là. Le corps qui tient un handstand sans mur. Qui porte des charges. Qui ne se fatigue plus dans les escaliers, qui garde l'énergie à la fin d'une journée de coaching, qui vieillit solide. Alors j'ai commencé la musculation. Et ce qui s'est passé a confirmé ce que je soupçonnais : on ne perd rien à musclér. On gagne tout.",
+                seances: []
+            },
+            ch1: {
+                title: "Chapitre 1",
+                intro: "Apprivoiser le muscle sans crainte - Phase d'introduction aux 4 patterns fondamentaux",
+                seances: [
+                    {
+                        name: "Séance 1A",
+                        weeks: "Semaines 1-2",
+                        phase: "Phase EMG",
+                        duration: "~45 min",
+                        pattern: "LES 4 PATTERNS FONDAMENTAUX",
+                        conseil: "Cette semaine, ce n'est pas la force qu'on cherche, c'est la sensation. À chaque répétition, tu dois bien sentir tes muscles travailler. Charges volontairement légères. On construit avant d'intensifier.",
+                        muscles: "Bas du corps: quadriceps, grand fessier, ischio-jambiers, adducteurs | Haut du corps: grand pectoral, triceps, grand dorsal, biceps, deltoïde antérieur | Core: transverse | Full Body",
+                        materiel: "Haltères légers · Banc",
+                        exercises: [
+                            { num: 1, name: "PATTERN SQUAT GOBLET", objectif: "Renforcement (pattern squat fondamental)", muscles: "Quadriceps, grand fessier, gainage profond (transverse), adducteurs", materiel: "Une haltère 4-6 kg", reps: "3 séries × 12 reps | Repos 75 sec" },
+                            { num: 2, name: "PATTERN HINGE ROMANIAN DEADLIFT HALTÈRES", objectif: "Renforcement + mobilité ischio-jambiers", muscles: "Ischio-jambiers, grand fessier, érecteurs du rachis, gainage", materiel: "Deux haltères 2-4 kg (par haltère)", reps: "3 séries × 12 reps | Repos 75 sec" },
+                            { num: 3, name: "PATTERN PUSH DÉVELOPPÉ COUCHÉ HALTÈRES", objectif: "Renforcement (pattern push horizontal)", muscles: "Grand pectoral, triceps brachial, deltoïde antérieur", materiel: "Banc plat + Deux haltères 2-4 kg (par haltère)", reps: "3 séries × 12 reps | Repos 75 sec" },
+                            { num: 4, name: "PATTERN PULL ROWING HALTÈRE UNILATÉRAL", objectif: "Renforcement (pattern pull tirage unilatéral)", muscles: "Grand dorsal, grand rond, rhomboïdes, biceps, deltoïde postérieur", materiel: "Banc + Une haltère 2-4 kg", reps: "3 séries × 10 reps/côté | Repos 75 sec" }
+                        ]
+                    },
+                    { name: "Séance 1B", weeks: "Semaine 1", phase: "Phase EMG", duration: "~45 min", pattern: "LES 4 PATTERNS, ANGLES DIFFÉRENTS", conseil: "Deuxième séance de la semaine. Tu maîtrises les 4 patterns maintenant, on les approfondit en variant les angles." },
+                    { name: "Séance 1C", weeks: "Semaine 2", phase: "Phase EMG", duration: "~45 min", pattern: "CONSOLIDATION DES PATTERNS", conseil: "Deuxième semaine. Tu sens déjà tes muscles travailler différemment." },
+                    { name: "Séance 1D", weeks: "Semaine 2", phase: "Phase EMG", duration: "~45 min", pattern: "FULL BODY CONSOLIDATION", conseil: "Dernière séance du chapitre. On consolide tout ce qu'on a appris." }
+                ]
+            },
+            ch2: {
+                title: "Chapitre 2",
+                intro: "Je me renforce en restant souple - Renforcement + Mobilité",
+                seances: [
+                    { name: "Séance 2A", weeks: "Semaines 3-4", phase: "Phase EMG", duration: "~45 min" },
+                    { name: "Séance 2B", weeks: "Semaines 3-4", phase: "Phase EMG", duration: "~45 min" },
+                    { name: "Séance 2C", weeks: "Semaines 3-4", phase: "Phase EMG", duration: "~45 min" },
+                    { name: "Séance 2D", weeks: "Semaines 3-4", phase: "Phase EMG", duration: "~45 min" }
+                ]
+            },
+            ch3: {
+                title: "Chapitre 3",
+                intro: "S'allonger, sans se tasser - Extension et Posture",
+                seances: [
+                    { name: "Séance 3A", weeks: "Semaines 5-6", phase: "Phase Hypertrophie", duration: "~45 min" },
+                    { name: "Séance 3B", weeks: "Semaines 5-6", phase: "Phase Hypertrophie", duration: "~45 min" },
+                    { name: "Séance 3C", weeks: "Semaines 5-6", phase: "Phase Hypertrophie", duration: "~45 min" },
+                    { name: "Séance 3D", weeks: "Semaines 5-6", phase: "Phase Hypertrophie", duration: "~45 min" }
+                ]
+            },
+            ch4: {
+                title: "Chapitre 4",
+                intro: "Sculpter les bras sans gonfler - Tonification Bras",
+                seances: [
+                    { name: "Séance 4A", weeks: "Semaines 7-8", phase: "Phase Force", duration: "~45 min" },
+                    { name: "Séance 4B", weeks: "Semaines 7-8", phase: "Phase Force", duration: "~45 min" },
+                    { name: "Séance 4C", weeks: "Semaines 7-8", phase: "Phase Force", duration: "~45 min" },
+                    { name: "Séance 4D", weeks: "Semaines 7-8", phase: "Phase Force", duration: "~45 min" }
+                ]
+            },
+            ch5: {
+                title: "Chapitre 5",
+                intro: "Renforcer les jambes - Force et Puissance Jambes",
+                seances: [
+                    { name: "Séance 5A", weeks: "Semaines 9-10", phase: "Phase Force", duration: "~45 min" },
+                    { name: "Séance 5B", weeks: "Semaines 9-10", phase: "Phase Force", duration: "~45 min" },
+                    { name: "Séance 5C", weeks: "Semaines 9-10", phase: "Phase Force", duration: "~45 min" },
+                    { name: "Séance 5D", weeks: "Semaines 9-10", phase: "Phase Force", duration: "~45 min" }
+                ]
+            },
+            ch6: {
+                title: "Chapitre 6",
+                intro: "Libérer le corps en redressant la posture - Posture et Alignement",
+                seances: [
+                    { name: "Séance 6A", weeks: "Semaines 9-10", phase: "Phase Endurance", duration: "~45 min" },
+                    { name: "Séance 6B", weeks: "Semaines 9-10", phase: "Phase Endurance", duration: "~45 min" },
+                    { name: "Séance 6C", weeks: "Semaines 9-10", phase: "Phase Endurance", duration: "~45 min" },
+                    { name: "Séance 6D", weeks: "Semaines 9-10", phase: "Phase Endurance", duration: "~45 min" }
+                ]
+            },
+            ch7: {
+                title: "Chapitre 7",
+                intro: "Choisir son cardio sans cramer - Conditionnement Aérobie",
+                seances: [
+                    { name: "Séance 7A", weeks: "Semaines 11-12", phase: "Phase Maintenance", duration: "~45 min" },
+                    { name: "Séance 7B", weeks: "Semaines 11-12", phase: "Phase Maintenance", duration: "~45 min" },
+                    { name: "Séance 7C", weeks: "Semaines 11-12", phase: "Phase Maintenance", duration: "~45 min" },
+                    { name: "Séance 7D", weeks: "Semaines 11-12", phase: "Phase Maintenance", duration: "~45 min" }
+                ]
+            },
+            ch8: {
+                title: "Chapitre 8",
+                intro: "Entretenir, progresser et continuer - Au-delà des 12 Semaines",
+                seances: [
+                    { name: "Séance 8A", weeks: "Au-delà", phase: "Phase Maintenance", duration: "~45 min" },
+                    { name: "Séance 8B", weeks: "Au-delà", phase: "Phase Maintenance", duration: "~45 min" },
+                    { name: "Séance 8C", weeks: "Au-delà", phase: "Phase Maintenance", duration: "~45 min" },
+                    { name: "Séance 8D", weeks: "Au-delà", phase: "Phase Maintenance", duration: "~45 min" }
+                ]
+            }
+        };
+
+        function renderChapters() {
+            const nav = document.getElementById('chaptersNav');
+            const content = document.getElementById('content');
+
+            // Create navigation buttons
+            Object.keys(flowtoForceData).forEach((key, idx) => {
+                const btn = document.createElement('button');
+                btn.textContent = flowtoForceData[key].title;
+                btn.classList.add('chapter-btn');
+                if (idx === 0) btn.classList.add('active');
+                btn.addEventListener('click', () => showChapter(key));
+                nav.appendChild(btn);
+            });
+
+            // Show first chapter
+            showChapter('ch0');
+        }
+
+        function showChapter(chapterKey) {
+            const chapter = flowtoForceData[chapterKey];
+            const content = document.getElementById('content');
+            const buttons = document.querySelectorAll('.chapter-btn');
+
+            buttons.forEach((btn, idx) => {
+                btn.classList.toggle('active', btn.textContent === chapter.title);
+            });
+
+            let html = '<div class="chapter active">';
+            html += `<h2 class="chapter-title">${chapter.title}</h2>`;
+            if (chapter.intro) html += `<div class="chapter-intro">${chapter.intro}</div>`;
+            if (chapter.content) html += `<div style="color: #dddddd; font-size: 13px; line-height: 1.8; margin-bottom: 30px; white-space: pre-wrap;">${chapter.content}</div>`;
+
+            if (chapter.seances && chapter.seances.length > 0) {
+                chapter.seances.forEach(seance => {
+                    html += renderSeance(seance);
+                });
+            }
+
+            html += '</div>';
+            content.innerHTML = html;
+        }
+
+        function renderSeance(seance) {
+            let html = '<div class="seance">';
+            html += `<h3 class="seance-title">${seance.name}</h3>`;
+
+            if (seance.weeks || seance.phase || seance.duration || seance.pattern) {
+                html += '<div class="seance-meta">';
+                if (seance.weeks) html += `<div class="seance-meta-item"><span class="seance-meta-label">Semaines</span>${seance.weeks}</div>`;
+                if (seance.phase) html += `<div class="seance-meta-item"><span class="seance-meta-label">Phase</span>${seance.phase}</div>`;
+                if (seance.duration) html += `<div class="seance-meta-item"><span class="seance-meta-label">Durée</span>${seance.duration}</div>`;
+                if (seance.pattern) html += `<div class="seance-meta-item"><span class="seance-meta-label">Pattern</span>${seance.pattern}</div>`;
+                html += '</div>';
+            }
+
+            if (seance.conseil) html += `<div class="counsel"><strong>Conseil de Lys:</strong> ${seance.conseil}</div>`;
+            if (seance.muscles) html += `<div class="section"><div class="section-title">Muscles sollicités</div><div class="exercise-detail">${seance.muscles}</div></div>`;
+            if (seance.materiel) html += `<div class="section"><div class="section-title">Matériel</div><div class="exercise-detail">${seance.materiel}</div></div>`;
+
+            if (seance.exercises && seance.exercises.length > 0) {
+                html += '<div class="section"><div class="section-title">CORPS DE SÉANCE</div>';
+                seance.exercises.forEach(ex => {
+                    html += '<div class="exercise">';
+                    html += `<div class="exercise-name">Exo ${ex.num} - ${ex.name}</div>`;
+                    html += `<div class="exercise-detail"><strong>Objectif:</strong> ${ex.objectif}</div>`;
+                    html += `<div class="exercise-detail"><strong>Muscles:</strong> ${ex.muscles}</div>`;
+                    html += `<div class="exercise-detail"><strong>Matériel:</strong> ${ex.materiel}</div>`;
+                    html += `<div class="exercise-detail"><strong>Séries & Repos:</strong> ${ex.reps}</div>`;
+                    html += '</div>';
+                });
+                html += '</div>';
+            }
+
+            html += '</div>';
+            return html;
+        }
+
+        document.addEventListener('DOMContentLoaded', renderChapters);
+    </script>
+</body>
+</html>

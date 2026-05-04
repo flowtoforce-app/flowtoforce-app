@@ -1,16 +1,41 @@
-## Hi there 👋
+# FlowToForce Landing Page
 
-<!--
-**flowtoforce-app/flowtoforce-app** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Landing page Next.js avec intégration Stripe.
 
-Here are some ideas to get you started:
+## Setup
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+1. Installer les dépendances:
+```bash
+npm install
+```
+
+2. Créer fichier `.env.local` basé sur `.env.local.example`:
+```bash
+cp .env.local.example .env.local
+```
+
+3. Ajouter tes clés Stripe dans `.env.local`:
+- STRIPE_SECRET_KEY (clé secrète Stripe)
+- NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY (clé publique Stripe)
+
+## Développement local
+
+```bash
+npm run dev
+```
+
+L'app ouvre sur `http://localhost:3000`
+
+## Build pour production
+
+```bash
+npm run build
+npm start
+```
+
+## Déploiement Vercel
+
+1. Commit et push sur GitHub
+2. Import du repo dans Vercel
+3. Ajouter les variables d'environnement Stripe dans Vercel settings
+4. Deploy
