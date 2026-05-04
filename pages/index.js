@@ -145,4 +145,4 @@ export default function Home() {
     </>
   )
 }
-// Landing page: new logo SVG, updated program descriptions, social links footer
+// Landing page: FINAL - logo gradient, new copy, V2/Bundle descriptions, social links
