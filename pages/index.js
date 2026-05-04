@@ -1,4 +1,5 @@
-import { useState } from 'react'
+
+// Updated landing page with gradient logo and new copyimport { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/landing.module.css'
 
