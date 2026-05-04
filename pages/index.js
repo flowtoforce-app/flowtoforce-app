@@ -18,14 +18,14 @@ export default function Home() {
       id: 'v2',
       name: 'FlowToForce V2',
       subtitle: 'Home Programme',
-      description: '12 semaines. 8 chapitres. Une progression structurée à la maison au poids du corps et accessoires (élastiques, chaise, haltères). Tu te muscles, tu construis ta confiance. L\'étape idéale avant de passer à la salle avec V1.',
+      description: '12 semaines. 8 chapitres. Une progression structurée à la maison au poids du corps et accessoires (élastiques, chaise, haltères). Tu te muscles, tu construis ta confiance. Après, tu seras prête pour la salle.',
       price: 29.99,
     },
     {
       id: 'bundle',
       name: 'FlowToForce Bundle',
       subtitle: 'V1 + V2',
-      description: 'Les deux programmes : V1 Salle + V2 Home. Flexibilité totale selon ton emploi du temps et tes objectifs.',
+      description: 'Les deux programmes : Salle et Home. Flexibilité totale selon ton emploi du temps et tes objectifs.',
       price: 39.99,
     },
   ]
@@ -58,24 +58,37 @@ export default function Home() {
         {/* Hero Section */}
         <section className={styles.hero}>
           <div className={styles.logo}>
-            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#7EAED6"/>
+                  <stop offset="50%" stopColor="#AFCBE3"/>
+                  <stop offset="100%" stopColor="#E8D8D3"/>
+                </linearGradient>
+              </defs>
+              <rect width="220" height="220" rx="50" fill="url(#grad)"/>
               <style>{`
-                .logoText {
+                .text {
                   fill: white;
-                  font-family: 'Playfair Display', serif;
-                  letter-spacing: 0.5px;
+                  font-family: 'Cormorant Garamond', serif;
+                  font-size: 20px;
+                  letter-spacing: 1px;
                 }
               `}</style>
-              <text x="30" y="50" className="logoText" fontSize="14">flow</text>
-              <line x1="55" y1="62" x2="70" y2="62" stroke="white" strokeWidth="1"/>
-              <text x="65" y="80" className="logoText" fontSize="14">force</text>
+              <text x="70" y="95" className="text">flow</text>
+              <line x1="95" y1="110" x2="125" y2="110"
+                    stroke="white"
+                    strokeWidth="1.4"
+                    strokeOpacity="0.6"
+                    strokeLinecap="round"/>
+              <text x="110" y="140" className="text">force</text>
             </svg>
           </div>
 
           <div className={styles.heroContent}>
             <h1>FlowToForce</h1>
             <p className={styles.mainDescription}>
-              FlowToForce est une méthode de musculation pensée pour celles qui viennent du yoga ou du pilates mais pas que, aussi pour les personnes qui ont envie de suivre une méthode. 12 semaines. Pas de complexité inutile, pas de programme pensé pour quelqu'un d'autre. Une méthode à toi.
+              Le programme idéal pour passer du yoga / pilates à la musculation en toute confiance. 12 semaines. Pas de complexité inutile, pas de programme pensé pour quelqu'un d'autre. Une méthode à toi.
             </p>
           </div>
         </section>
