@@ -132,4 +132,4 @@ export default function Home() {
     </>
   )
 }
-// Updated with new design and social links
+// Landing page: new logo SVG, updated program descriptions, social links footer
