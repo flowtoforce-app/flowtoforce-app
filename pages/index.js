@@ -132,3 +132,4 @@ export default function Home() {
     </>
   )
 }
+// Updated with new design and social links
