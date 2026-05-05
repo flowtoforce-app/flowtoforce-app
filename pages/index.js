@@ -26,7 +26,7 @@ export default function Home() {
       id: 'bundle',
       name: 'FlowToForce Bundle',
       subtitle: 'V1 + V2',
-      description: 'Les deux programmes : Salle et Home. Flexibilité totale selon ton emploi du temps et tes objectifs.',
+      description: 'Les deux programmes : Salle et Maison. Flexibilité totale selon ton emploi du temps | et tes objectifs.',
       price: 39.99,
     },
   ]
