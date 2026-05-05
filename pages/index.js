@@ -58,34 +58,6 @@ export default function Home() {
       <div className={styles.container}>
         {/* Hero Section */}
         <section className={styles.hero}>
-          <div className={styles.logo}>
-            <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#7EAED6"/>
-                  <stop offset="50%" stopColor="#AFCBE3"/>
-                  <stop offset="100%" stopColor="#E8D8D3"/>
-                </linearGradient>
-              </defs>
-              <rect width="220" height="220" rx="50" fill="url(#grad)"/>
-              <style>{`
-                .text {
-                  fill: white;
-                  font-family: 'Cormorant Garamond', serif;
-                  font-size: 20px;
-                  letter-spacing: 1px;
-                }
-              `}</style>
-              <text x="70" y="95" className="text">flow</text>
-              <line x1="95" y1="110" x2="125" y2="110"
-                    stroke="white"
-                    strokeWidth="1.4"
-                    strokeOpacity="0.6"
-                    strokeLinecap="round"/>
-              <text x="110" y="140" className="text">force</text>
-            </svg>
-          </div>
-
           <div className={styles.heroContent}>
             <h1>FlowToForce</h1>
             <p className={styles.mainDescription}>
