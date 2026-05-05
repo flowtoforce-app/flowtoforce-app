@@ -146,4 +146,4 @@ export default function Home() {
     </>
   )
 }
-// Landing page: FINAL - logo gradient, new copy, V2/Bundle descriptions, social links [DEPLOYED]
+// Landing page: FINAL - logo gradient, new copy, V2/Bundle descriptions, social links [DEPLOYED ✓]
