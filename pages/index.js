@@ -89,7 +89,7 @@ export default function Home() {
           <div className={styles.heroContent}>
             <h1>FlowToForce</h1>
             <p className={styles.mainDescription}>
-              TEST_UNIQUE_12345 Le programme idéal pour passer du yoga / pilates à la musculation en toute confiance. 12 semaines. Pas de complexité inutile, pas de programme pensé pour quelqu'un d'autre. Une méthode à toi.
+              Le programme idéal pour passer du yoga / pilates à la musculation en toute confiance. 12 semaines. Pas de complexité inutile, pas de programme pensé pour quelqu'un d'autre. Une méthode à toi.
             </p>
           </div>
         </section>
