@@ -26,7 +26,7 @@ export default function Home() {
       id: 'bundle',
       name: 'FlowToForce Bundle',
       subtitle: 'V1 + V2',
-      description: 'Les deux programmes : Salle et Maison. Flexibilité totale selon ton emploi du temps | et tes objectifs.',
+      description: 'Les deux programmes : Salle et Home. Flexibilité totale selon ton emploi du temps et tes objectifs.',
       price: 39.99,
     },
   ]
@@ -84,7 +84,7 @@ export default function Home() {
             </svg>
             <h1>FlowToForce</h1>
             <p className={styles.mainDescription}>
-              FlowToForce est une méthode de musculation pensée pour celles qui viennent du yoga ou du pilates mais pas que, aussi pour les personnes qui ont envie de suivre une méthode. 12 semaines. Pas de complexité inutile, pas de programme pensé pour quelqu'un d'autre. Une méthode à toi.
+              Le programme idéal pour passer du yoga / pilates à la musculation en toute confiance. 12 semaines. Pas de complexité inutile, pas de programme pensé pour quelqu'un d'autre. Une méthode à toi.
             </p>
           </div>
         </section>
