@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>FlowToForce - Musculation pour Toi</title>
+        <title>FlowToForce - Musculation pour Toi ✨</title>
         <meta name="description" content="FlowToForce : une méthode de musculation pensée pour toi" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
