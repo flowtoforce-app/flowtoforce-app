@@ -1,4 +1,4 @@
-// Updated landing page with gradient logo and new copy - FORCE DEPLOY
+// 🚀 LIVE_DEPLOYMENT_V3_2026_05_08_16_18 🚀
 import { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/landing.module.css'
