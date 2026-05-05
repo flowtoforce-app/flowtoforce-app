@@ -1,4 +1,4 @@
-// Updated landing page with gradient logo and new copy
+// Updated landing page with gradient logo and new copy - FORCE DEPLOY
 import { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/landing.module.css'
