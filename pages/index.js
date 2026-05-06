@@ -70,7 +70,10 @@ export default function Home() {
                   <stop offset="100%" stopColor="#E8D8D3"/>
                 </linearGradient>
               </defs>
-              <rect width="280" height="280" fill="url(#elevateGrad)"/>
+              <rect width="280" height="280" fill="#7EAED6"/>
+              <rect x="0" y="0" width="280" height="112" fill="#7EAED6"/>
+              <rect x="0" y="112" width="280" height="112" fill="#AFCBE3"/>
+              <rect x="0" y="224" width="280" height="56" fill="#E8D8D3"/>
               <style>{`
                 .flowForceText {
                   fill: white;
