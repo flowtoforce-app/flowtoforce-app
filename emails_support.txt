@@ -1,0 +1,132 @@
+===============================================
+EMAIL TO VERCEL SUPPORT
+===============================================
+
+Subject: Urgent: SVG Logo Changes Not Displaying in Production - After Multiple Deployments
+
+Dear Vercel Support Team,
+
+I need urgent help with a critical deployment issue. For the past 2 days, I've been trying to update an SVG gradient logo on my landing page, but the changes are NOT displaying in production, despite successful code commits and deployments.
+
+=== ISSUE SUMMARY ===
+- Website: www.flowtoforce.com (also tested flowtoforce-app.vercel.app)
+- Problem: SVG logo displays as white/blank instead of showing the gradient colors
+- Expected: Gradient with colors #7EAED6 → #AFCBE3 → #E8D8D3
+- Actual: White blank square with no colors
+
+=== WHAT WE'VE DONE TODAY ===
+
+1. **Code Modifications & Commits** (All successful):
+   - Modified /pages/index.js to change SVG gradient colors
+   - Commit 1: "Logo gradient colors - final landing page update" (3c3bc82)
+   - Commit 2: "FORCE: Rebuild landing page - ensure gradient colors display" (f9c1c17)
+   - Commit 3: "FIX: Replace SVG gradient with solid color bands" (9dca48b)
+
+2. **Deployment Attempts**:
+   - Manual redeploy from Vercel dashboard (status: Ready, 38s build time)
+   - Automatic deployments via GitHub push (all showing status: Ready)
+   - Build logs show: Success ✓
+
+3. **Code Verification**:
+   - Confirmed code modifications are IN GitHub repository
+   - Vercel shows latest commits in deployment details
+   - All builds completed successfully with 0 errors
+
+4. **Cache/Browser Testing**:
+   - Tested on flowtoforce-app.vercel.app (Vercel preview URL)
+   - Tested on www.flowtoforce.com (custom domain)
+   - Cleared browser cache, cookies, local storage
+   - Hard refresh (Cmd+Shift+R)
+   - Tested on multiple browsers
+   - Issue persists everywhere
+
+5. **Current Status**:
+   - Latest deployment: EdQC1ET7c (4m ago, Status: Ready, Current)
+   - Source: main branch, commit 9dca48b
+   - No errors in build logs
+   - All deployment checks pass ✓
+
+=== WHAT'S CONFUSING ===
+- Code is correct ✓
+- Commits are pushed ✓
+- Vercel shows "Ready" status ✓
+- Build logs show success ✓
+- But changes don't appear on the actual website ✗
+
+This suggests either:
+1. Vercel is serving cached builds
+2. There's an issue with the CDN/edge cache
+3. DNS routing problem (but both URLs show same issue)
+
+=== REQUEST ===
+Can you please:
+1. Verify that www.flowtoforce.com is correctly routed to your infrastructure
+2. Check if there are any cache settings that might be preventing updates
+3. Check if there's an issue with build cache or artifact serving
+4. Look at the actual deployed code to confirm the latest version is being served
+
+Any help would be greatly appreciated. This is blocking our production launch.
+
+Best regards,
+Lisa
+Project: FlowToForce
+Domain: flowtoforce.com
+Vercel Project: flowtoforce-app
+
+
+===============================================
+EMAIL TO IONOS SUPPORT
+===============================================
+
+Subject: DNS Verification Needed - Domain Not Displaying Latest Content from Vercel
+
+Dear IONOS Support Team,
+
+I need help verifying our DNS configuration. Our domain is pointing to Vercel, but we suspect there might be a DNS/routing issue preventing latest content from displaying.
+
+=== CURRENT DNS CONFIGURATION ===
+Domain: flowtoforce.com
+Target: Vercel hosting (76.76.21.21)
+
+Records we created:
+- A Record (@): 76.76.21.21
+- A Record (www): 76.76.21.21
+
+=== THE ISSUE ===
+Despite multiple code updates and successful deployments on Vercel's end:
+- www.flowtoforce.com shows outdated content
+- The latest code changes (committed and deployed) are NOT visible
+- This has been happening for 2 days
+
+=== WHAT WE NEED ===
+Can you please verify:
+1. That both @ and www A records are correctly pointing to 76.76.21.21
+2. That DNS is properly propagated globally
+3. Check if there's any caching at the IONOS level interfering
+4. Verify the DNS resolution is working correctly
+
+We've already:
+- Verified code is deployed on Vercel
+- Confirmed Vercel deployment status is "Ready"
+- Tested both www.flowtoforce.com and flowtoforce-app.vercel.app
+- Cleared browser caches
+- Tested on multiple devices/browsers
+
+The problem appears to be DNS/routing related since Vercel confirms the latest code is deployed.
+
+Please advise on next steps or if there's a configuration issue on your end.
+
+Thank you,
+Lisa
+Domain: flowtoforce.com
+Email: lisamonterdez@gmail.com
+
+
+===============================================
+NOTES FOR YOU:
+- Customize the email content if needed
+- Add your Vercel project URL/ID if available
+- Add support ticket numbers if you have them
+- Vercel support: support@vercel.com
+- IONOS support: Use their support portal or contact form
+===============================================
