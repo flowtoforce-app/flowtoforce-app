@@ -144,4 +144,12 @@ export default function Home() {
     </>
   )
 }
+
+// Force server-side rendering on every request (no static generation)
+export async function getServerSideProps() {
+  return {
+    props: {},
+  }
+}
+
 // Landing page: FINAL - logo gradient, new copy, V2/Bundle descriptions, social links [DEPLOYED ✓]
