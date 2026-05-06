@@ -3,6 +3,9 @@ import { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/landing.module.css'
 
+// Force instant updates - no server-side caching
+export const revalidate = 0
+
 export default function Home() {
   const [selectedProgram, setSelectedProgram] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
