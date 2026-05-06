@@ -1,4 +1,4 @@
-// 🚀 LIVE_DEPLOYMENT_V3_2026_05_08_16_18 🚀
+// 🚀 FORCE_REBUILD_V4_GRADIENT_LIVE_2026_05_06 🚀
 import { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/landing.module.css'
