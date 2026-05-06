@@ -66,8 +66,8 @@ export default function Home() {
               <defs>
                 <linearGradient id="elevateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#7EAED6"/>
-                  <stop offset="40%" stopColor="#D18FB8"/>
-                  <stop offset="100%" stopColor="#A8D5BA"/>
+                  <stop offset="40%" stopColor="#AFCBE3"/>
+                  <stop offset="100%" stopColor="#E8D8D3"/>
                 </linearGradient>
               </defs>
               <rect width="280" height="280" fill="url(#elevateGrad)"/>
