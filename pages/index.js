@@ -42,10 +42,15 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ programId }),
       })
-      const { url } = await response.json()
-      window.location.href = url
+      const data = await response.json()
+      if (data.url) {
+        window.location.href = data.url
+      } else {
+        alert('Erreur paiement : ' + (data.error || 'Réessaie dans quelques instants.'))
+        setIsLoading(false)
+      }
     } catch (error) {
-      console.error('Error:', error)
+      alert('Erreur de connexion. Réessaie dans quelques instants.')
       setIsLoading(false)
     }
   }
