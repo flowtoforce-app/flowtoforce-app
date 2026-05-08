@@ -1,6 +1,9 @@
 .container {
   min-height: 100vh;
-  background: linear-gradient(160deg, #8DAFD4 0%, #A8C0D0 45%, #C8B8B0 100%);
+  background:
+    radial-gradient(ellipse at 22% 12%, rgba(255, 255, 255, 0.38) 0%, transparent 52%),
+    radial-gradient(ellipse at 78% 85%, rgba(255, 255, 255, 0.18) 0%, transparent 48%),
+    linear-gradient(150deg, #7AAED4 0%, #93BEDD 28%, #AECADB 55%, #C8BDB6 80%, #D4C4BC 100%);
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -19,34 +22,47 @@
 .logoText {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 18px;
+  width: 300px;
+  gap: 22px;
   margin-bottom: 50px;
 }
 
-.logoWord {
+.logoFlow {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 72px;
+  font-size: 74px;
   font-weight: 300;
   color: white;
-  letter-spacing: 6px;
+  letter-spacing: 5px;
   line-height: 1;
+  align-self: flex-start;
+}
+
+.logoForce {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 74px;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 5px;
+  line-height: 1;
+  align-self: flex-end;
 }
 
 .logoLine {
   display: block;
-  width: 50px;
+  width: 55px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
+  align-self: center;
 }
 
 .mainDescription {
-  font-size: 16px;
-  color: white;
-  line-height: 1.6;
-  max-width: 600px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.75;
+  max-width: 580px;
   margin: 0 auto 40px;
-  font-weight: 400;
+  font-weight: 300;
+  letter-spacing: 0.3px;
 }
 
 .programs {
@@ -73,20 +89,23 @@
 }
 
 .programCard {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 30px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(100, 140, 180, 0.12);
 }
 
 .programCard:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(100, 140, 180, 0.18);
 }
 
 .programCard h3 {
@@ -126,23 +145,26 @@
 }
 
 .button {
-  background: white;
-  color: #6A9BBF;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 14px 38px;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 2.5px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .button:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.32);
+  border-color: rgba(255, 255, 255, 0.7);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(100, 140, 180, 0.25);
 }
 
 .button:disabled {
@@ -206,7 +228,12 @@
     grid-template-columns: 1fr;
   }
 
-  .logoWord {
-    font-size: 52px;
+  .logoText {
+    width: 220px;
+  }
+
+  .logoFlow,
+  .logoForce {
+    font-size: 54px;
   }
 }

@@ -63,9 +63,9 @@ export default function Home() {
         <section className={styles.hero}>
           <div className={styles.heroContent}>
             <div className={styles.logoText}>
-              <span className={styles.logoWord}>flow</span>
+              <span className={styles.logoFlow}>flow</span>
               <span className={styles.logoLine}></span>
-              <span className={styles.logoWord}>force</span>
+              <span className={styles.logoForce}>force</span>
             </div>
             <p className={styles.mainDescription}>
               Le programme idéal pour passer du yoga / pilates à la musculation en toute confiance. 12 semaines. Pas de complexité inutile, pas de programme pensé pour quelqu'un d'autre. Une méthode à toi.
