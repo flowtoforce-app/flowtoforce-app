@@ -62,33 +62,11 @@ export default function Home() {
         {/* Hero Section */}
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style={{marginBottom: '20px'}}>
-              <defs>
-                <linearGradient id="elevateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#7EAED6"/>
-                  <stop offset="40%" stopColor="#AFCBE3"/>
-                  <stop offset="100%" stopColor="#E8D8D3"/>
-                </linearGradient>
-              </defs>
-              <rect width="280" height="280" fill="#7EAED6"/>
-              <rect x="0" y="0" width="280" height="112" fill="#7EAED6"/>
-              <rect x="0" y="112" width="280" height="112" fill="#AFCBE3"/>
-              <rect x="0" y="224" width="280" height="56" fill="#E8D8D3"/>
-              <style>{`
-                .flowForceText {
-                  fill: white;
-                  font-family: 'Georgia', serif;
-                  font-size: 56px;
-                  font-style: italic;
-                  font-weight: 300;
-                  letter-spacing: 2px;
-                  text-anchor: middle;
-                }
-              `}</style>
-              <text x="140" y="135" className="flowForceText">flow</text>
-              <text x="140" y="195" className="flowForceText">force</text>
-            </svg>
-            <h1>FlowToForce</h1>
+            <div className={styles.logoText}>
+              <span className={styles.logoWord}>flow</span>
+              <span className={styles.logoLine}></span>
+              <span className={styles.logoWord}>force</span>
+            </div>
             <p className={styles.mainDescription}>
               Le programme idéal pour passer du yoga / pilates à la musculation en toute confiance. 12 semaines. Pas de complexité inutile, pas de programme pensé pour quelqu'un d'autre. Une méthode à toi.
             </p>
