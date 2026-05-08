@@ -269,17 +269,84 @@
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
 }
 
+.dots {
+  display: none;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.dotActive {
+  width: 20px;
+  height: 6px;
+  border-radius: 3px;
+  background: white;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .mainDescription {
     font-size: 16px;
   }
 
+  .programs {
+    padding: 12px 0 36px;
+  }
+
   .programs h2 {
     font-size: 18px;
+    padding: 0 20px;
   }
 
   .programsGrid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 14px;
+    padding: 4px 20px 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .programsGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .programCard {
+    flex: 0 0 82vw;
+    scroll-snap-align: center;
+    min-width: 0;
+  }
+
+  .button {
+    background: rgba(255, 255, 255, 0.88);
+    color: #5A8FAE;
+    border: none;
+    text-shadow: none;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(80, 130, 180, 0.25);
+  }
+
+  .button:hover:not(:disabled) {
+    background: white;
+    color: #4A7F9E;
+  }
+
+  .dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
   }
 
   .logoText {

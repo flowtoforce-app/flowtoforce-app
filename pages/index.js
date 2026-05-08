@@ -1,5 +1,5 @@
 // 🚀 FORCE_REBUILD_V5_GRADIENT_CACHE_BUST_2026_05_06 🚀
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Head from 'next/head'
 import styles from '../styles/landing.module.css'
 
@@ -9,6 +9,16 @@ export const revalidate = 0
 export default function Home() {
   const [selectedProgram, setSelectedProgram] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+  const [activeCard, setActiveCard] = useState(0)
+  const carouselRef = useRef(null)
+
+  const handleScroll = () => {
+    if (carouselRef.current) {
+      const scrollLeft = carouselRef.current.scrollLeft
+      const cardWidth = carouselRef.current.offsetWidth * 0.82
+      setActiveCard(Math.round(scrollLeft / cardWidth))
+    }
+  }
 
   const programs = [
     {
@@ -82,7 +92,7 @@ export default function Home() {
         <section className={styles.programs}>
           <h2>Choisis ton programme</h2>
 
-          <div className={styles.programsGrid}>
+          <div className={styles.programsGrid} ref={carouselRef} onScroll={handleScroll}>
             {programs.map((program) => (
               <div key={program.id} className={styles.programCard}>
                 <h3>{program.name}</h3>
@@ -101,6 +111,11 @@ export default function Home() {
                   {isLoading ? 'Redirection...' : 'S\'inscrire'}
                 </button>
               </div>
+            ))}
+          </div>
+          <div className={styles.dots}>
+            {programs.map((_, i) => (
+              <span key={i} className={i === activeCard ? styles.dotActive : styles.dot} />
             ))}
           </div>
         </section>
