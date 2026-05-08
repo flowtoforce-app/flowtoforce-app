@@ -50,10 +50,7 @@
   line-height: 1;
   align-self: flex-start;
   margin-left: 0;
-  text-shadow:
-    0 0 25px rgba(255, 255, 255, 1),
-    0 0 50px rgba(255, 255, 255, 0.7),
-    0 0 80px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.35);
 }
 
 .logoForce {
@@ -65,33 +62,27 @@
   line-height: 1;
   align-self: flex-end;
   margin-right: 0;
-  text-shadow:
-    0 0 25px rgba(255, 255, 255, 1),
-    0 0 50px rgba(255, 255, 255, 0.7),
-    0 0 80px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.35);
 }
 
 .logoLine {
   display: block;
   width: 55px;
   height: 1px;
-  background: white;
+  background: rgba(255, 255, 255, 0.8);
   align-self: center;
-  box-shadow:
-    0 0 8px rgba(255, 255, 255, 1),
-    0 0 20px rgba(255, 255, 255, 0.8),
-    0 0 40px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
 .mainDescription {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.97);
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.75;
   max-width: 540px;
   margin: 0 auto 16px;
   font-weight: 300;
   letter-spacing: 0.3px;
-  text-shadow: 0 1px 10px rgba(60, 120, 180, 0.35);
+  text-shadow: none;
 }
 
 .programs {
@@ -109,9 +100,7 @@
   font-weight: 300;
   letter-spacing: 4px;
   text-transform: uppercase;
-  text-shadow:
-    0 0 20px rgba(255, 255, 255, 0.8),
-    0 0 40px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.3);
 }
 
 .programsGrid {
