@@ -1,9 +1,10 @@
 .container {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at 22% 12%, rgba(255, 255, 255, 0.38) 0%, transparent 52%),
-    radial-gradient(ellipse at 78% 85%, rgba(255, 255, 255, 0.18) 0%, transparent 48%),
-    linear-gradient(150deg, #7AAED4 0%, #93BEDD 28%, #AECADB 55%, #C8BDB6 80%, #D4C4BC 100%);
+    radial-gradient(ellipse at 18% 10%, rgba(255, 255, 255, 0.55) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 90%, rgba(255, 255, 255, 0.3) 0%, transparent 45%),
+    radial-gradient(ellipse at 60% 40%, rgba(180, 215, 240, 0.25) 0%, transparent 55%),
+    linear-gradient(150deg, #5A9FCC 0%, #78B8DC 22%, #9ABFD8 48%, #BBAAA2 78%, #CABDB6 100%);
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -15,7 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px 40px;
+  padding: 70px 20px 50px;
   text-align: center;
 }
 
@@ -23,46 +24,56 @@
   display: flex;
   flex-direction: column;
   width: 300px;
-  gap: 22px;
-  margin-bottom: 50px;
+  gap: 24px;
+  margin-bottom: 55px;
 }
 
 .logoFlow {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 74px;
+  font-size: 78px;
   font-weight: 300;
-  color: white;
-  letter-spacing: 5px;
+  color: #ffffff;
+  letter-spacing: 6px;
   line-height: 1;
   align-self: flex-start;
+  text-shadow:
+    0 0 30px rgba(255, 255, 255, 0.9),
+    0 0 60px rgba(255, 255, 255, 0.5),
+    0 2px 4px rgba(120, 170, 210, 0.3);
 }
 
 .logoForce {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 74px;
+  font-size: 78px;
   font-weight: 300;
-  color: white;
-  letter-spacing: 5px;
+  color: #ffffff;
+  letter-spacing: 6px;
   line-height: 1;
   align-self: flex-end;
+  text-shadow:
+    0 0 30px rgba(255, 255, 255, 0.9),
+    0 0 60px rgba(255, 255, 255, 0.5),
+    0 2px 4px rgba(120, 170, 210, 0.3);
 }
 
 .logoLine {
   display: block;
   width: 55px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.75);
+  background: white;
   align-self: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 .mainDescription {
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.95);
-  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.97);
+  line-height: 1.8;
   max-width: 580px;
   margin: 0 auto 40px;
   font-weight: 300;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
+  text-shadow: 0 1px 12px rgba(80, 140, 190, 0.3);
 }
 
 .programs {
@@ -74,154 +85,188 @@
 }
 
 .programs h2 {
-  font-size: 32px;
+  font-size: 30px;
   color: white;
   margin-bottom: 40px;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 .programsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 28px;
   max-width: 1000px;
   width: 100%;
 }
 
 .programCard {
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 22px;
   padding: 36px;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(100, 140, 180, 0.12);
+  box-shadow:
+    0 8px 32px rgba(80, 130, 180, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .programCard:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.65);
   transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(100, 140, 180, 0.18);
+  box-shadow:
+    0 20px 48px rgba(80, 130, 180, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .programCard h3 {
-  font-size: 24px;
+  font-size: 22px;
   color: white;
   margin: 0 0 8px;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 .subtitle {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
   margin: 0 0 20px;
   font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .programDescription {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
   margin: 0 0 30px;
   flex-grow: 1;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .priceSection {
-  margin: 20px 0 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 20px 0;
+  margin: 20px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 18px 0;
 }
 
 .price {
-  font-size: 32px;
+  font-size: 34px;
   color: white;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 .button {
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(255, 255, 255, 0.14) 100%);
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 14px 38px;
-  font-size: 12px;
-  font-weight: 400;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 15px 40px;
+  font-size: 11px;
+  font-weight: 500;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: 3px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 4px 16px rgba(80, 130, 180, 0.2);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
 }
 
 .button:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.32);
-  border-color: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.22) 100%);
+  border-color: rgba(255, 255, 255, 0.85);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(100, 140, 180, 0.25);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 8px 28px rgba(80, 130, 180, 0.3);
 }
 
 .button:disabled {
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
 .footer {
-  padding: 20px;
+  padding: 30px 20px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 1px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .socialLinks {
   display: flex;
-  gap: 20px;
+  gap: 18px;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .socialLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.12) 100%);
   color: white;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 4px 12px rgba(80, 130, 180, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .socialLink:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0.22) 100%);
+  border-color: rgba(255, 255, 255, 0.75);
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 8px 20px rgba(80, 130, 180, 0.25);
 }
 
 .socialLink svg {
   width: 18px;
   height: 18px;
   fill: white;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.7));
 }
 
 @media (max-width: 768px) {
-  .heroContent h1 {
-    font-size: 36px;
-  }
-
   .mainDescription {
-    font-size: 14px;
+    font-size: 17px;
   }
 
   .programs h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .programsGrid {
@@ -234,6 +279,6 @@
 
   .logoFlow,
   .logoForce {
-    font-size: 54px;
+    font-size: 56px;
   }
 }
