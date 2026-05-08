@@ -1,17 +1,15 @@
 .container {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at 15% 8%,  rgba(255, 255, 255, 0.65) 0%, transparent 40%),
-    radial-gradient(ellipse at 85% 88%, rgba(255, 255, 255, 0.40) 0%, transparent 40%),
-    radial-gradient(ellipse at 55% 45%, rgba(160, 210, 240, 0.30) 0%, transparent 50%),
-    radial-gradient(ellipse at 30% 70%, rgba(200, 170, 200, 0.20) 0%, transparent 45%),
+    radial-gradient(ellipse at 20% 10%, rgba(0, 60, 180, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 85%, rgba(0, 0, 120, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 20, 100, 0.3) 0%, transparent 60%),
     linear-gradient(145deg,
-      #4A9AC8 0%,
-      #6AAFD8 18%,
-      #8ABFE0 36%,
-      #A8C8D8 54%,
-      #C0B0A8 74%,
-      #CEC0B8 100%);
+      #000033 0%,
+      #000055 30%,
+      #000877 55%,
+      #001199 80%,
+      #000055 100%);
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -75,13 +73,14 @@
 }
 
 .mainDescription {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.95);
-  line-height: 1.75;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
   max-width: 540px;
   margin: 0 auto 16px;
-  font-weight: 300;
-  letter-spacing: 0.3px;
+  font-weight: 400;
+  letter-spacing: 2px;
   text-shadow: none;
 }
 
@@ -94,13 +93,14 @@
 }
 
 .programs h2 {
-  font-size: 22px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
   color: white;
   margin-bottom: 24px;
-  font-weight: 300;
-  letter-spacing: 4px;
+  font-weight: 400;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 20px rgba(100, 150, 255, 0.5);
 }
 
 .programsGrid {
@@ -112,36 +112,37 @@
 }
 
 .programCard {
-  background: rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
-  border: 1px solid rgba(255, 255, 255, 0.50);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   padding: 24px 28px;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
   box-shadow:
-    0 6px 24px rgba(60, 110, 170, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 6px 24px rgba(0, 0, 80, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .programCard:hover {
-  background: rgba(255, 255, 255, 0.28);
-  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(100, 150, 255, 0.4);
   transform: translateY(-4px);
   box-shadow:
-    0 16px 40px rgba(60, 110, 170, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    0 16px 40px rgba(0, 0, 100, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .programCard h3 {
-  font-size: 18px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
   color: white;
   margin: 0 0 6px;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(100, 150, 255, 0.4);
 }
 
 .subtitle {
@@ -178,26 +179,27 @@
 }
 
 .button {
-  background: rgba(255, 255, 255, 0.88);
-  color: #5A8FAE;
+  background: rgba(255, 255, 255, 0.92);
+  color: #000055;
   border: none;
   padding: 13px 36px;
-  font-size: 10px;
-  font-weight: 600;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-shadow: none;
-  box-shadow: 0 4px 16px rgba(80, 130, 180, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 100, 0.4);
 }
 
 .button:hover:not(:disabled) {
   background: white;
-  color: #4A7F9E;
+  color: #000033;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(80, 130, 180, 0.32);
+  box-shadow: 0 8px 30px rgba(0, 0, 100, 0.5);
 }
 
 .button:disabled {
