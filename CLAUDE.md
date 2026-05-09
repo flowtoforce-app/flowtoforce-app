@@ -154,7 +154,11 @@ Application mobile iOS/Android. Achat unique (one-time), pas d'abonnement. Conte
 - Section **Échauffement** → liste texte uniquement, **sans photo/miniature**
 - Section **Corps principal** → miniature photo à gauche + nom exercice + tags séries/reps
 - Section **Retour au calme** → liste texte uniquement, **sans photo/miniature**
-- Bouton bas : "Lancer la séance" + "Séance validée ✓"
+- Boutons bas de l'écran séance :
+  - **"Lancer la séance"** — bouton principal (plein, couleur)
+  - **"Séance validée ✓"** — bouton secondaire (contour)
+  - **❤️ Favoris** — ajouter la séance aux favoris
+  - **Partage vers [NOM À DÉFINIR]** — partager la séance dans l'onglet social (nom en cours de décision : Le Cercle / La Tribu / Le Studio / Flow Club)
 - ⚠️ Inspiration visuelle : Elevate app — **ne pas copier**, s'en inspirer uniquement pour la structure
 
 **Slide 3 — Détail d'un exercice** (clic sur l'exo → la photo apparaît)
