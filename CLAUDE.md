@@ -149,17 +149,18 @@ Application mobile iOS/Android. Achat unique (one-time), pas d'abonnement. Conte
 - Description du programme
 
 **Slide 2 — Liste des exercices d'une séance** (ex: Chapitre 1 Séance 1A)
-- Section Échauffement → sans photo
-- Section Corps principal → 1 photo par exercice + nom + séries/reps
-- Section Retour au calme → sans photo
+- Section Échauffement → **sans photo**
+- Section Corps principal → miniature photo par exercice + nom + séries/reps
+- Section Retour au calme → **sans photo**
 
-**Slide 3 — Détail d'un exercice** (clic sur un exo)
-- Nom de l'exercice
-- Séries + répétitions
-- Comment l'effectuer
-- Tips
-- Muscles sollicités
-- Matériel requis
+**Slide 3 — Détail d'un exercice** (clic sur l'exo → la photo apparaît)
+- Grande photo plein écran en haut (fond sombre, photo de Lys)
+- Nom de l'exercice en gras/majuscules
+- Instructions numérotées (1. 2. 3. 4.)
+- **Objectif** (ex: Mobilité)
+- **Muscles sollicités** avec icônes schéma corps
+- **Matériel requis** avec icônes (ex: tapis, mur, haltères...)
+- ⚠️ Pas de photo pour échauffement et retour au calme — uniquement pour les exercices du corps principal
 
 **Slide 6 — Exercice étendu pendant la séance**
 - Grande photo de l'exercice
