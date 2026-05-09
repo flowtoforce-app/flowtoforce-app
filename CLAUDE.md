@@ -149,9 +149,13 @@ Application mobile iOS/Android. Achat unique (one-time), pas d'abonnement. Conte
 - Description du programme
 
 **Slide 2 — Liste des exercices d'une séance** (ex: Chapitre 1 Séance 1A)
-- Section Échauffement → **sans photo**
-- Section Corps principal → miniature photo par exercice + nom + séries/reps
-- Section Retour au calme → **sans photo**
+- Titre de la séance en haut
+- Icônes discrets : calendrier (planifier) + cœur (favoris)
+- Section **Échauffement** → liste texte uniquement, **sans photo/miniature**
+- Section **Corps principal** → miniature photo à gauche + nom exercice + tags séries/reps
+- Section **Retour au calme** → liste texte uniquement, **sans photo/miniature**
+- Bouton bas : "Lancer la séance" + "Séance validée ✓"
+- ⚠️ Inspiration visuelle : Elevate app — **ne pas copier**, s'en inspirer uniquement pour la structure
 
 **Slide 3 — Détail d'un exercice** (clic sur l'exo → la photo apparaît)
 - Grande photo plein écran en haut (fond sombre, photo de Lys)
