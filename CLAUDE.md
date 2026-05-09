@@ -141,12 +141,31 @@ Application mobile iOS/Android. Achat unique (one-time), pas d'abonnement. Conte
 
 ---
 
+### ONGLET ACCUEIL *(inspiration Elevate home screen, ne pas copier)*
+
+- **"Hello [Prénom]"** en grand/gras en haut
+- Icône badge récompense + photo de profil (en haut à droite)
+- **Calendrier semaine** : vue horizontale L M M J V S D, jour actif en surligné
+- Texte sous le calendrier : *"Planifie une séance..."* + bouton **"Planifier"** (plein, couleur)
+- Section **"Programmes en cours"** → cartes horizontales scrollables
+  - Grande photo du programme + **titre** en overlay + **barre de progression** (% complété)
+- Navigation bottom : **Workout · Accueil · Social · Profil**
+
+---
+
 ### ONGLET WORKOUT — Programmes & Séances
 
-**Slide 1 — Vue programme**
-- Espace photo du programme `(photo)` — placeholder en attendant le shooting
-- Bouton "Commencer Programme"
-- Description du programme
+**Slide 1 — Vue programme** *(inspiration Elevate "PREMIERS PAS À LA SALLE", ne pas copier)*
+- Grande photo plein écran en haut avec **badge durée** en overlay (ex: "12 semaines")
+- **Titre programme** en grand + gras par-dessus la photo
+- Tagline courte sous le titre
+- Bouton **"TRAILER"** (optionnel — vidéo de présentation du programme)
+- Bouton principal **"Commencer Programme"** (plein, couleur, en bas)
+- Section **DESCRIPTION** — texte du programme
+- **Objectif** — ex: Force, Tonification
+- **Muscles sollicités** — icônes schéma corps (style illustrations roses/épurées)
+- **Matériel requis** — icônes avec label + mention "(optionnel)" si besoin
+- Espace photo `(photo)` — placeholder en attendant le shooting
 
 **Slide 2 — Liste des exercices d'une séance** (ex: Chapitre 1 Séance 1A)
 - Titre de la séance en haut
@@ -158,7 +177,7 @@ Application mobile iOS/Android. Achat unique (one-time), pas d'abonnement. Conte
   - **"Lancer la séance"** — bouton principal (plein, couleur)
   - **"Séance validée ✓"** — bouton secondaire (contour)
   - **❤️ Favoris** — ajouter la séance aux favoris
-  - **Partage vers [NOM À DÉFINIR]** — partager la séance dans l'onglet social (nom en cours de décision : Le Cercle / La Tribu / Le Studio / Flow Club)
+  - **Partage vers Social** — partager la séance dans l'onglet Social
 - ⚠️ Inspiration visuelle : Elevate app — **ne pas copier**, s'en inspirer uniquement pour la structure
 
 **Slide 3 — Détail d'un exercice** (clic sur l'exo → la photo apparaît)
@@ -193,28 +212,40 @@ Application mobile iOS/Android. Achat unique (one-time), pas d'abonnement. Conte
 
 ---
 
-### ONGLET PROFIL
+### ONGLET PROFIL *(inspiration Elevate "MON PROFIL", ne pas copier — style Instagram chic, à l'image de Lys)*
 
-**En-tête (style Instagram)**
-- Photo de profil
-- Prénom + ville + programme en cours (V1 ou V2)
-- Bio optionnelle
-- Bouton "Modifier profil" (discret)
-- Bouton "Follow" pour se suivre entre utilisatrices
-- Toggle Privé / Public (simple et discret)
+**En-tête**
+- Grande **photo de profil ronde** (à gauche ou centrée)
+- **Prénom + nom** en gras sous la photo
+- Âge + ville (discret, gris clair)
+- **Badges programmes** en cours — pills rose/nude (ex: "FlowToForce V1", "FlowToForce V2")
+- **Followers + Suivies** (chiffres en gras + label fin)
+- Boutons : **"Modifier le profil"** + **"Paramètres"** (pills gris/discrets)
+- Icônes notification (cloche) + partage (avion) en haut à droite
 
-**Contenu du profil**
-- Suivi des séances complétées
-- Séances favorites
-- Évolution du programme
-- Planning — planifier les séances avec rappels
-- Photos progression : jour 1 (face/profil/dos) + optionnel en salle ou pendant exos — choix privé/public
+**Menu profil** *(liste avec icônes rondes rose/nude + chevron →)*
+- Mes posts
+- Mes progrès
+- Mes badges *(récompenses séances complétées)*
+- Mes favoris *(séances et exos mis en favoris)*
+- Mon planning *(accès rapide au calendrier séances)*
+- Mon journal *(journaling privé : pensées, ressentis, objectifs)*
 
-**Onglet Journaling** *(dans le profil)*
+**Planning des séances** *(inspiration screenshot Elevate "calendrier", ne pas copier)*
+- Vue semaine horizontale (L M M J V S D) — jour actif en surligné
+- Fréquence : **2 séances par semaine** à planifier librement
+- Bouton **"Planifier"** (plein, couleur) — clic pour choisir la séance et le jour
+- **Rappel push la veille** — notification automatique, ton chic :
+  *"Prépare tes affaires, tu as ta séance demain 🤍"*
+- Rappel optionnel désactivable dans Paramètres (icône cloche)
+
+**Photos progression**
+- Jour 1 (face / profil / dos) + optionnel en salle ou pendant exos — choix privé/public
+
+**Journaling** *(privé par défaut)*
 - Écrire librement : pensées du jour, ressenti de la séance, objectifs
-- Privé par défaut
 
-**Onglet Paramètres**
+**Paramètres**
 - Modifier mot de passe
 - Gérer les notifications
 - Contacter le support
@@ -227,15 +258,27 @@ Application mobile iOS/Android. Achat unique (one-time), pas d'abonnement. Conte
 
 Feed communauté — accessible uniquement aux acheteuses du programme.
 
-- Feed style Instagram : posts, photos, texte
-- Interactions : commenter, liker, ❤️ (cœur pour les timides)
-- Photo ronde + prénom/pseudo + texte du post
+**Canaux de discussion** *(inspiration Elevate "CANAUX DE DISCUSSION — Une thématique, un feed", ne pas copier)*
+- Organisation par **canaux thématiques** — ex: Salle, Home, Motivation, Before/After, Questions
+- Chaque canal a une cover image + nom
+- Filtres en haut du feed : **Tout** / **Personnes suivies** / **Posts privés**
+
+**Feed posts**
+- Photo de profil ronde + @pseudo + horodatage (il y a X h) + menu ···
+- Texte du post (photos optionnelles)
+- **Réactions** : emoji réaction + commentaire (icônes rose/discrets)
+- Bouton flottant **"+ Publier"** (en bas à droite, couleur de la marque)
 - Follow automatique sans demande — on voit ce que la personne met en public
-- Compte coach @Lys : présente dans le feed, répond aux filles
-- Mention @ pour citer quelqu'un → notification à la personne
-- Badge numéroté coloré en haut à droite pour les notifications
+
+**Modération & coach**
+- Compte coach **@Lys** présente dans le feed, répond aux filles
+- Mention **@** pour citer quelqu'un → notification à la personne
+- Badge numéroté coloré pour les notifications
 - Lys modère les posts irrespectueux/agressifs/insultants
+
+**Types de contenus**
 - Photos before (jour 1) + pendant les séances + fin de programme
+- Séances complétées partagées depuis l'onglet Workout
 - Chaque post : choix privé ou public par la fille
 
 ---
