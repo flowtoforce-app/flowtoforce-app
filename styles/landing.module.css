@@ -424,7 +424,6 @@
   box-shadow:
     0 10px 36px rgba(60, 110, 170, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.75);
-  transform: translateY(-6px);
 }
 
 .programCardFeatured:hover {
@@ -455,12 +454,13 @@
 }
 
 .programCardFeatured .programDescription {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.93);
-  line-height: 1.65;
+  font-size: 15px;
+  color: white;
+  line-height: 1.75;
   margin: 0 0 16px;
   flex-grow: 1;
-  font-weight: 300;
+  font-weight: 400;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
 .programCardFeatured .price {
@@ -506,9 +506,9 @@
 }
 
 .programDescription {
-  font-size: 13px;
+  font-size: 15px;
   color: white;
-  line-height: 1.70;
+  line-height: 1.75;
   margin: 0 0 16px;
   flex-grow: 1;
   font-weight: 400;
@@ -683,23 +683,26 @@
     display: flex;
     flex-direction: row;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     gap: 14px;
     padding: 4px 20px 16px;
     width: 100%;
     max-width: 100%;
+    touch-action: pan-x;
   }
 
   .programsGrid::-webkit-scrollbar {
     display: none;
   }
 
-  .programCard {
+  .programCard,
+  .programCardFeatured {
     flex: 0 0 82vw;
     scroll-snap-align: center;
     min-width: 0;
+    transform: none;
   }
 
   .button {
