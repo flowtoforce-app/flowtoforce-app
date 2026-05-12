@@ -9,7 +9,7 @@ export default function IntroV1({ content, token }) {
       token={token}
       version="v1"
       nextHref={`/programme/v1/1a?token=${token}`}
-      nextLabel="Commencer — Séance 1A"
+      nextLabel="Commencer · Séance 1A"
     />
   )
 }

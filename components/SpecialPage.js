@@ -22,10 +22,14 @@ const IconMail = () => (
 )
 
 function renderLine(line, i) {
+  if (line.startsWith('# ') && !line.startsWith('## ')) return null
+  if (line.startsWith('---')) return null
+
   const clean = line
     .replace(/^#{1,3}\s/, '')
     .replace(/\*\*/g, '')
-    .replace(/^[–—-]\s?/, '')
+    .replace(/^[–—]\s?/, '')
+    .replace(/ [–—] /g, ' ')
     .replace(/\bLys(?! 🤍)/g, 'Lys 🤍')
 
   if (line.startsWith('###') || line.startsWith('##')) {
@@ -34,7 +38,6 @@ function renderLine(line, i) {
   if (line.startsWith('→')) {
     return <p key={i} className={styles.specialArrow}>{clean}</p>
   }
-  if (line.startsWith('---')) return null
   return <p key={i} className={styles.specialP}>{clean}</p>
 }
 
@@ -44,7 +47,7 @@ export default function SpecialPage({ title, content, token, version, nextHref, 
   return (
     <>
       <Head>
-        <title>{`${title} — FlowToForce ${version.toUpperCase()}`}</title>
+        <title>{`${title} · FlowToForce ${version.toUpperCase()}`}</title>
         <meta name="robots" content="noindex" />
       </Head>
       <div className={styles.page}>

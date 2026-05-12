@@ -5,6 +5,7 @@ import styles from '../styles/programme.module.css'
 
 export default function SeancePage({ seance, seanceId, chapitre, token, version }) {
   const [activeModal, setActiveModal] = useState(null)
+  const [photoFailed, setPhotoFailed] = useState(false)
   const [rating, setRating] = useState(0)
   const [done, setDone] = useState(false)
 
@@ -20,6 +21,10 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
       }
     } catch {}
   }, [storageKey])
+
+  useEffect(() => {
+    setPhotoFailed(false)
+  }, [activeModal])
 
   const saveRating = (r) => {
     const next = rating === r ? 0 : r
@@ -45,7 +50,7 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
   return (
     <>
       <Head>
-        <title>{`${seance.titre} — FlowToForce ${version.toUpperCase()}`}</title>
+        <title>{`${seance.titre} · FlowToForce ${version.toUpperCase()}`}</title>
         <meta name="robots" content="noindex" />
       </Head>
 
@@ -54,7 +59,21 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
         <div className={styles.modal}>
           <button className={styles.modalClose} onClick={() => setActiveModal(null)}>←</button>
           <div className={styles.modalPhoto}>
-            <span className={styles.photoHint}>(photo)</span>
+            {!photoFailed ? (
+              <img
+                src={`/photos/${version}/${seanceId}/${activeModal}.jpg`}
+                alt={exoModal.nom}
+                className={styles.photoImg}
+                onError={() => setPhotoFailed(true)}
+              />
+            ) : (
+              <div className={styles.photoPlaceholder}>
+                <span className={styles.photoHint}>(photo)</span>
+              </div>
+            )}
+            {!photoFailed && (
+              <div className={styles.photoNameOverlay}>{exoModal.nom}</div>
+            )}
           </div>
           <div className={styles.modalContent}>
             <h2 className={styles.modalExoNom}>{exoModal.nom}</h2>
@@ -97,11 +116,9 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
             )}
           </div>
           <div className={styles.modalNav}>
-            {activeModal > 0 && (
-              <button className={styles.btnExoPrev} onClick={() => setActiveModal(activeModal - 1)}>
-                ← Précédent
-              </button>
-            )}
+            <button className={styles.btnRetourCalme} onClick={() => setActiveModal(null)}>
+              ← Retour au calme
+            </button>
             {activeModal < seance.exercices.length - 1 && (
               <button className={styles.btnExoSuivant} onClick={() => setActiveModal(activeModal + 1)}>
                 Exercice suivant →
@@ -135,7 +152,7 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
 
         {seance.conseilLys && (
           <div className={styles.conseilBlock}>
-            <p className={styles.conseilLabel}>Le conseil de Lys</p>
+            <p className={styles.conseilLabel}>Le conseil de Lys 🤍</p>
             <p className={styles.conseilText}>{seance.conseilLys}</p>
           </div>
         )}
@@ -208,7 +225,7 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
             </button>
           )}
           <a href="mailto:hello@flowtoforce.com" className={styles.btnContact}>
-            Écrire à Lys
+            Écrire à Lys 🤍
           </a>
           <Link href={`/programme/${version}?token=${token}`} className={styles.btnRetour}>
             Retour au programme
