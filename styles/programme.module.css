@@ -804,6 +804,93 @@
 
 .socialBtn:active { background: rgba(255, 255, 255, 0.12); }
 
+/* === PLANNING === */
+.planningForm { display: flex; flex-direction: column; gap: 12px; }
+
+.planningLabel {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 4px 0 0;
+}
+
+.joursRow { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.jourBtn {
+  padding: 8px 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.jourBtnActive {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.planningSelect {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 12px 16px;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 160px;
+}
+
+.planningInput {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 12px 16px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.planningInput::placeholder { color: rgba(255, 255, 255, 0.35); }
+
+.planningError { font-size: 13px; color: rgba(255, 180, 180, 0.85); margin: 0; }
+
+.planningSaved { display: flex; flex-direction: column; gap: 8px; }
+.planningSavedText { font-size: 16px; color: rgba(255, 255, 255, 0.92); margin: 0; }
+.planningSavedSub { font-size: 13px; color: rgba(255, 255, 255, 0.5); margin: 0 0 8px; }
+
+.planningEditBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 8px 20px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 4px;
+  transition: all 0.2s;
+}
+
+.planningEditBtn:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* === FOOTER === */
 .footer {
   padding: 32px 24px;

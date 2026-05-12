@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { chapitresV2 } from '../../../lib/chapters'
 import { canAccessVersion } from '../../../lib/token'
 import styles from '../../../styles/programme.module.css'
+import PlanningSection from '../../../components/PlanningSection'
 
 export default function V2Index({ token }) {
   return (
@@ -64,6 +65,10 @@ export default function V2Index({ token }) {
               </div>
             )
           })}
+        </div>
+
+        <div className={styles.chapitresList}>
+          <PlanningSection version="v2" />
         </div>
 
         <footer className={styles.footer}>
