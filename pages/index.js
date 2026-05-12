@@ -230,7 +230,7 @@ export default function Home() {
             Les premières inscrites seront les premières à y entrer.
           </p>
           {emailSubmitted ? (
-            <p className={styles.emailSuccess}>Tu es sur la liste. À très vite.</p>
+            <p className={styles.emailSuccess}>Tu es sur la waiting list 🤍 On te prévient dès que l'application est disponible.</p>
           ) : (
             <form className={styles.emailForm} onSubmit={handleEmailSubmit}>
               <input
