@@ -16,21 +16,9 @@ async function getRawBody(req) {
 }
 
 const programNames = {
-  'FlowToForce V1 - Programme en salle': {
-    label: 'FlowToForce V1',
-    files: [{ name: 'V1', file: 'flowtoforce-v1.pdf' }],
-  },
-  'FlowToForce V2 - Home Programme': {
-    label: 'FlowToForce V2',
-    files: [{ name: 'V2', file: 'flowtoforce-v2.pdf' }],
-  },
-  'FlowToForce Bundle - V1 + V2': {
-    label: 'FlowToForce Bundle',
-    files: [
-      { name: 'V1', file: 'flowtoforce-v1.pdf' },
-      { name: 'V2', file: 'flowtoforce-v2.pdf' },
-    ],
-  },
+  'FlowToForce V1 - Programme en salle': { label: 'FlowToForce V1' },
+  'FlowToForce V2 - Home Programme': { label: 'FlowToForce V2' },
+  'FlowToForce Bundle - V1 + V2': { label: 'FlowToForce Bundle' },
 }
 
 export default async function handler(req, res) {
@@ -58,19 +46,12 @@ export default async function handler(req, res) {
     const prenom = fullName.split(' ')[0] || ''
 
     let programLabel = 'ton programme'
-    let downloadLinks = ''
 
     try {
       const lineItems = await stripe.checkout.sessions.listLineItems(session.id)
       const itemName = lineItems.data[0]?.description || ''
       const info = programNames[itemName]
-      if (info) {
-        programLabel = info.label
-        const base = 'https://www.flowtoforce.com/downloads/'
-        downloadLinks = info.files.map(f =>
-          `<a href="${base}${f.file}" style="display:inline-block;padding:12px 28px;margin:8px 0;background:#1a1a1a;color:#fff;text-decoration:none;border-radius:4px;font-size:14px;letter-spacing:1px;">Accéder à ta méthode ${f.name}</a>`
-        ).join('<br/>')
-      }
+      if (info) programLabel = info.label
     } catch (e) {
       console.error('Line items error:', e)
     }
@@ -92,12 +73,9 @@ export default async function handler(req, res) {
             <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 16px;">
               Merci pour ton achat et ta confiance. Ton accès à <strong>${programLabel}</strong> est confirmé.
             </p>
-            <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 24px;">
-              Télécharge ton programme ci-dessous. Garde ce mail précieusement, c'est ton accès définitif.
+            <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 32px;">
+              Ton programme sera disponible très prochainement. Tu recevras un email avec ton accès dès que tout est prêt.
             </p>
-            <div style="margin-bottom: 32px;">
-              ${downloadLinks || '<p style="color:#888;font-size:14px;">Ton lien de téléchargement arrive sous peu.</p>'}
-            </div>
             <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 24px;">
               Si tu as des questions, n'hésite pas à m'écrire à la suite de ce mail, je te réponds personnellement.
             </p>
