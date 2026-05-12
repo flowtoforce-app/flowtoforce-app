@@ -13,11 +13,15 @@ async function sendEmail({ to, subject, html }) {
 }
 
 // 0=Lundi … 6=Dimanche (notre convention)
-function getTomorrowDayIndex() {
+function getTomorrowInfo() {
   const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Paris' }))
   const tomorrow = new Date(now)
   tomorrow.setDate(tomorrow.getDate() + 1)
-  return (tomorrow.getDay() + 6) % 7
+  const dayIndex = (tomorrow.getDay() + 6) % 7
+  const JOURS_FR = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
+  const MOIS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+  const dateStr = `${JOURS_FR[dayIndex]} ${tomorrow.getDate()} ${MOIS_FR[tomorrow.getMonth()]}`
+  return { dayIndex, dateStr }
 }
 
 export default async function handler(req, res) {
@@ -29,9 +33,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ sent: 0, reason: 'KV non configuré' })
   }
 
-  const tomorrowDay = getTomorrowDayIndex()
-  const JOURS_FR = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
-  const jourNom = JOURS_FR[tomorrowDay]
+  const { dayIndex: tomorrowDay, dateStr } = getTomorrowInfo()
 
   let cursor = 0
   let sent = 0
@@ -47,9 +49,8 @@ export default async function handler(req, res) {
       const html = emailTemplate({
         bodyHtml: `
           <p style="font-size:17px;margin:0 0 20px;">Hello ${plan.prenom || 'toi'} 🤍</p>
-          <p style="margin:0 0 16px;">Demain c'est <strong>${jourNom}</strong> — ta séance FlowToForce ${plan.version?.toUpperCase() || ''} t'attend.</p>
-          <p style="margin:0 0 16px;">Prépare tes affaires, hydrate-toi et arrive prête à te dépasser. Tu as déjà fait le plus dur : t'y engager.</p>
-          <p style="margin:0;">À demain 🤍<br><span style="font-size:13px;color:rgba(255,255,255,0.45);display:block;margin-top:6px;">Lys</span></p>
+          <p style="margin:0 0 32px;">Ta séance est demain, <strong>${dateStr}</strong> à <strong>${plan.time || '18:00'}</strong>.</p>
+          <p style="margin:0;">Enjoy<br><span style="font-size:13px;color:rgba(255,255,255,0.45);display:block;margin-top:6px;">Lys</span></p>
         `,
         ctaLabel: 'Voir mon programme',
         ctaUrl: 'https://flowtoforce.com',

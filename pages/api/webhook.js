@@ -1,5 +1,6 @@
 import Stripe from 'stripe'
 import { emailTemplate } from '../../lib/emailTemplate'
+import { generateToken } from '../../lib/token'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
@@ -17,9 +18,9 @@ async function getRawBody(req) {
 }
 
 const programNames = {
-  'FlowToForce V1 - Programme en salle': { label: 'FlowToForce V1' },
-  'FlowToForce V2 - Home Programme': { label: 'FlowToForce V2' },
-  'FlowToForce Bundle - V1 + V2': { label: 'FlowToForce Bundle' },
+  'FlowToForce V1 - Programme en salle': { label: 'FlowToForce V1', version: 'v1' },
+  'FlowToForce V2 - Home Programme': { label: 'FlowToForce V2', version: 'v2' },
+  'FlowToForce Bundle - V1 + V2': { label: 'FlowToForce Bundle', version: 'bundle' },
 }
 
 export default async function handler(req, res) {
@@ -47,15 +48,21 @@ export default async function handler(req, res) {
     const prenom = fullName.split(' ')[0] || ''
 
     let programLabel = 'ton programme'
+    let programVersion = 'v1'
 
     try {
       const lineItems = await stripe.checkout.sessions.listLineItems(session.id)
       const itemName = lineItems.data[0]?.description || ''
       const info = programNames[itemName]
-      if (info) programLabel = info.label
+      if (info) { programLabel = info.label; programVersion = info.version }
     } catch (e) {
       console.error('Line items error:', e)
     }
+
+    const token = generateToken(programVersion)
+    const programUrl = programVersion === 'bundle'
+      ? `https://flowtoforce.com/programme/v1?token=${generateToken('bundle')}`
+      : `https://flowtoforce.com/programme/${programVersion}?token=${token}`
 
     await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -70,13 +77,11 @@ export default async function handler(req, res) {
         html: emailTemplate({
           bodyHtml: `
             <p style="font-size:17px;margin:0 0 20px;">Hello ${prenom || 'toi'} 🤍</p>
-            <p style="margin:0 0 16px;">Merci pour ton achat et ta confiance. Ton accès à <strong>${programLabel}</strong> est confirmé.</p>
-            <p style="margin:0 0 16px;">Ton programme sera disponible très prochainement. Tu recevras un email avec ton lien d'accès dès que tout est prêt.</p>
-            <p style="margin:0 0 32px;">Si tu as des questions, n'hésite pas à répondre à ce mail.</p>
-            <p style="margin:0;">À très vite, enjoy 🤍<br><span style="font-size:13px;color:rgba(255,255,255,0.45);display:block;margin-top:6px;">Lys</span></p>
+            <p style="margin:0 0 32px;">Ton accès à <strong>${programLabel}</strong> est confirmé.</p>
+            <p style="margin:0;">Enjoy<br><span style="font-size:13px;color:rgba(255,255,255,0.45);display:block;margin-top:6px;">Lys</span></p>
           `,
           ctaLabel: 'Accéder au programme',
-          ctaUrl: 'https://flowtoforce.com',
+          ctaUrl: programUrl,
         }),
       }),
     })
