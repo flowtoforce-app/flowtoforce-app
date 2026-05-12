@@ -813,6 +813,15 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-top: 8px;
+}
+
+.progressTitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  font-style: italic;
 }
 
 .progressHeader {
@@ -822,7 +831,7 @@
 }
 
 .progressPct {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.9);
   letter-spacing: 1px;
@@ -883,8 +892,8 @@
 }
 
 .progressNextSeance {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 18px;
+  color: #fff;
   font-weight: 300;
   letter-spacing: 1px;
   font-style: italic;
@@ -916,6 +925,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 18px;
   padding: 20px;
+  margin-top: 8px;
 }
 
 .planningCardHeader {
@@ -928,11 +938,13 @@
 .planningIcon { font-size: 18px; }
 
 .planningCardTitle {
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.62);
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  font-style: italic;
   margin: 0;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .planningForm { display: flex; flex-direction: column; gap: 14px; }
@@ -948,16 +960,15 @@
 .joursRow { display: flex; gap: 6px; }
 
 .jourPill {
-  padding: 5px 11px;
+  padding: 4px 8px;
   border-radius: 50px;
   border: none;
   font-family: inherit;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.18s;
   flex-shrink: 0;
-  letter-spacing: 0.5px;
 }
 
 .jourPillActive {

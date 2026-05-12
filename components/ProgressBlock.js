@@ -31,7 +31,7 @@ export default function ProgressBlock({ version, token }) {
   return (
     <div className={styles.progressBlock}>
       <div className={styles.progressHeader}>
-        <p className={styles.blockLabel}>Ta progression</p>
+        <p className={styles.progressTitle}>Ta progression</p>
         <span className={styles.progressPct}>{pct}%</span>
       </div>
 
