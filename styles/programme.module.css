@@ -1,10 +1,10 @@
-/* === PAGE WRAPPER === */
+/* === PAGE === */
 .page {
   min-height: 100vh;
-  background: linear-gradient(160deg, #0d1b2a 0%, #1a0a2e 50%, #0d1b2a 100%);
+  background: linear-gradient(160deg, #060d1f 0%, #0d0828 40%, #060d1f 100%);
   color: #fff;
   font-family: Georgia, 'Times New Roman', serif;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 /* === HEADER === */
@@ -15,72 +15,107 @@
   padding: 20px 24px 16px;
   position: sticky;
   top: 0;
-  background: rgba(13, 27, 42, 0.9);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(6, 13, 31, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   z-index: 100;
 }
 
 .back {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 22px;
   text-decoration: none;
   width: 40px;
   display: flex;
   align-items: center;
+  transition: color 0.15s;
 }
+
+.back:hover { color: #fff; }
 
 .headerLogo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .logoFlow {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   color: #fff;
   font-style: italic;
 }
 
 .logoLine {
-  width: 18px;
+  width: 20px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .logoForce {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   color: #fff;
 }
 
 .version {
   width: 40px;
   text-align: right;
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-/* === HERO PROGRAMME === */
+/* === LOGO HERO (grand, central) === */
+.logoHero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.logoHeroFlow {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  color: #fff;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.logoHeroLine {
+  width: 32px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.logoHeroForce {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* === HERO PROGRAMME (index) === */
 .heroBlock {
-  padding: 40px 24px 32px;
+  padding: 48px 24px 36px;
   text-align: center;
 }
 
 .heroLabel {
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.45);
   text-transform: uppercase;
   margin-bottom: 12px;
 }
 
 .heroTitle {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 300;
   letter-spacing: 2px;
   margin: 0 0 12px;
@@ -89,31 +124,38 @@
 
 .heroMeta {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.45);
   margin-bottom: 20px;
 }
 
 .heroBadge {
   display: inline-block;
-  padding: 6px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* === CHAPITRES LIST === */
+/* === CHAPITRES LIST (index) === */
 .chapitresList {
   padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .chapitreCard {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.chapitreCardSpecial {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   overflow: hidden;
 }
@@ -126,23 +168,24 @@
 }
 
 .chapitreNum {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.1);
   line-height: 1;
-  min-width: 44px;
+  min-width: 48px;
+  font-style: italic;
 }
 
 .chapitreSemaines {
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.35);
   text-transform: uppercase;
   margin: 0 0 4px;
 }
 
 .chapitreTitre {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
   color: #fff;
   margin: 0;
@@ -150,7 +193,7 @@
 }
 
 .seancesList {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
 }
@@ -159,267 +202,309 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 20px;
+  padding: 15px 20px;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   transition: background 0.15s;
 }
 
-.seanceItem:last-child {
-  border-bottom: none;
-}
-
-.seanceItem:active {
-  background: rgba(255, 255, 255, 0.06);
-}
+.seanceItem:last-child { border-bottom: none; }
+.seanceItem:active { background: rgba(255, 255, 255, 0.05); }
 
 .seanceLabel {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 1px;
 }
 
 .seanceArrow {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.25);
   font-size: 16px;
 }
 
-/* === SEANCE HERO === */
-.seanceHero {
-  position: relative;
-}
-
-.photoPlaceholder {
-  width: 100%;
-  height: 260px;
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.specialLink {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  text-decoration: none;
+  transition: background 0.15s;
 }
 
-.photoText {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.2);
+.specialLink:active { background: rgba(255, 255, 255, 0.05); }
+
+.specialLinkLabel {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+}
+
+.specialLinkSub {
+  font-size: 11px;
   letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.35);
+  display: block;
+  margin-top: 2px;
 }
 
+/* === SÉANCE HERO === */
 .seanceHeroContent {
-  padding: 24px 24px 8px;
+  padding: 40px 24px 24px;
+  text-align: center;
 }
 
 .chapitreTag {
   font-size: 11px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 .seanceTitre {
-  font-size: 24px;
+  font-size: 34px;
   font-weight: 400;
   color: #fff;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-style: italic;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .seanceSousTitre {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
-  margin: 0 0 16px;
+  margin: 0 0 18px;
 }
 
 .seanceMeta {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
 }
 
 .metaTag {
   display: inline-block;
-  padding: 5px 14px;
-  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.07);
   border-radius: 50px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* === CONSEIL DE LYS === */
 .conseilBlock {
-  margin: 24px 16px 0;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0 12px 12px 0;
+  margin: 8px 16px 0;
+  padding: 22px 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0 14px 14px 0;
 }
 
 .conseilLabel {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.4);
-  text-transform: uppercase;
-  margin: 0 0 10px;
-}
-
-.conseilText {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.7;
-  margin: 0;
-  font-style: italic;
-}
-
-/* === MUSCLES BLOCK === */
-.musclesBlock {
-  margin: 16px 16px 0;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-}
-
-.musclesText {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* === BLOCKS ÉCHAUFFEMENT / RETOUR === */
-.block {
-  margin: 16px 16px 0;
-}
-
-.blockLabel {
-  font-size: 11px;
-  letter-spacing: 2px;
+  font-size: 10px;
+  letter-spacing: 3px;
   color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
   margin: 0 0 12px;
 }
 
+.conseilText {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.75;
+  margin: 0;
+  font-style: italic;
+}
+
+/* === MUSCLES === */
+.musclesBlock {
+  margin: 14px 16px 0;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+}
+
+.musclesText {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* === BLOCKS === */
+.block {
+  margin: 20px 16px 0;
+}
+
+.blockLabel {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+/* === ÉCHAUFFEMENT / RETOUR AU CALME === */
 .simpleList {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .simpleItem {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
-  padding: 10px 16px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px 18px;
   background: rgba(255, 255, 255, 0.04);
-  border-radius: 8px;
+  border-radius: 10px;
   line-height: 1.4;
 }
 
-/* === EXERCICES === */
+/* === EXERCICES (liste cliquable) === */
 .exosList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 3px;
 }
 
-.exoCard {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.exoHeader {
+.exoRow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
   width: 100%;
-  padding: 16px 20px;
-  background: none;
-  border: none;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
   cursor: pointer;
   text-align: left;
+  transition: background 0.15s;
 }
 
-.exoHeaderLeft {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
+.exoRow:active { background: rgba(255, 255, 255, 0.08); }
 
 .exoNum {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.15);
   line-height: 1;
-  min-width: 28px;
+  min-width: 30px;
+  font-style: italic;
 }
 
 .exoNom {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  color: #fff;
   font-style: italic;
   line-height: 1.3;
+  flex: 1;
 }
 
-.exoChevron {
+.exoArrow {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 16px;
+}
+
+/* === MODAL EXERCICE PLEIN ÉCRAN === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: #060d1f;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modalClose {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.3);
-  min-width: 20px;
-  text-align: right;
+  padding: 8px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: Georgia, serif;
 }
 
-.exoDetail {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0 0 16px;
-}
-
-.photoPlaceholderSmall {
+.modalPhoto {
   width: 100%;
-  height: 180px;
+  height: 42vh;
+  min-height: 200px;
   background: rgba(255, 255, 255, 0.04);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  flex-shrink: 0;
+  position: relative;
 }
 
+.photoHint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 3px;
+}
+
+.modalContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 24px 40px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modalExoNom {
+  font-size: 26px;
+  font-weight: 400;
+  color: #fff;
+  font-style: italic;
+  margin: 0 0 28px;
+  line-height: 1.25;
+}
+
+/* === CHAMPS EXERCICE === */
 .exoField {
-  padding: 0 20px;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 .exoFieldLabel {
   font-size: 10px;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
-  margin: 0 0 6px;
+  margin: 0 0 8px;
 }
 
 .exoFieldValue {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.5;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
   margin: 0;
 }
 
 .execList {
-  padding-left: 18px;
+  padding-left: 20px;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .execList li {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.5;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.55;
 }
 
 .tipsList {
@@ -428,14 +513,14 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .tipsList li {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.5;
-  padding-left: 12px;
+  padding-left: 14px;
   position: relative;
 }
 
@@ -443,22 +528,46 @@
   content: '–';
   position: absolute;
   left: 0;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.25);
 }
 
 .seriesTag {
-  margin: 16px 20px 0;
-  padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 8px;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.5px;
+}
+
+/* === HEARTS === */
+.heartsRow {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.heartBtn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.2);
+  padding: 4px;
+  transition: transform 0.1s, color 0.15s;
+  line-height: 1;
+}
+
+.heartBtn:active { transform: scale(1.2); }
+
+.heartFilled {
+  color: #fff;
 }
 
 /* === ACTIONS === */
 .seanceActions {
-  margin: 40px 16px 24px;
+  margin: 36px 16px 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -468,7 +577,7 @@
   width: 100%;
   padding: 18px;
   background: #fff;
-  color: #0d1b2a;
+  color: #060d1f;
   border: none;
   border-radius: 50px;
   font-size: 15px;
@@ -478,50 +587,129 @@
   transition: opacity 0.15s;
 }
 
-.btnValider:active {
-  opacity: 0.85;
-}
+.btnValider:active { opacity: 0.85; }
 
 .doneMessage {
   width: 100%;
   padding: 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50px;
   font-size: 15px;
-  letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
+  font-family: Georgia, serif;
 }
+
+.btnContact {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: Georgia, serif;
+  transition: background 0.15s;
+}
+
+.btnContact:active { background: rgba(255, 255, 255, 0.08); }
 
 .btnRetour {
   display: block;
   text-align: center;
-  padding: 14px;
-  color: rgba(255, 255, 255, 0.4);
+  padding: 12px;
+  color: rgba(255, 255, 255, 0.3);
   text-decoration: none;
   font-size: 13px;
   letter-spacing: 1px;
 }
 
+/* === SPECIAL PAGES (intro, mantra, final) === */
+.specialHero {
+  padding: 40px 24px 28px;
+  text-align: center;
+}
+
+.specialTitle {
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+  font-style: italic;
+  margin: 0;
+}
+
+.specialContent {
+  padding: 8px 24px 8px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.specialH3 {
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+  margin: 32px 0 12px;
+  letter-spacing: 0.5px;
+}
+
+.specialP {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+  margin: 0 0 16px;
+}
+
+.specialArrow {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin: 0 0 10px;
+  padding-left: 4px;
+}
+
+.finalLinks {
+  margin: 32px 16px 0;
+}
+
+.socialFinal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.socialBtn {
+  display: inline-block;
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: Georgia, serif;
+  transition: background 0.15s;
+}
+
+.socialBtn:active { background: rgba(255, 255, 255, 0.1); }
+
 /* === FOOTER === */
 .footer {
-  padding: 24px;
+  padding: 32px 24px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.15);
   font-size: 12px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 /* === MOBILE === */
 @media (max-width: 600px) {
-  .heroTitle {
-    font-size: 28px;
-  }
-  .seanceTitre {
-    font-size: 20px;
-  }
-  .photoPlaceholder {
-    height: 200px;
-  }
+  .heroTitle { font-size: 32px; }
+  .seanceTitre { font-size: 26px; }
+  .logoHeroFlow, .logoHeroForce { font-size: 22px; }
+  .modalPhoto { height: 35vh; }
 }
