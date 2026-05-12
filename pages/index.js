@@ -13,6 +13,7 @@ export default function Home() {
   const [activeCard, setActiveCard] = useState(0)
   const [openFaq, setOpenFaq] = useState(null)
   const [emailValue, setEmailValue] = useState('')
+  const [firstNameValue, setFirstNameValue] = useState('')
   const [emailSubmitted, setEmailSubmitted] = useState(false)
   const [emailLoading, setEmailLoading] = useState(false)
   const [paymentStatus, setPaymentStatus] = useState(null)
@@ -52,7 +53,7 @@ export default function Home() {
       await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: emailValue }),
+        body: JSON.stringify({ email: emailValue, firstName: firstNameValue }),
       })
       setEmailSubmitted(true)
     } catch {
@@ -221,6 +222,14 @@ export default function Home() {
             <p className={styles.emailSuccess}>Tu es sur la liste. À très vite.</p>
           ) : (
             <form className={styles.emailForm} onSubmit={handleEmailSubmit}>
+              <input
+                type="text"
+                className={styles.emailInput}
+                placeholder="PRÉNOM"
+                value={firstNameValue}
+                onChange={e => setFirstNameValue(e.target.value)}
+                required
+              />
               <input
                 type="email"
                 className={styles.emailInput}

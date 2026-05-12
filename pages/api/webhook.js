@@ -16,9 +16,21 @@ async function getRawBody(req) {
 }
 
 const programNames = {
-  'FlowToForce V1 - Programme en salle': { label: 'FlowToForce V1', file: 'flowtoforce-v1.pdf' },
-  'FlowToForce V2 - Home Programme': { label: 'FlowToForce V2', file: 'flowtoforce-v2.pdf' },
-  'FlowToForce Bundle - V1 + V2': { label: 'FlowToForce Bundle', files: ['flowtoforce-v1.pdf', 'flowtoforce-v2.pdf'] },
+  'FlowToForce V1 - Programme en salle': {
+    label: 'FlowToForce V1',
+    files: [{ name: 'V1', file: 'flowtoforce-v1.pdf' }],
+  },
+  'FlowToForce V2 - Home Programme': {
+    label: 'FlowToForce V2',
+    files: [{ name: 'V2', file: 'flowtoforce-v2.pdf' }],
+  },
+  'FlowToForce Bundle - V1 + V2': {
+    label: 'FlowToForce Bundle',
+    files: [
+      { name: 'V1', file: 'flowtoforce-v1.pdf' },
+      { name: 'V2', file: 'flowtoforce-v2.pdf' },
+    ],
+  },
 }
 
 export default async function handler(req, res) {
@@ -42,7 +54,9 @@ export default async function handler(req, res) {
     const customerEmail = session.customer_details?.email
     if (!customerEmail) return res.status(200).json({ received: true })
 
-    // Récupérer le nom du programme depuis les line items
+    const fullName = session.customer_details?.name || ''
+    const prenom = fullName.split(' ')[0] || ''
+
     let programLabel = 'ton programme'
     let downloadLinks = ''
 
@@ -53,13 +67,9 @@ export default async function handler(req, res) {
       if (info) {
         programLabel = info.label
         const base = 'https://www.flowtoforce.com/downloads/'
-        if (info.files) {
-          downloadLinks = info.files.map(f =>
-            `<a href="${base}${f}" style="display:inline-block;margin:8px 0;color:#1a1a1a;font-weight:bold;">⬇ Télécharger ${f.includes('v1') ? 'V1' : 'V2'}</a>`
-          ).join('<br/>')
-        } else {
-          downloadLinks = `<a href="${base}${info.file}" style="display:inline-block;margin:8px 0;color:#1a1a1a;font-weight:bold;">⬇ Télécharger ${programLabel}</a>`
-        }
+        downloadLinks = info.files.map(f =>
+          `<a href="${base}${f.file}" style="display:inline-block;padding:12px 28px;margin:8px 0;background:#1a1a1a;color:#fff;text-decoration:none;border-radius:4px;font-size:14px;letter-spacing:1px;">Accéder à ta méthode ${f.name}</a>`
+        ).join('<br/>')
       }
     } catch (e) {
       console.error('Line items error:', e)
@@ -74,23 +84,25 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         from: 'FlowToForce <hello@flowtoforce.com>',
         to: [customerEmail],
-        subject: `${programLabel} — ton accès est prêt 🤍`,
+        subject: `Ta méthode ${programLabel} 🤍`,
         html: `
           <div style="font-family: Georgia, serif; max-width: 520px; margin: 0 auto; padding: 40px 24px; color: #1a1a1a;">
-            <p style="font-size: 22px; font-weight: bold; margin-bottom: 8px;">flow / force</p>
-            <hr style="border: none; border-top: 1px solid #e0e0e0; margin-bottom: 32px;" />
-            <p style="font-size: 17px; margin-bottom: 16px;">Merci pour ta confiance 🤍</p>
-            <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 24px;">
-              Ton accès à <strong>${programLabel}</strong> est confirmé.
-              Télécharge ton PDF ci-dessous — garde ce mail précieusement, c'est ton accès définitif.
+            <p style="font-size: 22px; font-weight: bold; margin-bottom: 32px; letter-spacing: 2px;">FLOWTOFORCE</p>
+            <p style="font-size: 17px; margin-bottom: 20px;">Hello ${prenom || 'toi'} 🤍</p>
+            <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 16px;">
+              Merci pour ton achat et ta confiance. Ton accès à <strong>${programLabel}</strong> est confirmé.
             </p>
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 24px; margin-bottom: 32px;">
-              ${downloadLinks || '<p style="color:#888;">Ton lien de téléchargement arrive sous peu.</p>'}
+            <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 24px;">
+              Télécharge ton programme ci-dessous. Garde ce mail précieusement, c'est ton accès définitif.
+            </p>
+            <div style="margin-bottom: 32px;">
+              ${downloadLinks || '<p style="color:#888;font-size:14px;">Ton lien de téléchargement arrive sous peu.</p>'}
             </div>
-            <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 16px;">
-              Des questions ? Réponds directement à cet email, je te réponds personnellement.
+            <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 24px;">
+              Si tu as des questions, n'hésite pas à m'écrire à la suite de ce mail, je te réponds personnellement.
             </p>
-            <p style="font-size: 14px; color: #888;">À très vite sur le tapis,<br/>Lys — FlowToForce</p>
+            <p style="font-size: 15px; color: #1a1a1a;">À très vite, enjoy 🤍</p>
+            <p style="font-size: 14px; color: #888; margin-top: 8px;">Lys</p>
           </div>
         `,
       }),

@@ -35,44 +35,44 @@ export default async function handler(req, res) {
     return res.status(429).json({ error: 'Trop de tentatives, réessaie dans une minute.' })
   }
 
-  const { email } = req.body
+  const { email, firstName } = req.body
   if (!email || typeof email !== 'string' || !email.includes('@') || email.length > 254) {
     return res.status(400).json({ error: 'Email invalide' })
   }
 
   const clean = email.toLowerCase().trim()
+  const prenom = firstName?.trim() || ''
 
   if (!process.env.RESEND_API_KEY) {
-    console.log('[FlowToForce] Inscription (Resend non configuré):', clean)
+    console.log('[FlowToForce] Inscription:', clean, prenom)
     return res.status(200).json({ success: true })
   }
 
   try {
-    // Notification interne
     await sendEmail({
       to: ['hello@flowtoforce.com'],
-      subject: '🤍 Nouvelle inscription app FlowToForce',
-      html: `<p>Nouvelle personne inscrite pour l'accès prioritaire :</p><p><strong>${clean}</strong></p>`,
+      subject: 'Nouvelle inscription app FlowToForce',
+      html: `<p>Nouvelle inscription :</p><p><strong>${prenom} — ${clean}</strong></p>`,
     })
 
-    // Email de bienvenue à l'inscrite
     await sendEmail({
       to: [clean],
-      subject: 'Tu es sur la liste 🤍',
+      subject: `L'application FlowToForce 🤍`,
       html: `
         <div style="font-family: Georgia, serif; max-width: 520px; margin: 0 auto; padding: 40px 24px; color: #1a1a1a;">
-          <p style="font-size: 22px; font-weight: bold; margin-bottom: 8px;">flow / force</p>
-          <hr style="border: none; border-top: 1px solid #e0e0e0; margin-bottom: 32px;" />
-          <p style="font-size: 17px; margin-bottom: 16px;">Tu es sur la liste.</p>
-          <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 16px;">
-            L'application FlowToForce est en cours de construction — pensée pour toi, construite avec soin.
-            Les premières inscrites seront les premières à y entrer.
+          <p style="font-size: 22px; font-weight: bold; margin-bottom: 32px; letter-spacing: 2px;">FLOWTOFORCE</p>
+          <p style="font-size: 17px; margin-bottom: 20px;">Hello ${prenom || 'toi'} 🤍</p>
+          <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 16px;">
+            Tu es officiellement sur la waiting list de l'application FlowToForce.
           </p>
-          <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 32px;">
-            En attendant, si tu veux démarrer maintenant, les programmes PDF sont disponibles sur
-            <a href="https://www.flowtoforce.com" style="color: #1a1a1a;">flowtoforce.com</a>.
+          <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 16px;">
+            On construit quelque chose de beau, pensé pour toi, avec soin. Les premières inscrites seront les premières à y entrer, et tu en fais partie.
           </p>
-          <p style="font-size: 14px; color: #888;">À très vite,<br/>Lys — FlowToForce</p>
+          <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 32px;">
+            En attendant, les programmes PDF sont disponibles sur <a href="https://www.flowtoforce.com" style="color: #1a1a1a;">flowtoforce.com</a> si tu veux démarrer maintenant.
+          </p>
+          <p style="font-size: 15px; color: #1a1a1a;">À très vite 🤍</p>
+          <p style="font-size: 14px; color: #888; margin-top: 8px;">Lys</p>
         </div>
       `,
     })
