@@ -804,91 +804,274 @@
 
 .socialBtn:active { background: rgba(255, 255, 255, 0.12); }
 
-/* === PLANNING === */
-.planningForm { display: flex; flex-direction: column; gap: 12px; }
+/* === PROGRESS BLOCK === */
+.progressBlock {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-.planningLabel {
-  font-size: 11px;
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progressPct {
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1px;
+}
+
+.progressBarWrap {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(to right, #5baae8, #a78bd4);
+  border-radius: 50px;
+  transition: width 0.6s ease;
+  min-width: 6px;
+}
+
+.progressStats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 1px;
+}
+
+.progressCount { color: rgba(255, 255, 255, 0.7); }
+.progressTotal { color: rgba(255, 255, 255, 0.35); }
+
+.progressNextLink { text-decoration: none; }
+
+.progressNextBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.progressNextBlock:hover { background: rgba(255, 255, 255, 0.12); }
+
+.progressNextLabel {
+  display: block;
+  font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 4px;
+}
+
+.progressNextSeance {
+  display: block;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.progressNextCh {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}
+
+.progressNextArrow {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.progressDone {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
   margin: 4px 0 0;
 }
 
-.joursRow { display: flex; gap: 8px; flex-wrap: wrap; }
-
-.jourBtn {
-  padding: 8px 12px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: transparent;
-  color: rgba(255, 255, 255, 0.6);
-  font-family: inherit;
-  font-size: 12px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.2s;
+/* === PLANNING === */
+.planningCard {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 20px;
 }
 
-.jourBtnActive {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.55);
-  color: rgba(255, 255, 255, 0.95);
+.planningCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.planningIcon { font-size: 18px; }
+
+.planningCardTitle {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+.planningForm { display: flex; flex-direction: column; gap: 14px; }
+
+.planningSubLabel {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+.joursRow { display: flex; gap: 6px; }
+
+.jourPill {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s;
+  flex-shrink: 0;
+}
+
+.jourPillActive {
+  background: linear-gradient(135deg, #5baae8, #a78bd4);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(91, 170, 232, 0.35);
+}
+
+.jourPillInactive {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.jourPillInactive:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .planningSelect {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.88);
   font-family: inherit;
   font-size: 14px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   outline: none;
   cursor: pointer;
-  width: 100%;
-  max-width: 160px;
+  width: auto;
+  max-width: 140px;
 }
+
+.planningInputRow { display: flex; flex-direction: column; gap: 8px; }
 
 .planningInput {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.88);
   font-family: inherit;
   font-size: 14px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   outline: none;
   width: 100%;
   box-sizing: border-box;
 }
 
-.planningInput::placeholder { color: rgba(255, 255, 255, 0.35); }
+.planningInput::placeholder { color: rgba(255, 255, 255, 0.3); }
 
-.planningError { font-size: 13px; color: rgba(255, 180, 180, 0.85); margin: 0; }
+.planningError { font-size: 12px; color: rgba(255, 160, 160, 0.85); margin: 0; }
 
-.planningSaved { display: flex; flex-direction: column; gap: 8px; }
-.planningSavedText { font-size: 16px; color: rgba(255, 255, 255, 0.92); margin: 0; }
-.planningSavedSub { font-size: 13px; color: rgba(255, 255, 255, 0.5); margin: 0 0 8px; }
+.planningSubmitBtn {
+  background: linear-gradient(135deg, rgba(91,170,232,0.25), rgba(167,139,212,0.25));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.planningSubmitBtn:hover { background: linear-gradient(135deg, rgba(91,170,232,0.38), rgba(167,139,212,0.38)); }
+.planningSubmitBtn:disabled { opacity: 0.5; }
+
+.planningSavedState { display: flex; flex-direction: column; gap: 12px; }
+
+.planningSavedDays { display: flex; gap: 6px; }
+
+.planningSavedInfo {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.planningNextSeance {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.planningNextLabel {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.planningNextValue {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 1px;
+}
 
 .planningEditBtn {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.45);
   font-family: inherit;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 2px;
-  padding: 8px 20px;
+  padding: 7px 18px;
   cursor: pointer;
   align-self: flex-start;
-  margin-top: 4px;
   transition: all 0.2s;
 }
 
 .planningEditBtn:hover {
-  border-color: rgba(255, 255, 255, 0.45);
-  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* === FOOTER === */

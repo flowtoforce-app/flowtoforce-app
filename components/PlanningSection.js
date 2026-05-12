@@ -1,7 +1,16 @@
 import { useState, useEffect } from 'react'
+import { chapitresV1, chapitresV2 } from '../lib/chapters'
 import styles from '../styles/programme.module.css'
 
-const JOURS = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']
+const JOURS = [
+  { label: 'L', full: 'Lundi' },
+  { label: 'M', full: 'Mardi' },
+  { label: 'M', full: 'Mercredi' },
+  { label: 'J', full: 'Jeudi' },
+  { label: 'V', full: 'Vendredi' },
+  { label: 'S', full: 'Samedi' },
+  { label: 'D', full: 'Dimanche' },
+]
 const HEURES = Array.from({ length: 17 }, (_, i) => `${String(i + 6).padStart(2, '0')}:00`)
 
 export default function PlanningSection({ version }) {
@@ -12,9 +21,16 @@ export default function PlanningSection({ version }) {
   const [saved, setSaved] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [nextSeance, setNextSeance] = useState(null)
+
+  const chapitres = version === 'v1' ? chapitresV1 : chapitresV2
+  const allSeances = chapitres
+    .filter(ch => !ch.special)
+    .flatMap(ch => ch.seances.map(s => ({ seance: s, chapitre: ch })))
 
   useEffect(() => {
     try {
+      // Load planning prefs
       const stored = localStorage.getItem(`ftf_planning_${version}`)
       if (stored) {
         const data = JSON.parse(stored)
@@ -24,6 +40,12 @@ export default function PlanningSection({ version }) {
         setPrenom(data.prenom || '')
         setSaved(true)
       }
+      // Find next séance
+      const next = allSeances.find(({ seance }) => {
+        const d = JSON.parse(localStorage.getItem(`ftf_${version}_${seance}`) || '{}')
+        return !d.done
+      })
+      setNextSeance(next || null)
     } catch {}
   }, [version])
 
@@ -36,7 +58,7 @@ export default function PlanningSection({ version }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (selectedDays.length === 0) { setError('Choisis au moins un jour 🤍'); return }
+    if (selectedDays.length === 0) { setError('Choisis au moins un jour'); return }
     setLoading(true)
     setError('')
     try {
@@ -57,70 +79,62 @@ export default function PlanningSection({ version }) {
     setLoading(false)
   }
 
+  const selectedLabels = selectedDays.sort().map(i => JOURS[i].full).join(', ')
+
   return (
-    <div className={styles.block}>
-      <p className={styles.blockLabel}>Planifier mes séances</p>
+    <div className={styles.planningCard}>
+      <div className={styles.planningCardHeader}>
+        <span className={styles.planningIcon}>📅</span>
+        <p className={styles.planningCardTitle}>Mon planning</p>
+      </div>
+
       {saved ? (
-        <div className={styles.planningSaved}>
-          <p className={styles.planningSavedText}>Planning enregistré 🤍</p>
-          <p className={styles.planningSavedSub}>Tu reçois un rappel par mail la veille de chaque séance.</p>
-          <div className={styles.joursRow}>
+        <div className={styles.planningSavedState}>
+          <div className={styles.planningSavedDays}>
             {JOURS.map((j, i) => (
-              <button
-                key={i}
-                type="button"
-                className={`${styles.jourBtn} ${selectedDays.includes(i) ? styles.jourBtnActive : ''}`}
-                onClick={() => toggleDay(i)}
-              >
-                {j}
-              </button>
+              <span key={i} className={`${styles.jourPill} ${selectedDays.includes(i) ? styles.jourPillActive : styles.jourPillInactive}`}>
+                {j.label}
+              </span>
             ))}
           </div>
+          <p className={styles.planningSavedInfo}>{selectedLabels} · {time}</p>
+          {nextSeance && (
+            <div className={styles.planningNextSeance}>
+              <span className={styles.planningNextLabel}>Prochaine</span>
+              <span className={styles.planningNextValue}>Séance {nextSeance.seance.toUpperCase()}</span>
+            </div>
+          )}
           <button className={styles.planningEditBtn} onClick={() => setSaved(false)}>Modifier</button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className={styles.planningForm}>
-          <p className={styles.planningLabel}>Tes jours d'entraînement</p>
+          <p className={styles.planningSubLabel}>Tes jours d'entraînement</p>
           <div className={styles.joursRow}>
             {JOURS.map((j, i) => (
               <button
                 key={i}
                 type="button"
-                className={`${styles.jourBtn} ${selectedDays.includes(i) ? styles.jourBtnActive : ''}`}
+                className={`${styles.jourPill} ${selectedDays.includes(i) ? styles.jourPillActive : styles.jourPillInactive}`}
                 onClick={() => toggleDay(i)}
               >
-                {j}
+                {j.label}
               </button>
             ))}
           </div>
-          <p className={styles.planningLabel}>Heure de séance</p>
-          <select
-            className={styles.planningSelect}
-            value={time}
-            onChange={e => setTime(e.target.value)}
-          >
-            {HEURES.map(h => (
-              <option key={h} value={h}>{h}</option>
-            ))}
+
+          <p className={styles.planningSubLabel}>Heure de séance</p>
+          <select className={styles.planningSelect} value={time} onChange={e => setTime(e.target.value)}>
+            {HEURES.map(h => <option key={h} value={h}>{h}</option>)}
           </select>
-          <p className={styles.planningLabel}>Rappels par email</p>
-          <input
-            type="text"
-            className={styles.planningInput}
-            placeholder="Prénom"
-            value={prenom}
-            onChange={e => setPrenom(e.target.value)}
-          />
-          <input
-            type="email"
-            className={styles.planningInput}
-            placeholder="Ton adresse email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
+
+          <p className={styles.planningSubLabel}>Rappels par email</p>
+          <div className={styles.planningInputRow}>
+            <input type="text" className={styles.planningInput} placeholder="Prénom" value={prenom} onChange={e => setPrenom(e.target.value)} />
+            <input type="email" className={styles.planningInput} placeholder="Ton email" value={email} onChange={e => setEmail(e.target.value)} required />
+          </div>
+
           {error && <p className={styles.planningError}>{error}</p>}
-          <button type="submit" className={styles.btnValider} disabled={loading}>
+          <button type="submit" className={styles.planningSubmitBtn} disabled={loading}>
             {loading ? '...' : 'Enregistrer 🤍'}
           </button>
         </form>

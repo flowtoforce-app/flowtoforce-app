@@ -4,6 +4,7 @@ import { chapitresV1 } from '../../../lib/chapters'
 import { canAccessVersion } from '../../../lib/token'
 import styles from '../../../styles/programme.module.css'
 import PlanningSection from '../../../components/PlanningSection'
+import ProgressBlock from '../../../components/ProgressBlock'
 
 export default function V1Index({ token }) {
   return (
@@ -68,6 +69,7 @@ export default function V1Index({ token }) {
         </div>
 
         <div className={styles.chapitresList}>
+          <ProgressBlock version="v1" token={token} />
           <PlanningSection version="v1" />
         </div>
 
