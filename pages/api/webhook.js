@@ -1,4 +1,5 @@
 import Stripe from 'stripe'
+import { emailTemplate } from '../../lib/emailTemplate'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
@@ -66,23 +67,17 @@ export default async function handler(req, res) {
         from: 'FlowToForce <hello@flowtoforce.com>',
         to: [customerEmail],
         subject: `Ta méthode ${programLabel} 🤍`,
-        html: `
-          <div style="font-family: Georgia, serif; max-width: 520px; margin: 0 auto; padding: 40px 24px; color: #1a1a1a;">
-            <p style="font-size: 22px; font-weight: bold; margin-bottom: 32px; letter-spacing: 2px;">FLOWTOFORCE</p>
-            <p style="font-size: 17px; margin-bottom: 20px;">Hello ${prenom || 'toi'} 🤍</p>
-            <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 16px;">
-              Merci pour ton achat et ta confiance. Ton accès à <strong>${programLabel}</strong> est confirmé.
-            </p>
-            <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 32px;">
-              Ton programme sera disponible très prochainement. Tu recevras un email avec ton accès dès que tout est prêt.
-            </p>
-            <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 24px;">
-              Si tu as des questions, n'hésite pas à m'écrire à la suite de ce mail, je te réponds personnellement.
-            </p>
-            <p style="font-size: 15px; color: #1a1a1a;">À très vite, enjoy 🤍</p>
-            <p style="font-size: 14px; color: #888; margin-top: 8px;">Lys</p>
-          </div>
-        `,
+        html: emailTemplate({
+          bodyHtml: `
+            <p style="font-size:17px;margin:0 0 20px;">Hello ${prenom || 'toi'} 🤍</p>
+            <p style="margin:0 0 16px;">Merci pour ton achat et ta confiance. Ton accès à <strong>${programLabel}</strong> est confirmé.</p>
+            <p style="margin:0 0 16px;">Ton programme sera disponible très prochainement. Tu recevras un email avec ton lien d'accès dès que tout est prêt.</p>
+            <p style="margin:0 0 32px;">Si tu as des questions, n'hésite pas à répondre à ce mail — je te réponds personnellement.</p>
+            <p style="margin:0;">À très vite, enjoy 🤍<br><span style="font-size:13px;color:rgba(255,255,255,0.45);display:block;margin-top:6px;">Lys</span></p>
+          `,
+          ctaLabel: 'Accéder au programme',
+          ctaUrl: 'https://flowtoforce.com',
+        }),
       }),
     })
   }

@@ -1,3 +1,5 @@
+import { emailTemplate } from '../../lib/emailTemplate'
+
 const rateLimit = new Map()
 
 function isRateLimited(ip) {
@@ -58,23 +60,17 @@ export default async function handler(req, res) {
     await sendEmail({
       to: [clean],
       subject: `L'application FlowToForce 🤍`,
-      html: `
-        <div style="font-family: Georgia, serif; max-width: 520px; margin: 0 auto; padding: 40px 24px; color: #1a1a1a;">
-          <p style="font-size: 22px; font-weight: bold; margin-bottom: 32px; letter-spacing: 2px;">FLOWTOFORCE</p>
-          <p style="font-size: 17px; margin-bottom: 20px;">Hello ${prenom || 'toi'} 🤍</p>
-          <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 16px;">
-            Tu es officiellement sur la waiting list de l'application FlowToForce.
-          </p>
-          <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 16px;">
-            On construit quelque chose de beau, pensé pour toi, avec soin. Les premières inscrites seront les premières à y entrer, et tu en fais partie.
-          </p>
-          <p style="font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 32px;">
-            En attendant, les programmes PDF sont disponibles sur <a href="https://www.flowtoforce.com" style="color: #1a1a1a;">flowtoforce.com</a> si tu veux démarrer maintenant.
-          </p>
-          <p style="font-size: 15px; color: #1a1a1a;">À très vite 🤍</p>
-          <p style="font-size: 14px; color: #888; margin-top: 8px;">Lys</p>
-        </div>
-      `,
+      html: emailTemplate({
+        bodyHtml: `
+          <p style="font-size:17px;margin:0 0 20px;">Hello ${prenom || 'toi'} 🤍</p>
+          <p style="margin:0 0 16px;">Tu es officiellement sur la waiting list de l'application FlowToForce.</p>
+          <p style="margin:0 0 16px;">On construit quelque chose de beau, pensé pour toi, avec soin. Les premières inscrites seront les premières à y entrer, et tu en fais partie.</p>
+          <p style="margin:0 0 32px;">En attendant, les programmes sont disponibles sur flowtoforce.com si tu veux démarrer maintenant.</p>
+          <p style="margin:0;">À très vite 🤍<br><span style="font-size:13px;color:rgba(255,255,255,0.45);display:block;margin-top:6px;">Lys</span></p>
+        `,
+        ctaLabel: 'Découvrir',
+        ctaUrl: 'https://flowtoforce.com',
+      }),
     })
 
     return res.status(200).json({ success: true })
