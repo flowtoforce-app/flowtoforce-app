@@ -132,7 +132,7 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
 
       <div className={styles.page}>
         <header className={styles.header}>
-          <Link href={`/programme/${version}?token=${token}`} className={styles.back}>←</Link>
+          <Link href={`/programme/${version}?token=${token}`} className={styles.back}> </Link>
           <div className={styles.headerLogo}>
             <span className={styles.logoFlow}>flow</span>
             <span className={styles.logoLine} />

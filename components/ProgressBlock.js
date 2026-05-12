@@ -48,12 +48,8 @@ export default function ProgressBlock({ version, token }) {
       ) : nextItem && (
         <a href={`/programme/${version}/${nextItem.seance}?token=${token}`} className={styles.progressNextLink}>
           <div className={styles.progressNextBlock}>
-            <div className={styles.progressNextInfo}>
-              <span className={styles.progressNextLabel}>Prochaine</span>
-              <span className={styles.progressNextSeance}>Séance {nextItem.seance.toUpperCase()}</span>
-            </div>
-            {currentCh && <span className={styles.progressNextCh}>{currentCh.titre}</span>}
-            <span className={styles.progressNextArrow}>→</span>
+            <span className={styles.progressNextLabel}>Prochaine</span>
+            <span className={styles.progressNextSeance}>Séance {nextItem.seance.toUpperCase()}</span>
           </div>
         </a>
       )}
