@@ -141,9 +141,20 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>FlowToForce - Musculation pour Toi ✨</title>
-        <meta name="description" content="FlowToForce : une méthode de musculation pensée pour toi" />
+        <title>FlowToForce · Méthode</title>
+        <meta name="description" content="FlowToForce, la méthode de musculation pensée pour toi. 12 semaines, 2 programmes : salle et maison." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flowtoforce.com" />
+        <meta property="og:title" content="FlowToForce · Méthode" />
+        <meta property="og:description" content="La méthode de musculation pensée pour toi. 12 semaines, 2 programmes : salle et maison." />
+        <meta property="og:image" content="https://flowtoforce.com/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="FlowToForce · Méthode" />
+        <meta name="twitter:description" content="La méthode de musculation pensée pour toi. 12 semaines, 2 programmes : salle et maison." />
+        <meta name="twitter:image" content="https://flowtoforce.com/og-image.jpg" />
       </Head>
 
       <div className={styles.container}>

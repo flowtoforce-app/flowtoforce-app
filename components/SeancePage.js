@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/programme.module.css'
 
+const cleanNom = (nom) => nom.replace(/ [–—] /g, ' ').trim()
+
 export default function SeancePage({ seance, seanceId, chapitre, token, version }) {
   const [activeModal, setActiveModal] = useState(null)
   const [photoFailed, setPhotoFailed] = useState(false)
@@ -72,11 +74,11 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
               </div>
             )}
             {!photoFailed && (
-              <div className={styles.photoNameOverlay}>{exoModal.nom}</div>
+              <div className={styles.photoNameOverlay}>{cleanNom(exoModal.nom)}</div>
             )}
           </div>
           <div className={styles.modalContent}>
-            <h2 className={styles.modalExoNom}>{exoModal.nom}</h2>
+            <h2 className={styles.modalExoNom}>{cleanNom(exoModal.nom)}</h2>
             {exoModal.objectif && (
               <div className={styles.exoField}>
                 <p className={styles.exoFieldLabel}>Objectif</p>
@@ -182,7 +184,7 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
               {seance.exercices.map((exo, i) => (
                 <button key={i} className={styles.exoRow} onClick={() => setActiveModal(i)}>
                   <span className={styles.exoNum}>{i + 1}</span>
-                  <span className={styles.exoNom}>{exo.nom}</span>
+                  <span className={styles.exoNom}>{cleanNom(exo.nom)}</span>
                   <span className={styles.exoArrow}>→</span>
                 </button>
               ))}
