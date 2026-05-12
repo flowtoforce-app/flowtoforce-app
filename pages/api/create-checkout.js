@@ -2,9 +2,30 @@ import Stripe from 'stripe'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
+const rateLimit = new Map()
+
+function isRateLimited(ip) {
+  const now = Date.now()
+  const windowMs = 60 * 1000
+  const max = 10
+  const entry = rateLimit.get(ip) || { count: 0, start: now }
+  if (now - entry.start > windowMs) {
+    rateLimit.set(ip, { count: 1, start: now })
+    return false
+  }
+  if (entry.count >= max) return true
+  rateLimit.set(ip, { count: entry.count + 1, start: entry.start })
+  return false
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
+  }
+
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown'
+  if (isRateLimited(ip)) {
+    return res.status(429).json({ error: 'Trop de tentatives.' })
   }
 
   const { programId } = req.body
@@ -35,16 +56,14 @@ export default async function handler(req, res) {
         {
           price_data: {
             currency: 'eur',
-            product_data: {
-              name: name,
-            },
+            product_data: { name },
             unit_amount: amount,
           },
           quantity: 1,
         },
       ],
       mode: 'payment',
-      success_url: `${req.headers.origin}/?success=true&program=${programId}`,
+      success_url: `${req.headers.origin}/success?program=${programId}`,
       cancel_url: `${req.headers.origin}/?canceled=true`,
     })
 
