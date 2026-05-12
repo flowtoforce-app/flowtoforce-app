@@ -14,6 +14,17 @@ function isRateLimited(ip) {
   return false
 }
 
+async function sendEmail({ to, subject, html }) {
+  return fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ from: 'FlowToForce <hello@flowtoforce.com>', to, subject, html }),
+  })
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
@@ -37,24 +48,34 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'FlowToForce <hello@flowtoforce.com>',
-        to: ['hello@flowtoforce.com'],
-        subject: '🤍 Nouvelle inscription app FlowToForce',
-        html: `<p>Nouvelle personne inscrite pour l'accès prioritaire à l'app :</p><p><strong>${clean}</strong></p>`,
-      }),
+    // Notification interne
+    await sendEmail({
+      to: ['hello@flowtoforce.com'],
+      subject: '🤍 Nouvelle inscription app FlowToForce',
+      html: `<p>Nouvelle personne inscrite pour l'accès prioritaire :</p><p><strong>${clean}</strong></p>`,
     })
 
-    if (!response.ok) {
-      const err = await response.text()
-      console.error('[Resend error]', err)
-    }
+    // Email de bienvenue à l'inscrite
+    await sendEmail({
+      to: [clean],
+      subject: 'Tu es sur la liste 🤍',
+      html: `
+        <div style="font-family: Georgia, serif; max-width: 520px; margin: 0 auto; padding: 40px 24px; color: #1a1a1a;">
+          <p style="font-size: 22px; font-weight: bold; margin-bottom: 8px;">flow / force</p>
+          <hr style="border: none; border-top: 1px solid #e0e0e0; margin-bottom: 32px;" />
+          <p style="font-size: 17px; margin-bottom: 16px;">Tu es sur la liste.</p>
+          <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 16px;">
+            L'application FlowToForce est en cours de construction — pensée pour toi, construite avec soin.
+            Les premières inscrites seront les premières à y entrer.
+          </p>
+          <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 32px;">
+            En attendant, si tu veux démarrer maintenant, les programmes PDF sont disponibles sur
+            <a href="https://www.flowtoforce.com" style="color: #1a1a1a;">flowtoforce.com</a>.
+          </p>
+          <p style="font-size: 14px; color: #888;">À très vite,<br/>Lys — FlowToForce</p>
+        </div>
+      `,
+    })
 
     return res.status(200).json({ success: true })
   } catch (err) {
