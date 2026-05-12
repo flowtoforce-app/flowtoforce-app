@@ -39,21 +39,20 @@ export default function ProgressBlock({ version, token }) {
         <div className={styles.progressFill} style={{ width: `${pct}%` }} />
       </div>
 
-      <div className={styles.progressStats}>
-        <span className={styles.progressCount}>{count} séances complétées</span>
-        <span className={styles.progressTotal}>sur {total}</span>
-      </div>
+      <p className={styles.progressStats}>
+        <span className={styles.progressCount}>{count} / {total} séances</span>
+      </p>
 
       {finished ? (
         <p className={styles.progressDone}>Programme terminé 🤍</p>
       ) : nextItem && (
         <a href={`/programme/${version}/${nextItem.seance}?token=${token}`} className={styles.progressNextLink}>
           <div className={styles.progressNextBlock}>
-            <div>
-              <span className={styles.progressNextLabel}>Prochaine séance</span>
+            <div className={styles.progressNextInfo}>
+              <span className={styles.progressNextLabel}>Prochaine</span>
               <span className={styles.progressNextSeance}>Séance {nextItem.seance.toUpperCase()}</span>
-              {currentCh && <span className={styles.progressNextCh}>{currentCh.titre}</span>}
             </div>
+            {currentCh && <span className={styles.progressNextCh}>{currentCh.titre}</span>}
             <span className={styles.progressNextArrow}>→</span>
           </div>
         </a>

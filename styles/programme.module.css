@@ -345,9 +345,9 @@
 }
 
 .blockLabel {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.62);
   text-transform: uppercase;
   margin: 0 0 12px;
 }
@@ -844,59 +844,63 @@
 }
 
 .progressStats {
-  display: flex;
-  justify-content: space-between;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.45);
   letter-spacing: 1px;
+  margin: 0;
 }
 
-.progressCount { color: rgba(255, 255, 255, 0.7); }
-.progressTotal { color: rgba(255, 255, 255, 0.35); }
+.progressCount { color: rgba(255, 255, 255, 0.55); }
 
 .progressNextLink { text-decoration: none; }
 
 .progressNextBlock {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 14px 16px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
-.progressNextBlock:hover { background: rgba(255, 255, 255, 0.12); }
+.progressNextBlock:hover { background: rgba(255, 255, 255, 0.1); }
+
+.progressNextInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
 
 .progressNextLabel {
-  display: block;
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.38);
 }
 
 .progressNextSeance {
-  display: block;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.92);
   font-weight: 300;
   letter-spacing: 1px;
+  font-style: italic;
 }
 
 .progressNextCh {
-  display: block;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.45);
-  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: 0.5px;
+  flex: 1;
+  text-align: right;
 }
 
 .progressNextArrow {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .progressDone {
@@ -924,10 +928,10 @@
 .planningIcon { font-size: 18px; }
 
 .planningCardTitle {
-  font-size: 11px;
-  letter-spacing: 3px;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.62);
   margin: 0;
 }
 
@@ -944,9 +948,8 @@
 .joursRow { display: flex; gap: 6px; }
 
 .jourPill {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  padding: 5px 11px;
+  border-radius: 50px;
   border: none;
   font-family: inherit;
   font-size: 12px;
@@ -954,6 +957,7 @@
   cursor: pointer;
   transition: all 0.18s;
   flex-shrink: 0;
+  letter-spacing: 0.5px;
 }
 
 .jourPillActive {

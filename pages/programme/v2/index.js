@@ -32,6 +32,10 @@ export default function V2Index({ token }) {
         </div>
 
         <div className={styles.chapitresList}>
+          <ProgressBlock version="v2" token={token} />
+        </div>
+
+        <div className={styles.chapitresList}>
           {chapitresV2.map((ch) => {
             if (ch.special) {
               return (
@@ -69,7 +73,6 @@ export default function V2Index({ token }) {
         </div>
 
         <div className={styles.chapitresList}>
-          <ProgressBlock version="v2" token={token} />
           <PlanningSection version="v2" />
         </div>
 

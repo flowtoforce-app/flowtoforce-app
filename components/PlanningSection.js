@@ -84,7 +84,6 @@ export default function PlanningSection({ version }) {
   return (
     <div className={styles.planningCard}>
       <div className={styles.planningCardHeader}>
-        <span className={styles.planningIcon}>📅</span>
         <p className={styles.planningCardTitle}>Mon planning</p>
       </div>
 
