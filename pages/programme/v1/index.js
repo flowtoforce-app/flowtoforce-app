@@ -23,11 +23,6 @@ export default function V1Index({ token }) {
         </header>
 
         <div className={styles.heroBlock}>
-          <div className={styles.logoHero}>
-            <span className={styles.logoHeroFlow}>flow</span>
-            <span className={styles.logoHeroLine} />
-            <span className={styles.logoHeroForce}>force</span>
-          </div>
           <p className={styles.heroLabel}>Programme en Salle</p>
           <h1 className={styles.heroTitle}>FlowToForce V1</h1>
           <p className={styles.heroMeta}>12 semaines · 24 séances · 8 chapitres</p>
@@ -41,8 +36,8 @@ export default function V1Index({ token }) {
                 <div key={ch.id} className={styles.chapitreCardSpecial}>
                   <Link href={`/programme/v1/${ch.special}?token=${token}`} className={styles.specialLink}>
                     <div>
-                      <span className={styles.specialLinkLabel}>{ch.titre}</span>
                       <span className={styles.specialLinkSub}>{ch.semaines}</span>
+                      <span className={styles.specialLinkLabel}>{ch.titre}</span>
                     </div>
                     <span className={styles.seanceArrow}>→</span>
                   </Link>

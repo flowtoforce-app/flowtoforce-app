@@ -96,6 +96,18 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
               <div className={styles.seriesTag}>{exoModal.series}</div>
             )}
           </div>
+          <div className={styles.modalNav}>
+            {activeModal > 0 && (
+              <button className={styles.btnExoPrev} onClick={() => setActiveModal(activeModal - 1)}>
+                ← Précédent
+              </button>
+            )}
+            {activeModal < seance.exercices.length - 1 && (
+              <button className={styles.btnExoSuivant} onClick={() => setActiveModal(activeModal + 1)}>
+                Exercice suivant →
+              </button>
+            )}
+          </div>
         </div>
       )}
 
@@ -111,11 +123,6 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
         </header>
 
         <div className={styles.seanceHeroContent}>
-          <div className={styles.logoHero}>
-            <span className={styles.logoHeroFlow}>flow</span>
-            <span className={styles.logoHeroLine} />
-            <span className={styles.logoHeroForce}>force</span>
-          </div>
           <p className={styles.chapitreTag}>{chapitre?.titre}</p>
           <h1 className={styles.seanceTitre}>{seance.titre}</h1>
           {seance.sousTitre && <p className={styles.seanceSousTitre}>{seance.sousTitre}</p>}

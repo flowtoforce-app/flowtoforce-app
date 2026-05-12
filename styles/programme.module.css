@@ -256,7 +256,7 @@
 .chapitreTag {
   font-size: 11px;
   letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.62);
   text-transform: uppercase;
   margin: 0 0 10px;
 }
@@ -271,8 +271,8 @@
 }
 
 .seanceSousTitre {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.82);
   margin: 0 0 18px;
 }
 
@@ -286,10 +286,10 @@
 .metaTag {
   display: inline-block;
   padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 50px;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 /* === CONSEIL DE LYS === */
@@ -302,16 +302,16 @@
 }
 
 .conseilLabel {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.62);
   text-transform: uppercase;
   margin: 0 0 12px;
 }
 
 .conseilText {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.75;
   margin: 0;
   font-style: italic;
@@ -327,8 +327,8 @@
 }
 
 .musclesText {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.65;
   margin: 0;
 }
@@ -339,9 +339,9 @@
 }
 
 .blockLabel {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.55);
   text-transform: uppercase;
   margin: 0 0 12px;
 }
@@ -357,8 +357,8 @@
 }
 
 .simpleItem {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.92);
   padding: 12px 18px;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
@@ -479,16 +479,16 @@
 }
 
 .exoFieldLabel {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
   text-transform: uppercase;
   margin: 0 0 8px;
 }
 
 .exoFieldValue {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.6;
   margin: 0;
 }
@@ -502,8 +502,8 @@
 }
 
 .execList li {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.55;
 }
 
@@ -517,8 +517,8 @@
 }
 
 .tipsList li {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.5;
   padding-left: 14px;
   position: relative;
@@ -540,6 +540,48 @@
   color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.5px;
 }
+
+/* === MODAL NAVIGATION === */
+.modalNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.btnExoPrev {
+  flex: 1;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+}
+
+.btnExoSuivant {
+  flex: 1;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+}
+
+.btnExoSuivant:active { background: rgba(255, 255, 255, 0.15); }
+.btnExoPrev:active { background: rgba(255, 255, 255, 0.08); }
 
 /* === HEARTS === */
 .heartsRow {
@@ -570,12 +612,14 @@
   margin: 36px 16px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
 }
 
 .btnValider {
-  width: 100%;
-  padding: 18px;
+  width: fit-content;
+  min-width: 220px;
+  padding: 16px 40px;
   background: #fff;
   color: #060d1f;
   border: none;
@@ -584,31 +628,37 @@
   letter-spacing: 2px;
   font-family: Georgia, serif;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block;
   transition: opacity 0.15s;
 }
 
 .btnValider:active { opacity: 0.85; }
 
 .doneMessage {
-  width: 100%;
-  padding: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: fit-content;
+  min-width: 220px;
+  padding: 16px 40px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50px;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.88);
   text-align: center;
   font-family: Georgia, serif;
 }
 
 .btnContact {
+  width: fit-content;
+  min-width: 180px;
   display: block;
   text-align: center;
-  padding: 14px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 50px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 1px;
@@ -616,17 +666,22 @@
   transition: background 0.15s;
 }
 
-.btnContact:active { background: rgba(255, 255, 255, 0.08); }
+.btnContact:active { background: rgba(255, 255, 255, 0.1); }
 
 .btnRetour {
   display: block;
   text-align: center;
-  padding: 12px;
-  color: rgba(255, 255, 255, 0.3);
+  padding: 12px 28px;
+  color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
   font-size: 13px;
   letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  transition: background 0.15s;
 }
+
+.btnRetour:active { background: rgba(255, 255, 255, 0.05); }
 
 /* === SPECIAL PAGES (intro, mantra, final) === */
 .specialHero {
@@ -635,7 +690,7 @@
 }
 
 .specialTitle {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 300;
   color: #fff;
   font-style: italic;
@@ -649,25 +704,25 @@
 }
 
 .specialH3 {
-  font-size: 17px;
+  font-size: 21px;
   font-weight: 400;
   color: #fff;
-  margin: 32px 0 12px;
+  margin: 36px 0 14px;
   letter-spacing: 0.5px;
 }
 
 .specialP {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.8;
-  margin: 0 0 16px;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.85;
+  margin: 0 0 18px;
 }
 
 .specialArrow {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.7;
-  margin: 0 0 10px;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.75;
+  margin: 0 0 12px;
   padding-left: 4px;
 }
 
@@ -682,20 +737,22 @@
 }
 
 .socialBtn {
-  display: inline-block;
-  padding: 10px 22px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 1px;
   font-family: Georgia, serif;
   transition: background 0.15s;
 }
 
-.socialBtn:active { background: rgba(255, 255, 255, 0.1); }
+.socialBtn:active { background: rgba(255, 255, 255, 0.12); }
 
 /* === FOOTER === */
 .footer {
@@ -712,4 +769,6 @@
   .seanceTitre { font-size: 26px; }
   .logoHeroFlow, .logoHeroForce { font-size: 22px; }
   .modalPhoto { height: 35vh; }
+  .socialFinal { flex-direction: column; }
+  .socialBtn { width: 100%; justify-content: center; }
 }

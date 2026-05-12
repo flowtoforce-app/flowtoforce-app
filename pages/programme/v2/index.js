@@ -23,11 +23,6 @@ export default function V2Index({ token }) {
         </header>
 
         <div className={styles.heroBlock}>
-          <div className={styles.logoHero}>
-            <span className={styles.logoHeroFlow}>flow</span>
-            <span className={styles.logoHeroLine} />
-            <span className={styles.logoHeroForce}>force</span>
-          </div>
           <p className={styles.heroLabel}>Home Programme</p>
           <h1 className={styles.heroTitle}>FlowToForce V2</h1>
           <p className={styles.heroMeta}>12 semaines · 20 séances · 8 chapitres</p>
@@ -41,8 +36,8 @@ export default function V2Index({ token }) {
                 <div key={ch.id} className={styles.chapitreCardSpecial}>
                   <Link href={`/programme/v2/${ch.special}?token=${token}`} className={styles.specialLink}>
                     <div>
-                      <span className={styles.specialLinkLabel}>{ch.titre}</span>
                       <span className={styles.specialLinkSub}>{ch.semaines}</span>
+                      <span className={styles.specialLinkLabel}>{ch.titre}</span>
                     </div>
                     <span className={styles.seanceArrow}>→</span>
                   </Link>
