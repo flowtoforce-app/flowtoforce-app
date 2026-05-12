@@ -28,6 +28,7 @@ function renderLine(line, i) {
   const clean = line
     .replace(/^#{1,3}\s/, '')
     .replace(/\*\*/g, '')
+    .replace(/^→\s?/, '')
     .replace(/^[–—]\s?/, '')
     .replace(/ [–—] /g, ' ')
     .replace(/\bLys(?! 🤍)/g, 'Lys 🤍')
@@ -52,7 +53,7 @@ export default function SpecialPage({ title, content, token, version, nextHref, 
       </Head>
       <div className={styles.page}>
         <header className={styles.header}>
-          <Link href={`/programme/${version}?token=${token}`} className={styles.back}>←</Link>
+          <Link href={`/programme/${version}?token=${token}`} className={styles.back}> </Link>
           <div className={styles.headerLogo}>
             <span className={styles.logoFlow}>flow</span>
             <span className={styles.logoLine} />

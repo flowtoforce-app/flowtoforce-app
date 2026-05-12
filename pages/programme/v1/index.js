@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { chapitresV1 } from '../../../lib/chapters'
@@ -7,6 +8,21 @@ import PlanningSection from '../../../components/PlanningSection'
 import ProgressBlock from '../../../components/ProgressBlock'
 
 export default function V1Index({ token }) {
+  const [completed, setCompleted] = useState([])
+
+  useEffect(() => {
+    try {
+      const done = []
+      chapitresV1.filter(ch => !ch.special).forEach(ch => {
+        ch.seances.forEach(s => {
+          const data = JSON.parse(localStorage.getItem(`ftf_v1_${s}`) || '{}')
+          if (data.done) done.push(s)
+        })
+      })
+      setCompleted(done)
+    } catch {}
+  }, [])
+
   return (
     <>
       <Head>
@@ -15,7 +31,7 @@ export default function V1Index({ token }) {
       </Head>
       <div className={styles.page}>
         <header className={styles.header}>
-          <Link href="/" className={styles.back}>←</Link>
+          <Link href="/" className={styles.back}> </Link>
           <div className={styles.headerLogo}>
             <span className={styles.logoFlow}>flow</span>
             <span className={styles.logoLine} />
@@ -45,7 +61,6 @@ export default function V1Index({ token }) {
                       <span className={styles.specialLinkSub}>{ch.semaines}</span>
                       <span className={styles.specialLinkLabel}>{ch.titre}</span>
                     </div>
-                    <span className={styles.seanceArrow}>→</span>
                   </Link>
                 </div>
               )
@@ -63,7 +78,7 @@ export default function V1Index({ token }) {
                   {ch.seances.map((s) => (
                     <Link key={s} href={`/programme/v1/${s}?token=${token}`} className={styles.seanceItem}>
                       <span className={styles.seanceLabel}>Séance {s.toUpperCase()}</span>
-                      <span className={styles.seanceArrow}>→</span>
+                      {completed.includes(s) && <span className={styles.doneCheck}>✓</span>}
                     </Link>
                   ))}
                 </div>

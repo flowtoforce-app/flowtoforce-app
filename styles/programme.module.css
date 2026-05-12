@@ -34,6 +34,7 @@
   display: flex;
   align-items: center;
   transition: color 0.15s;
+  cursor: pointer;
 }
 
 .back:hover { color: #fff; }
@@ -211,6 +212,7 @@
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   transition: background 0.15s;
+  cursor: pointer;
 }
 
 .seanceItem:last-child { border-bottom: none; }
@@ -222,9 +224,16 @@
   letter-spacing: 1px;
 }
 
-.seanceArrow {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 16px;
+.doneCheck {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, rgba(91, 170, 232, 0.28), rgba(167, 139, 212, 0.28));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50px;
+  padding: 2px 8px;
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px);
+  flex-shrink: 0;
 }
 
 .specialLink {
@@ -234,6 +243,7 @@
   padding: 20px 20px;
   text-decoration: none;
   transition: background 0.15s;
+  cursor: pointer;
 }
 
 .specialLink:active { background: rgba(255, 255, 255, 0.05); }
@@ -861,16 +871,16 @@
 
 .progressCount { color: rgba(255, 255, 255, 0.55); }
 
-.progressNextLink { text-decoration: none; }
+.progressNextLink { text-decoration: none; display: inline-flex; }
 
 .progressNextBlock {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 14px 16px;
+  padding: 12px 16px;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -881,7 +891,6 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  flex: 1;
 }
 
 .progressNextLabel {
@@ -892,7 +901,7 @@
 }
 
 .progressNextSeance {
-  font-size: 18px;
+  font-size: 17px;
   color: #fff;
   font-weight: 300;
   letter-spacing: 1px;
@@ -900,16 +909,10 @@
 }
 
 .progressNextCh {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.38);
-  letter-spacing: 0.5px;
-  flex: 1;
-  text-align: right;
-}
-
-.progressNextArrow {
-  font-size: 16px;
+  font-size: 11px;
   color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.5px;
+  margin-top: 2px;
 }
 
 .progressDone {
@@ -1001,7 +1004,7 @@
   max-width: 140px;
 }
 
-.planningInputRow { display: flex; flex-direction: column; gap: 8px; }
+.planningInputRow { display: flex; flex-direction: column; gap: 8px; max-width: 300px; }
 
 .planningInput {
   background: rgba(255, 255, 255, 0.08);
@@ -1014,6 +1017,7 @@
   outline: none;
   width: 100%;
   box-sizing: border-box;
+  cursor: text;
 }
 
 .planningInput::placeholder { color: rgba(255, 255, 255, 0.3); }
