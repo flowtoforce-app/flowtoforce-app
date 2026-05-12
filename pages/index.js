@@ -29,6 +29,14 @@ export default function Home() {
     }
   }, [router.query])
 
+  useEffect(() => {
+    const handlePageShow = (e) => {
+      if (e.persisted) setIsLoading(false)
+    }
+    window.addEventListener('pageshow', handlePageShow)
+    return () => window.removeEventListener('pageshow', handlePageShow)
+  }, [])
+
   const scrollToPrograms = useCallback(() => {
     document.getElementById('programmes')?.scrollIntoView({ behavior: 'smooth' })
   }, [])
