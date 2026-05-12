@@ -824,6 +824,7 @@
   flex-direction: column;
   gap: 12px;
   margin-top: 8px;
+  max-width: 44%;
 }
 
 .progressTitle {
