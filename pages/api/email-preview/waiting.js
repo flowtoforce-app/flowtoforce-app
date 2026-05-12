@@ -9,7 +9,6 @@ export default function handler(req, res) {
       <p style="margin:0 0 32px;">En attendant, retrouve les programmes sur <a href="https://flowtoforce.com" style="color:rgba(255,255,255,0.92);text-decoration:underline;">flowtoforce.com</a> pour démarrer maintenant.</p>
       <p style="margin:0;">À très vite 🤍<br><span style="font-size:13px;color:rgba(255,255,255,0.45);display:block;margin-top:6px;">Lys</span></p>
     `,
-    imageUrl: 'https://flowtoforce.com/halteres.jpg',
     ctaLabel: 'Voir les programmes',
     ctaUrl: 'https://flowtoforce.com',
   })
