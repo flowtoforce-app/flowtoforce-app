@@ -27,7 +27,7 @@ const questions = [
   },
   {
     q: 'Et une fois le programme terminé ?',
-    a: 'Une fois l\'ensemble des séances complétées, tu es libre de piocher dans le désordre les séances que tu as le plus aimées. Le système de notation par coeurs — de 1 à 4 — te permet de retrouver facilement tes préférées et de les rejouer à volonté.',
+    a: 'Une fois l\'ensemble des séances complétées, tu es libre de piocher dans le désordre les séances que tu as le plus aimées. Le système de notation par coeurs, de 1 à 4, te permet de retrouver facilement tes préférées et de les rejouer à volonté.',
   },
   {
     q: 'Comment voir les détails d\'un exercice ?',
@@ -79,7 +79,7 @@ const questions = [
   },
   {
     q: 'Mes données personnelles sont-elles sécurisées ?',
-    a: 'Oui. Toutes tes données personnelles — email, prénom, planning — sont strictement confidentielles et ne sont jamais partagées, revendues ou transmises à des tiers. Elles sont uniquement utilisées pour le bon fonctionnement du programme et l\'envoi de tes rappels.',
+    a: 'Oui. Toutes tes données personnelles (email, prénom, planning) sont strictement confidentielles et ne sont jamais partagées, revendues ou transmises à des tiers. Elles sont uniquement utilisées pour le bon fonctionnement du programme et l\'envoi de tes rappels.',
   },
   {
     q: 'Mon lien d\'accès est-il personnel ?',
