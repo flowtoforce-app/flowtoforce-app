@@ -48,6 +48,9 @@ export default function V2Index({ token }) {
         </div>
 
         <div className={styles.faqPillWrap}>
+          <Link href={`/programme/profil?token=${token}`} className={styles.faqPill}>
+            Mon profil
+          </Link>
           <Link href={`/programme/faq?token=${token}&from=v2`} className={styles.faqPill}>
             Mode d'emploi
           </Link>

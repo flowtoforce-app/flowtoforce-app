@@ -1099,6 +1099,98 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* === PROFIL === */
+.profilList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profilItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  text-decoration: none;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+
+.profilItem:active { background: rgba(255, 255, 255, 0.08); }
+
+.profilItemLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profilItemRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.profilVersion {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(160, 210, 245, 0.7);
+  border: 1px solid rgba(160, 210, 245, 0.25);
+  border-radius: 50px;
+  padding: 3px 8px;
+  flex-shrink: 0;
+}
+
+.profilChapitre {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 3px;
+}
+
+.profilSeanceId {
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+}
+
+.profilHearts {
+  display: flex;
+  gap: 3px;
+}
+
+.profilHeartOn {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.profilHeartOff {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.profilDone {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, rgba(91, 170, 232, 0.28), rgba(167, 139, 212, 0.28));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50px;
+  padding: 2px 8px;
+}
+
+.profilEmpty {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.35);
+  font-style: italic;
+  padding: 24px 0;
+  margin: 0;
+}
+
 /* === FAQ PILL (bouton sur index) === */
 .faqPill {
   display: inline-block;
@@ -1119,6 +1211,8 @@
 .faqPillWrap {
   display: flex;
   justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
   padding: 24px 16px 8px;
 }
 
