@@ -26,13 +26,13 @@ export default function Profil({ token, versions }) {
         chapters.filter(ch => !ch.special).forEach(ch => {
           ch.seances.forEach(s => {
             const data = JSON.parse(localStorage.getItem(`ftf_${version}_${s}`) || '{}')
-            if (data.done || data.hearts > 0) {
+            if (data.done || data.rating > 0) {
               results.push({
                 version,
                 seanceId: s,
                 chapitre: ch.titre,
                 done: data.done || false,
-                hearts: data.hearts || 0,
+                hearts: data.rating || 0,
               })
             }
           })
