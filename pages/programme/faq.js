@@ -19,7 +19,15 @@ const IconTikTok = () => (
 const questions = [
   {
     q: 'Comment naviguer dans le programme ?',
-    a: 'Le programme est organisé en chapitres, chacun couvrant deux semaines. Depuis la page principale, clique sur une séance pour l\'ouvrir. Tu avances à ton rythme, dans l\'ordre qui te convient.',
+    a: 'Le programme est organisé en chapitres, chacun couvrant deux semaines. Depuis la page principale, clique sur une séance pour l\'ouvrir. Le rythme conseillé est de deux séances par semaine, mais tu avances à ton rythme.',
+  },
+  {
+    q: 'Dans quel ordre faire les séances ?',
+    a: 'Le programme suit une structure d\'évolution progressive à respecter. Chaque chapitre et chaque séance sont conçus pour construire sur ce qui précède. Il est conseillé de suivre l\'ordre des chapitres et des séances pour bénéficier pleinement de la progression.',
+  },
+  {
+    q: 'Et une fois le programme terminé ?',
+    a: 'Une fois l\'ensemble des séances complétées, tu es libre de piocher dans le désordre les séances que tu as le plus aimées. Le système de notation par coeurs — de 1 à 4 — te permet de retrouver facilement tes préférées et de les rejouer à volonté.',
   },
   {
     q: 'Comment voir les détails d\'un exercice ?',
@@ -51,7 +59,7 @@ const questions = [
   },
   {
     q: 'Puis-je sauter une séance ?',
-    a: 'Oui. Le programme ne t\'impose pas d\'ordre strict. Si tu sautes une séance, reprends simplement là où tu t\'es arrêtée. Ta progression reste sauvegardée.',
+    a: 'Tu peux reporter une séance si nécessaire. La progression reste sauvegardée. Cependant, la structure du programme est conçue pour évoluer progressivement — il vaut mieux y revenir que de la passer définitivement.',
   },
   {
     q: 'Et si je suis fatiguée ce jour-là ?',
@@ -63,11 +71,19 @@ const questions = [
   },
   {
     q: 'Comment ajouter mes photos de progression ?',
-    a: 'Cette fonctionnalité sera disponible dans l\'application FlowToForce, actuellement en développement. Tu pourras enregistrer tes photos à chaque étape et suivre ton évolution dans le temps.',
+    a: 'Cette fonctionnalité sera disponible dans l\'application FlowToForce, actuellement en développement. Tu pourras enregistrer tes photos à chaque étape et suivre ton évolution dans le temps. Tes photos resteront strictement privées et confidentielles.',
   },
   {
     q: 'Quand sort l\'application FlowToForce ?',
     a: 'L\'application est en cours de développement. Elle regroupera tes programmes, ton planning, tes photos de progression et un espace communauté. Inscris-toi à la newsletter pour être informée en priorité.',
+  },
+  {
+    q: 'Mes données personnelles sont-elles sécurisées ?',
+    a: 'Oui. Toutes tes données personnelles — email, prénom, planning — sont strictement confidentielles et ne sont jamais partagées, revendues ou transmises à des tiers. Elles sont uniquement utilisées pour le bon fonctionnement du programme et l\'envoi de tes rappels.',
+  },
+  {
+    q: 'Mon lien d\'accès est-il personnel ?',
+    a: 'Oui. Ton lien d\'accès est unique, personnel et traçable. Il est strictement interdit de le partager, de le transmettre ou de le revendre. Tout usage non autorisé constitue une violation des conditions d\'utilisation et pourra entraîner la désactivation de l\'accès.',
   },
   {
     q: 'Comment contacter Lys ?',
