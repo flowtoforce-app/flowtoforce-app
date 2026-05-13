@@ -6,12 +6,10 @@ import { chapitresV1, chapitresV2 } from '../../lib/chapters'
 import styles from '../../styles/programme.module.css'
 
 function Hearts({ count }) {
-  if (!count) return null
   return (
-    <span className={styles.profilHearts}>
-      {Array.from({ length: count }).map((_, i) => (
-        <span key={i} className={styles.profilHeartOn}>♥</span>
-      ))}
+    <span className={styles.profilHeartBadge}>
+      <span className={styles.profilHeartIcon}>♥</span>
+      <span className={styles.profilHeartCount}>{count}</span>
     </span>
   )
 }
