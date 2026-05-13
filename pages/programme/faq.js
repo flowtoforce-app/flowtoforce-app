@@ -209,6 +209,12 @@ export default function Faq({ token, from }) {
             </a>
           </div>
 
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Link href={backHref} className={styles.faqPill}>
+              Retour au programme
+            </Link>
+          </div>
+
           <p className={styles.faqCopyright}>FlowToForce © 2026</p>
         </div>
       </div>
