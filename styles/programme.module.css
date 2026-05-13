@@ -814,6 +814,29 @@
 
 .socialBtn:active { background: rgba(255, 255, 255, 0.12); }
 
+.socialIconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.socialIconBtn:active { background: rgba(255, 255, 255, 0.12); }
+
+.socialIconRow {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px 8px;
+}
+
 /* === PROGRESS BLOCK === */
 .progressBlock {
   background: rgba(255, 255, 255, 0.07);
