@@ -1,4 +1,4 @@
-# Chapitre 0 — FlowToForce
+# Chapitre 0 — FlowToForce V2
 
 **Pourquoi FlowToForce V2, et pourquoi tu es au bon endroit.**
 
@@ -16,7 +16,7 @@ Et puis j'ai eu envie d'autre chose.
 
 Parce que le yoga et le pilates, aussi puissants soient-ils, ne construisent pas tout.
 
-Ils développent la mobilité, la conscience, l'équilibre. Mais la force pure, la densité, la structure musculaire qui change durablement la silhouette et la posture — ça, ça se construit ailleurs.
+Ils développent la mobilité, la conscience, l'équilibre. Mais la force pure, la densité, la structure musculaire qui change durablement la silhouette et la posture ça, ça se construit ailleurs.
 
 J'ai voulu ce corps-là. Le corps qui tient un handstand sans mur. Qui porte son poids. Qui ne se fatigue plus dans les escaliers, qui garde l'énergie à la fin d'une journée de coaching, qui vieillit solide.
 
@@ -48,13 +48,13 @@ Alors j'ai passé mon CQP IF d'instructrice fitness à l'INSED, option musculati
 
 **Douze semaines. Huit chapitres. À la maison.**
 
-Une progression pensée pour celles qui viennent du yoga ou du pilates — mais pas seulement. Si tu n'as pas de pratique douce derrière toi et que la muscu à domicile te parle, tu es la bienvenue aussi. Tous les profils ont leur place ici.
+Une progression pensée pour celles qui viennent du yoga ou du pilates mais pas seulement. Si tu n'as pas de pratique douce derrière toi et que la muscu à domicile te parle, tu es la bienvenue aussi. Tous les profils ont leur place ici.
 
-Chaque semaine débloque un skill, installe un acquis, construit sur le précédent. Tu ne feras pas de la muscu "comme à la salle". Tu feras de la muscu pensée pour toi, pour ton bien-être, pour ton niveau, pour ta pratique — et depuis ton espace.
+Chaque semaine débloque un skill, installe un acquis, construit sur le précédent. Tu ne feras pas de la muscu "comme à la salle". Tu feras de la muscu pensée pour toi, pour ton bien-être, pour ton niveau, pour ta pratique et depuis ton espace.
 
 À la fin des douze semaines, tu seras plus forte, plus sculptée, plus droite. Tu sauras choisir tes mouvements, lire une progression, comprendre ton cardio.
 
-Et surtout, tu voudras continuer. Parce que FlowToForce V2, c'est plus qu'un programme de 12 semaines. C'est une façon d'avancer — une méthode à toi.
+Et surtout, tu voudras continuer. Parce que FlowToForce V2, c'est plus qu'un programme de 12 semaines. C'est une façon d'avancer une méthode à toi.
 
 Bienvenue.
 
