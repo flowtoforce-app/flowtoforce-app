@@ -1099,6 +1099,208 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* === FAQ PILL (bouton sur index) === */
+.faqPill {
+  display: inline-block;
+  padding: 6px 18px;
+  background: rgba(91, 170, 232, 0.1);
+  border: 1px solid rgba(91, 170, 232, 0.32);
+  border-radius: 50px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(160, 210, 245, 0.85);
+  text-decoration: none;
+  font-family: Georgia, serif;
+  transition: background 0.15s;
+}
+
+.faqPill:active { background: rgba(91, 170, 232, 0.18); }
+
+.faqPillWrap {
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px 8px;
+}
+
+/* === FAQ PAGE === */
+.faqHero {
+  padding: 48px 24px 28px;
+  text-align: center;
+}
+
+.faqList {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.faqItem {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.faqQuestion:active { background: rgba(255, 255, 255, 0.04); }
+
+.faqIndicator {
+  font-size: 18px;
+  font-style: normal;
+  color: rgba(160, 210, 245, 0.7);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.faqAnswer {
+  padding: 0 20px 20px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 14px;
+}
+
+/* === FAQ FOOTER === */
+.faqFooterSection {
+  padding: 32px 24px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.faqDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.faqSocial {
+  display: flex;
+  gap: 10px;
+}
+
+.faqNewsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqNewsletterTitle {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+.faqNewsletterSub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.faqNewsletterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+}
+
+.faqInput {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.faqInput::placeholder { color: rgba(255, 255, 255, 0.28); }
+
+.faqNewsletterBtn {
+  align-self: flex-start;
+  padding: 10px 28px;
+  background: rgba(91, 170, 232, 0.18);
+  border: 1px solid rgba(91, 170, 232, 0.35);
+  border-radius: 50px;
+  color: rgba(160, 210, 245, 0.9);
+  font-family: Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.faqNewsletterBtn:hover { background: rgba(91, 170, 232, 0.28); }
+.faqNewsletterBtn:disabled { opacity: 0.5; }
+
+.faqNewsletterSuccess {
+  font-size: 15px;
+  color: rgba(160, 210, 245, 0.8);
+  font-style: italic;
+  margin: 0;
+}
+
+.faqContact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faqContactLabel {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.faqContactLink {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-style: italic;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  align-self: flex-start;
+  padding-bottom: 2px;
+  transition: color 0.15s;
+}
+
+.faqContactLink:hover { color: rgba(255, 255, 255, 0.95); }
+
+.faqCopyright {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 2px;
+  margin: 0;
+  text-align: center;
+}
+
 /* === FOOTER === */
 .footer {
   padding: 32px 24px;

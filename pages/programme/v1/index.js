@@ -91,6 +91,12 @@ export default function V1Index({ token }) {
           <PlanningSection version="v1" />
         </div>
 
+        <div className={styles.faqPillWrap}>
+          <Link href={`/programme/faq?token=${token}&from=v1`} className={styles.faqPill}>
+            Mode d'emploi
+          </Link>
+        </div>
+
         <footer className={styles.footer}>
           <p>FlowToForce © 2026</p>
         </footer>
