@@ -64,20 +64,24 @@ export default function Home() {
 
   const faq = [
     {
-      q: "C'est vraiment pour débutantes ?",
-      a: "Oui. Même si tu n'as jamais soulevé une barre. Chaque séance part de zéro, t'explique le pourquoi, et t'emmène là où tu veux aller.",
+      q: "Est-ce que c'est vraiment pour débutantes ?",
+      a: "Oui. Même si tu n'es jamais allée en salle, ou rarement. Chaque séance t'explique le pourquoi, pas seulement le comment.",
     },
     {
-      q: "Qu'est-ce que je reçois exactement ?",
+      q: "Qu'est-ce que je reçois après paiement ?",
       a: "Un PDF complet : 12 semaines, 8 chapitres, chaque séance détaillée exercice par exercice. Accès immédiat après paiement.",
     },
     {
-      q: "Je peux faire V2 sans matériel ?",
-      a: "Oui. V2 fonctionne au poids du corps. Élastiques et haltères sont un bonus, pas une obligation.",
+      q: "Est-ce que je peux faire le programme V2 sans beaucoup de matériel ?",
+      a: "Oui. V2 est conçu au poids du corps. Élastiques et haltères sont un plus, jamais une condition.",
     },
     {
-      q: "Le paiement est sécurisé ?",
+      q: "Est-ce que le paiement est sécurisé ?",
       a: "Oui. Paiement par carte via Stripe. Achat unique, accès définitif. Zéro abonnement.",
+    },
+    {
+      q: "Est-ce que mes données personnelles sont sécurisées ?",
+      a: "Oui. Tes données sont protégées conformément au RGPD. Elles ne sont jamais revendues ni partagées à des tiers. Tu peux demander leur suppression à tout moment.",
     },
   ]
 
@@ -94,7 +98,7 @@ export default function Home() {
       id: 'v1',
       name: 'FlowToForce V1',
       subtitle: 'Programme en salle',
-      description: '12 semaines. 8 chapitres. Une progression structurée à la salle pour apprendre comment fonctionnent les séances, comment évoluer, comment utiliser les machines. Accompagnement poussé pour construire ta force et ta confiance.',
+      description: '12 semaines. 8 chapitres. Tu apprends à utiliser les machines, à structurer tes séances et à progresser en toute confiance.',
       price: 29.99,
       preorder: 'PDF disponible immédiatement · Bientôt dans l\'application',
     },
@@ -102,7 +106,7 @@ export default function Home() {
       id: 'v2',
       name: 'FlowToForce V2',
       subtitle: 'Home Programme',
-      description: '12 semaines. 8 chapitres. Une progression structurée à la maison au poids du corps et accessoires (élastiques, chaise, haltères). Tu te muscles, tu construis ta confiance. Après, tu seras prête pour la salle.',
+      description: '12 semaines. 8 chapitres. Poids du corps, élastiques, haltères. Tu te muscles chez toi, et tu seras prête pour la salle.',
       price: 29.99,
       preorder: 'PDF disponible immédiatement · Bientôt dans l\'application',
     },
@@ -110,7 +114,7 @@ export default function Home() {
       id: 'bundle',
       name: 'FlowToForce Bundle',
       subtitle: 'V1 + V2',
-      description: 'Les deux programmes : Salle et Home. Flexibilité totale selon ton emploi du temps et tes objectifs.',
+      description: 'Les deux programmes réunis. Entraîne-toi en salle ou à la maison, selon ton emploi du temps.',
       price: 39.99,
       featured: true,
       preorder: 'PDF disponible immédiatement · Bientôt dans l\'application',
@@ -174,7 +178,7 @@ export default function Home() {
               <span className={styles.logoForce}>force</span>
             </div>
             <p className={styles.mainDescription}>
-              Le programme idéal pour passer du yoga / pilates à la musculation en toute confiance. 12 semaines. Pas de complexité inutile, pas de programme pensé pour quelqu'un d'autre. Une méthode à toi.
+              Pour celles qui pratiquent le yoga et le pilates. Douze semaines pour évoluer de la mobilité vers la force, sans perdre ce que tu as construit.
             </p>
             <button className={styles.heroCtaButton} onClick={scrollToPrograms}>
               Voir les programmes
@@ -226,8 +230,7 @@ export default function Home() {
           <p className={styles.emailEyebrow}>Bientôt disponible</p>
           <h2 className={styles.emailTitle}>L'application FlowToForce.</h2>
           <p className={styles.emailSubtitle}>
-            Pensée pour toutes. Construite avec soin.<br />
-            Les premières inscrites seront les premières à y entrer.
+            L'application arrive. Inscris-toi pour la découvrir en avant-première.
           </p>
           {emailSubmitted ? (
             <p className={styles.emailSuccess}>Wishlist done 🤍</p>
