@@ -47,6 +47,12 @@ export default function V1Index({ token }) {
           <div className={styles.heroBadge}>Salle</div>
         </div>
 
+        <div className={styles.faqPillWrap}>
+          <Link href={`/programme/faq?token=${token}&from=v1`} className={styles.faqPill}>
+            Mode d'emploi
+          </Link>
+        </div>
+
         <div className={styles.chapitresList}>
           <ProgressBlock version="v1" token={token} />
         </div>
@@ -89,12 +95,6 @@ export default function V1Index({ token }) {
 
         <div className={styles.chapitresList} style={{ marginTop: '20px' }}>
           <PlanningSection version="v1" />
-        </div>
-
-        <div className={styles.faqPillWrap}>
-          <Link href={`/programme/faq?token=${token}&from=v1`} className={styles.faqPill}>
-            Mode d'emploi
-          </Link>
         </div>
 
         <footer className={styles.footer}>
