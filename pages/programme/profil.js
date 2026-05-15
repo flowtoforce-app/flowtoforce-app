@@ -36,6 +36,17 @@ function Hearts({ count }) {
 export default function Profil({ token, versions }) {
   const [seances, setSeances] = useState([])
   const [loaded, setLoaded] = useState(false)
+  const [resetConfirm, setResetConfirm] = useState(false)
+
+  function handleReset() {
+    try {
+      Object.keys(localStorage)
+        .filter(k => k.startsWith('ftf_'))
+        .forEach(k => localStorage.removeItem(k))
+      setSeances([])
+      setResetConfirm(false)
+    } catch {}
+  }
 
   useEffect(() => {
     try {
@@ -124,6 +135,20 @@ export default function Profil({ token, versions }) {
           <Link href={backHref} className={styles.faqPill}>
             Retour au programme
           </Link>
+        </div>
+
+        <div className={styles.resetWrap}>
+          {!resetConfirm ? (
+            <button className={styles.resetBtn} onClick={() => setResetConfirm(true)}>
+              Remettre à zéro
+            </button>
+          ) : (
+            <div className={styles.resetConfirmRow}>
+              <span className={styles.resetConfirmText}>Tout effacer ?</span>
+              <button className={styles.resetConfirmYes} onClick={handleReset}>Oui</button>
+              <button className={styles.resetConfirmNo} onClick={() => setResetConfirm(false)}>Annuler</button>
+            </div>
+          )}
         </div>
 
         <div className={styles.finalLinks} style={{ marginBottom: '8px' }}>

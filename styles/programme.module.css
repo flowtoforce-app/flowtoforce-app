@@ -1223,6 +1223,77 @@
   margin: 0;
 }
 
+/* === RESET === */
+.resetWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.resetBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 0.2s;
+}
+
+.resetBtn:hover {
+  color: rgba(255, 100, 100, 0.6);
+}
+
+.resetConfirmRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.resetConfirmText {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+  font-family: Georgia, serif;
+}
+
+.resetConfirmYes {
+  background: none;
+  border: 1px solid rgba(255, 80, 80, 0.4);
+  color: rgba(255, 100, 100, 0.8);
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  padding: 5px 14px;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.resetConfirmYes:hover {
+  background: rgba(255, 80, 80, 0.1);
+}
+
+.resetConfirmNo {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  padding: 5px 14px;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.resetConfirmNo:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /* === FAQ PILL (bouton sur index) === */
 .faqPill {
   display: inline-block;
