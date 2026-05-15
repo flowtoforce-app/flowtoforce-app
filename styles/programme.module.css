@@ -1232,18 +1232,20 @@
 
 .resetBtn {
   background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.45);
   font-size: 11px;
   letter-spacing: 1.5px;
   font-family: Georgia, serif;
   cursor: pointer;
-  padding: 8px 16px;
-  transition: color 0.2s;
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: all 0.2s;
 }
 
 .resetBtn:hover {
-  color: rgba(255, 100, 100, 0.6);
+  border-color: rgba(255, 100, 100, 0.4);
+  color: rgba(255, 100, 100, 0.8);
 }
 
 .resetConfirmRow {
