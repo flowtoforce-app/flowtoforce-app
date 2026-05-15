@@ -185,7 +185,6 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
                 <button key={i} className={styles.exoRow} onClick={() => setActiveModal(i)}>
                   <span className={styles.exoNum}>{i + 1}</span>
                   <span className={styles.exoNom}>{cleanNom(exo.nom)}</span>
-                  <span className={styles.exoArrow}>→</span>
                 </button>
               ))}
             </div>
