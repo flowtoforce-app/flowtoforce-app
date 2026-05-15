@@ -11,14 +11,19 @@ export default function ProgressBlock({ version, token }) {
     .flatMap(ch => ch.seances.map(s => ({ seance: s, chapitre: ch })))
 
   useEffect(() => {
-    try {
-      const done = []
-      allSeances.forEach(({ seance }) => {
-        const data = JSON.parse(localStorage.getItem(`ftf_${version}_${seance}`) || '{}')
-        if (data.done) done.push(seance)
-      })
-      setCompleted(done)
-    } catch {}
+    const readCompleted = () => {
+      try {
+        const done = []
+        allSeances.forEach(({ seance }) => {
+          const data = JSON.parse(localStorage.getItem(`ftf_${version}_${seance}`) || '{}')
+          if (data.done) done.push(seance)
+        })
+        setCompleted(done)
+      } catch {}
+    }
+    readCompleted()
+    window.addEventListener('focus', readCompleted)
+    return () => window.removeEventListener('focus', readCompleted)
   }, [version])
 
   const total = allSeances.length

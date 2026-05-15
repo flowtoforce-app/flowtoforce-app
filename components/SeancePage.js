@@ -143,6 +143,7 @@ export default function SeancePage({ seance, seanceId, chapitre, token, version 
 
         <div className={styles.seanceHeroContent}>
           <p className={styles.chapitreTag}>{chapitre?.titre}</p>
+          <p className={styles.seanceIdTag}>Séance {seanceId.toUpperCase()}</p>
           <h1 className={styles.seanceTitre}>{seance.titre}</h1>
           {seance.sousTitre && <p className={styles.seanceSousTitre}>{seance.sousTitre}</p>}
           {seance.materiel && (

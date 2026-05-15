@@ -30,6 +30,10 @@ const questions = [
     a: 'Une fois l\'ensemble des séances complétées, tu es libre de piocher dans le désordre les séances que tu as le plus aimées. Le système de notation par coeurs, de 1 à 4, te permet de retrouver facilement tes préférées et de les rejouer à volonté.',
   },
   {
+    q: 'Qu\'est-ce qu\'un superset ?',
+    a: 'Un superset, c\'est enchaîner deux exercices différents sans temps de repos entre eux. Tu fais l\'exercice A, puis immédiatement l\'exercice B, et tu te reposes seulement après les deux. Ce format densifie l\'entraînement, augmente l\'intensité et sollicite tes muscles différemment. Tu seras plus essoufflée qu\'en format classique : c\'est normal.',
+  },
+  {
     q: 'Comment voir les détails d\'un exercice ?',
     a: 'Sur chaque page de séance, clique sur un exercice pour l\'ouvrir en plein écran. Tu y trouves la photo, les séries, les répétitions et les conseils d\'exécution. Tu peux naviguer entre les exercices sans fermer la fenêtre.',
   },

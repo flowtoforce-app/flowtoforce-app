@@ -277,6 +277,14 @@
   margin: 0 0 10px;
 }
 
+.seanceIdTag {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
 .seanceTitre {
   font-size: 34px;
   font-weight: 400;
