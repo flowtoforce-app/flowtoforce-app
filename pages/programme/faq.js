@@ -46,6 +46,10 @@ const questions = [
     a: 'La barre de progression en haut de l\'index affiche ton avancement global. Elle se met à jour automatiquement à chaque séance validée. Tu vois aussi quelle est ta prochaine séance.',
   },
   {
+    q: 'Puis-je remettre ma progression à zéro ?',
+    a: 'Oui. Depuis la page Mon profil, un bouton discret en bas de page te permet de remettre à zéro l\'ensemble de tes séances validées et notées. Une confirmation t\'est demandée avant d\'effacer. La remise à zéro est définitive.',
+  },
+  {
     q: 'Comment configurer mon planning de séances ?',
     a: 'En bas de la page principale, choisis les jours de la semaine où tu t\'entraînes et ton heure habituelle. Entre ton prénom et ton adresse email pour recevoir un rappel la veille de chaque séance.',
   },
