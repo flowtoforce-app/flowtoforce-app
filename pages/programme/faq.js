@@ -47,7 +47,7 @@ const questions = [
   },
   {
     q: 'Puis-je annuler la validation d\'une séance ?',
-    a: 'Oui. Depuis la page Mon profil, chaque séance validée ou notée affiche un petit × à droite. Clique dessus pour l\'annuler individuellement, sans toucher aux autres séances.',
+    a: 'Oui. Depuis la page Mon profil, chaque séance validée ou notée affiche un bouton rond rouge × à droite. Clique dessus pour l\'annuler individuellement, sans toucher aux autres séances.',
   },
   {
     q: 'Puis-je remettre tout le programme à zéro ?',
