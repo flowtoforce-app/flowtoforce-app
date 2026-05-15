@@ -26,6 +26,7 @@ const IconMail = () => (
 
 export default function V2Index({ token }) {
   const [completed, setCompleted] = useState([])
+  const [resetConfirm, setResetConfirm] = useState(false)
 
   useEffect(() => {
     try {
@@ -39,6 +40,16 @@ export default function V2Index({ token }) {
       setCompleted(done)
     } catch {}
   }, [])
+
+  function handleReset() {
+    try {
+      Object.keys(localStorage)
+        .filter(k => k.startsWith('ftf_v2_'))
+        .forEach(k => localStorage.removeItem(k))
+      setCompleted([])
+      setResetConfirm(false)
+    } catch {}
+  }
 
   return (
     <>
@@ -121,6 +132,20 @@ export default function V2Index({ token }) {
           <a href="https://www.instagram.com/flowtoforce" target="_blank" rel="noopener noreferrer" className={styles.socialIconBtn}><IconInstagram /></a>
           <a href="https://www.tiktok.com/@flowtoforce" target="_blank" rel="noopener noreferrer" className={styles.socialIconBtn}><IconTikTok /></a>
           <a href="mailto:hello@flowtoforce.com" className={styles.socialIconBtn}><IconMail /></a>
+        </div>
+
+        <div className={styles.resetWrap}>
+          {!resetConfirm ? (
+            <button className={styles.resetBtn} onClick={() => setResetConfirm(true)}>
+              Remettre à zéro
+            </button>
+          ) : (
+            <div className={styles.resetConfirmRow}>
+              <span className={styles.resetConfirmText}>Tout effacer ?</span>
+              <button className={styles.resetConfirmYes} onClick={handleReset}>Oui</button>
+              <button className={styles.resetConfirmNo} onClick={() => setResetConfirm(false)}>Annuler</button>
+            </div>
+          )}
         </div>
 
         <footer className={styles.footer}>
