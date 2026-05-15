@@ -46,8 +46,12 @@ const questions = [
     a: 'La barre de progression en haut de l\'index affiche ton avancement global. Elle se met à jour automatiquement à chaque séance validée. Tu vois aussi quelle est ta prochaine séance.',
   },
   {
-    q: 'Puis-je remettre ma progression à zéro ?',
-    a: 'Oui. Depuis la page Mon profil, un bouton discret en bas de page te permet de remettre à zéro l\'ensemble de tes séances validées et notées. Une confirmation t\'est demandée avant d\'effacer. La remise à zéro est définitive.',
+    q: 'Puis-je annuler la validation d\'une séance ?',
+    a: 'Oui. Depuis la page Mon profil, chaque séance validée ou notée affiche un petit × à droite. Clique dessus pour l\'annuler individuellement, sans toucher aux autres séances.',
+  },
+  {
+    q: 'Puis-je remettre tout le programme à zéro ?',
+    a: 'Oui. En bas de la page principale du programme, un bouton "Remettre à zéro" efface l\'ensemble de ta progression d\'un coup — toutes les séances validées et toutes les notes. Une confirmation t\'est demandée avant d\'effacer. C\'est définitif.',
   },
   {
     q: 'Comment configurer mon planning de séances ?',

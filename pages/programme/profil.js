@@ -38,6 +38,21 @@ export default function Profil({ token, versions }) {
   const [loaded, setLoaded] = useState(false)
   const [resetConfirm, setResetConfirm] = useState(false)
 
+  function handleUnvalidate(version, seanceId) {
+    try {
+      const key = `ftf_${version}_${seanceId}`
+      const data = JSON.parse(localStorage.getItem(key) || '{}')
+      delete data.done
+      delete data.rating
+      if (Object.keys(data).length === 0) {
+        localStorage.removeItem(key)
+      } else {
+        localStorage.setItem(key, JSON.stringify(data))
+      }
+      setSeances(prev => prev.filter(s => !(s.version === version && s.seanceId === seanceId)))
+    } catch {}
+  }
+
   function handleReset() {
     try {
       Object.keys(localStorage)
@@ -110,22 +125,28 @@ export default function Profil({ token, versions }) {
           ) : (
             <div className={styles.profilList}>
               {seances.map((s, i) => (
-                <Link
-                  key={i}
-                  href={`/programme/${s.version}/${s.seanceId}?token=${token}`}
-                  className={styles.profilItem}
-                >
-                  <div className={styles.profilItemLeft}>
-                    <span className={styles.profilVersion}>{s.version.toUpperCase()}</span>
-                    <div>
-                      <p className={styles.profilChapitre}>{s.chapitre}</p>
-                      <p className={styles.profilSeanceId}>Séance {s.seanceId.toUpperCase()}</p>
+                <div key={i} className={styles.profilItemRow}>
+                  <Link
+                    href={`/programme/${s.version}/${s.seanceId}?token=${token}`}
+                    className={styles.profilItem}
+                  >
+                    <div className={styles.profilItemLeft}>
+                      <span className={styles.profilVersion}>{s.version.toUpperCase()}</span>
+                      <div>
+                        <p className={styles.profilChapitre}>{s.chapitre}</p>
+                        <p className={styles.profilSeanceId}>Séance {s.seanceId.toUpperCase()}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className={styles.profilItemRight}>
-                    <Hearts count={s.hearts} />
-                  </div>
-                </Link>
+                    <div className={styles.profilItemRight}>
+                      <Hearts count={s.hearts} />
+                    </div>
+                  </Link>
+                  <button
+                    className={styles.profilUnvalidateBtn}
+                    onClick={() => handleUnvalidate(s.version, s.seanceId)}
+                    aria-label="Annuler"
+                  >×</button>
+                </div>
               ))}
             </div>
           )}
