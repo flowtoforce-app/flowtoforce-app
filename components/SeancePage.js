@@ -3,7 +3,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/programme.module.css'
 
-const cleanNom = (nom) => nom.replace(/ [–—] /g, ' ').trim()
+const cleanNom = (nom) => {
+  if (!nom) return ''
+  const parts = nom.split(/ [–—] /)
+  return (parts.length > 1 ? parts[parts.length - 1] : parts[0]).trim()
+}
 
 export default function SeancePage({ seance, seanceId, chapitre, token, version }) {
   const [activeModal, setActiveModal] = useState(null)

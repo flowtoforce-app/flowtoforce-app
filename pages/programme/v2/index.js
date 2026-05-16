@@ -72,7 +72,7 @@ export default function V2Index({ token }) {
           <p className={styles.heroLabel}>Home Programme</p>
           <h1 className={styles.heroTitle}>FlowToForce V2</h1>
           <p className={styles.heroMeta}>12 semaines · 20 séances · 8 chapitres</p>
-          <div className={styles.heroBadge}>Maison</div>
+          <div className={styles.heroBadge}>Home</div>
         </div>
 
         <div className={styles.faqPillWrap}>

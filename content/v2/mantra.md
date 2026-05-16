@@ -2,46 +2,30 @@
 
 ### Ton mantra
 
-**Après ma séance, je me sens claire, forte, et prête à ma journée.**
-
-C'est pendant et après que tu le comprends. C'est là que le corps répond, et que ton cerveau sait pourquoi tu reviens demain.
+Après ma séance, je me sens mieux. C'est simple, c'est suffisant, c'est pour ça que ça dure.
 
 ---
 
 ### Installer ta routine sans contrainte
 
-**Une routine, c'est ton espace.**
-
-Tu l'abordes comme tu le souhaites. Certains jours : tout donner. D'autres : le minimum. Les deux comptent.
-
-Tu n'as pas besoin d'être héroïque. Tu as besoin d'être présente.
+Une routine, ce n'est pas une obligation. Certains jours tu donnes tout, d'autres tu fais le minimum et c'est suffisant. Ce qui compte, c'est d'être là et de bouger ton corps.
 
 ---
 
 ### Repousser ses limites, même de chez soi
 
-Respecter son rythme, oui. Se cacher derrière, non.
-
-Les vrais changements arrivent quand tu fais ce que tu pensais pas pouvoir faire. Une charge plus lourde depuis ton salon. Une série de plus. Une séance que tu aurais skip.
-
-Tu as le droit d'avoir peur. Tu as surtout le droit de le faire quand même.
+Respecter son rythme ne veut pas dire éviter l'effort. Les vrais changements arrivent quand tu vas un peu plus loin que prévu : une charge plus lourde, une série de plus, une séance que tu aurais sautée.
 
 ---
 
-### Tu as ta place ici. À la maison.
+### Tu as ta place ici.
 
-Pas de salle intimidante. Pas de club fermé. Juste toi, tes haltères, ta chaise, ton tapis.
-
-Tu n'as rien à prouver avant de commencer.
+Pas de salle, pas de machines. Juste toi, tes haltères, ta chaise et ton tapis. La seule chose à te prouver, c'est que la force et le mental font le reste.
 
 ---
 
 ### Pourquoi tu continues
 
-Parce que ça change ton corps. Mais surtout ta tête.
+Tu continues pour toi et toi seule. Pour te sentir bien, alignée, fière de ta force et de ce que tu construis. C'est ça, FlowToForce V2.
 
-Énergie. Clarté. Fierté.
-
-C'est ça, FlowToForce V2.
-
-Lys
+Lys 🤍
