@@ -2,9 +2,9 @@ import Head from 'next/head'
 import styles from '../styles/landing.module.css'
 
 const programNames = {
-  v1: 'FlowToForce V1 — Programme en Salle',
-  v2: 'FlowToForce V2 — Home Programme',
-  bundle: 'FlowToForce Bundle — V1 + V2',
+  v1: 'FlowToForce V1 · Programme en Salle',
+  v2: 'FlowToForce V2 · Home Programme',
+  bundle: 'FlowToForce Bundle · V1 + V2',
 }
 
 export default function Success({ programName }) {
@@ -23,15 +23,15 @@ export default function Success({ programName }) {
               <span className={styles.logoForce}>force</span>
             </div>
             <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: 20, marginTop: 32, marginBottom: 8 }}>
-              Paiement confirmé 🤍
+              Bienvenue dans la team 🤍
             </p>
             {programName && (
-              <p style={{ color: 'white', fontSize: 17, fontWeight: 500, marginBottom: 32 }}>
+              <p style={{ color: 'white', fontSize: 17, fontWeight: 500, marginBottom: 24 }}>
                 {programName}
               </p>
             )}
             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: 15, lineHeight: 1.8, marginBottom: 32 }}>
-              Ton email de confirmation est en route. Il contient ton accès au programme.
+              Merci pour ta confiance et bienvenue dans la communauté FlowToForce. Ton programme arrive par email, profite bien de ta méthode.
             </p>
             <a
               href="/"
