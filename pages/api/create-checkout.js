@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   const { programId } = req.body
 
   const prices = {
-    v1: 2999,
+    v1: 50,
     v2: 2999,
     bundle: 3999,
   }
