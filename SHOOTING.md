@@ -10,6 +10,7 @@
 |---|----------|:--:|:--:|-----------|
 | ☐ | Back Squat | ✓ | | barre sur les trapèzes |
 | ☐ | Front Squat | ✓ | | barre devant épaules |
+| ☐ | Good Morning Barre | ✓ | | buste penché, barre dos |
 | ☐ | Hip Thrust Barre | ✓ | | épaules sur banc |
 | ☐ | RDL Barre | ✓ | | barre devant cuisses |
 | ☐ | SDT Classique | ✓ | | barre au sol |
@@ -21,12 +22,17 @@
 | ☐ | Exercice | V1 | V2 | Placement |
 |---|----------|:--:|:--:|-----------|
 | ☐ | Goblet Squat | ✓ | ✓ | haltère contre poitrine |
-| ☐ | Bulgarian Split Squat | ✓ | ✓ | pied arrière sur banc |
+| ☐ | Bulgarian Split Squat | ✓ | | pied arrière sur banc |
 | ☐ | Fentes Avant | ✓ | | genou avant à 90° |
 | ☐ | Fentes Latérales | ✓ | | descente sur le côté |
 | ☐ | Fentes Marchées | ✓ | ✓ | en marche avant |
-| ☐ | Hip Thrust Haltère | ✓ | | haltère sur les hanches |
+| ☐ | Hip Thrust Haltère | ✓ | | haltère sur hanches, banc |
+| ☐ | RDL Haltères | ✓ | ✓ | haltères devant cuisses |
 | ☐ | Single Leg RDL | ✓ | ✓ | unijambiste, dos plat |
+| ☐ | Step-Up Haltères | ✓ | | pied sur banc |
+| ☐ | Sumo Squat Haltère | ✓ | ✓ | écartement large, haltère |
+| ☐ | Good Morning Haltères | ✓ | ✓ | haltères épaules, buste penché |
+| ☐ | Glute Bridge Pulse PDC | ✓ | | sol, pulsés sans haltère |
 
 ### BAS DU CORPS · Machines
 
@@ -38,6 +44,7 @@
 | ☐ | Hack Squat | ✓ | | dos sur dossier |
 | ☐ | Abduction Machine | ✓ | | assise, genoux écartés |
 | ☐ | Glute Hyperextension | ✓ | | buste vers le bas |
+| ☐ | Kick Back Machine | ✓ | | debout, genou fléchi |
 
 ### HAUT DU CORPS · Push
 
@@ -45,6 +52,7 @@
 |---|----------|:--:|:--:|-----------|
 | ☐ | Développé Couché Barre | ✓ | | allongée, barre au-dessus |
 | ☐ | Développé Couché Haltères | ✓ | | allongée, haltères poitrine |
+| ☐ | Développé Couché Prise Serrée | ✓ | | mains rapprochées, banc |
 | ☐ | Développé Incliné Haltères | ✓ | | banc incliné, haltères |
 | ☐ | Développé Militaire Barre | ✓ | | barre devant front |
 | ☐ | Développé Militaire Haltères | ✓ | ✓ | haltères hauteur épaules |
@@ -52,7 +60,7 @@
 | ☐ | Développé Épaules Assis | ✓ | ✓ | assise, haltères en haut |
 | ☐ | Élévations Latérales | ✓ | ✓ | haltères à hauteur épaules |
 | ☐ | Pompes Classiques | ✓ | ✓ | mains sol, corps droit |
-| ☐ | Dips Banc | ✓ | ✓ | mains sur banc |
+| ☐ | Dips Banc | ✓ | | mains sur banc |
 | ☐ | Extension Triceps Poulie | ✓ | | poulie haute, bras tendus |
 
 ### HAUT DU CORPS · Pull
@@ -60,12 +68,13 @@
 | ☐ | Exercice | V1 | V2 | Placement |
 |---|----------|:--:|:--:|-----------|
 | ☐ | Rowing Barre Buste Penché | ✓ | | dos à 45°, barre |
-| ☐ | Rowing Haltère Unilatéral | ✓ | ✓ | genou sur banc |
+| ☐ | Rowing Haltère Unilatéral | ✓ | | genou sur banc |
 | ☐ | Rowing Haltère Bilatéral | ✓ | ✓ | buste penché, deux haltères |
 | ☐ | Tirage Vertical / Lat Pulldown | ✓ | | barre large au-dessus |
 | ☐ | Rowing Assis Poulie | ✓ | | assis, câble vers ventre |
 | ☐ | Face Pull Poulie | ✓ | | câble vers le visage |
 | ☐ | Pull-Over Haltère | ✓ | | allongée, haltère derrière tête |
+| ☐ | Pull-Over Poulie | ✓ | | allongée, câble derrière tête |
 | ☐ | Oiseau Haltères | ✓ | ✓ | buste penché, bras ouverts |
 
 ### BRAS · Isolation
@@ -75,6 +84,8 @@
 | ☐ | Curl Biceps Barre | ✓ | | barre devant cuisses |
 | ☐ | Curl Biceps Haltères | ✓ | ✓ | haltères en flexion |
 | ☐ | Curl Incliné Haltères | ✓ | | banc incliné, bras pendant |
+| ☐ | Extension Triceps Haltère | ✓ | ✓ | haltère au-dessus tête |
+| ☐ | Superset Curl + Extension | ✓ | ✓ | deux mouvements enchaînés |
 
 ### CORE
 
@@ -88,7 +99,9 @@
 | ☐ | Hollow Hold | ✓ | ✓ | allongée, membres tendus |
 | ☐ | Mountain Climbers | ✓ | ✓ | planche, genoux alternés |
 | ☐ | Russian Twist | ✓ | ✓ | assise inclinée, rotation |
-| ☐ | Pallof Press | ✓ | ✓ | câble/élastique, résistance |
+| ☐ | Pallof Press | ✓ | ✓ | câble / élastique, résistance |
+| ☐ | Bear Crawl | ✓ | ✓ | à quatre pattes, en marche |
+| ☐ | Wood Chop Poulie | ✓ | | câble en diagonale |
 
 ---
 
@@ -103,8 +116,6 @@
 | ☐ | Glute Bridge Pulse | | ✓ | position haute, petits pulsés |
 | ☐ | Squat Bulgare + Chaise | | ✓ | pied arrière sur chaise |
 | ☐ | Step-Up Haltères | | ✓ | pied sur chaise |
-| ☐ | Sumo Squat Haltère | | ✓ | écartement large, haltère |
-| ☐ | Good Morning Haltères | | ✓ | haltères épaules, buste penché |
 
 ### HAUT DU CORPS · Pull Élastiques
 
@@ -125,16 +136,8 @@
 | ☐ | Pompes Prise Serrée | | ✓ | mains rapprochées |
 | ☐ | Pompes Déclinées | | ✓ | pieds sur chaise |
 
-### BRAS
-
-| ☐ | Exercice | V1 | V2 | Placement |
-|---|----------|:--:|:--:|-----------|
-| ☐ | Extension Triceps Haltère | | ✓ | haltère au-dessus tête |
-| ☐ | Superset Curl + Extension | | ✓ | deux mouvements enchaînés |
-
 ### CORE · Spécifique V2
 
 | ☐ | Exercice | V1 | V2 | Placement |
 |---|----------|:--:|:--:|-----------|
-| ☐ | Bear Crawl | | ✓ | à quatre pattes, en marche |
 | ☐ | Wood Chop Élastique | | ✓ | rotation diagonale |
